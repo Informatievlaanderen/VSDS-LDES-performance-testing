@@ -1,0 +1,40 @@
+version: "3.3"
+
+services:
+  jmeter:
+    container_name: jmeter_server_jmeter
+    image: jmeter:latest
+    build: .
+    environment:
+      - DISPLAY=:0
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./tests:/home/jmeter
+      - ../../data/epsg:/tmp/Databases:rw
+    command: -n -t gipod_10_000.jmx -l results/report.jtl -e -o results/output/
+    depends_on:
+      ldes-server:
+        condition: service_healthy
+
+  ldes-server:
+    container_name: jmeter_server_ldes-server
+    image: ghcr.io/informatievlaanderen/ldes-server:latest
+    volumes:
+      - ./config/ldes-server.config.yml:/application.yml:ro
+    environment:
+      - SIS_DATA=/tmp
+    depends_on:
+      - ldes-mongodb
+    ports:
+      - 8080:8080
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
+      interval: 10s
+      timeout: 2s
+      retries: 5
+
+  ldes-mongodb:
+    container_name: jmeter_server_ldes-mongodb
+    image: mongo:${MONGODB_TAG:-latest}
+    ports:
+      - ${MONGODB_PORT:-27017}:27017
