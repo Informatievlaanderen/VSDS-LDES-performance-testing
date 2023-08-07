@@ -852,11 +852,16 @@ log.info(&quot;end: &quot; + vars.get(&quot;last_geo_ingest_ts&quot;))
 log.info(&quot;end: &quot; + vars.get(&quot;last_time_ingest_ts&quot;))
 
 def start = props.get(&quot;start_ingest_ts&quot;) as long;
-def endGeo = vars.get(&quot;last_geo_ingest_ts&quot;) as long;
-def endTime = vars.get(&quot;last_time_ingest_ts&quot;) as long;
 
-//return &quot;hoi&quot;
-return &quot;\n\t\tFragmentation time GeospatialFragmentation(ms): &quot; + (endGeo - start) + &quot;. \n\t\tFragmentation time HierarchicalTimeBasedFragmentation (ms): &quot; + (endTime - start) + &quot;\n\t&quot;;</stringProp>
+def endGeo = vars.get(&quot;last_geo_ingest_ts&quot;) as long;
+def geoTime = endGeo - start;
+def geoPerSecond = ${member_count} / geoTime * 1000 as int;
+
+def endTimebased = vars.get(&quot;last_time_ingest_ts&quot;) as long;
+def timebasedTime = endTimebased - start;
+def timebasedPerSecond = ${member_count} / timebasedTime * 1000 as int;
+
+return &quot;\n\t\tGeospatialFragmentation time: &quot; + timebasedTime + &quot; ms (&quot; + timebasedPerSecond + &quot; per second)&quot; + &quot;\n\t\tHierarchicalTimeBasedFragmentation time: &quot; + timebasedTime + &quot; ms (&quot; + timebasedPerSecond + &quot; per second)\n\t&quot;;</stringProp>
           <stringProp name="TestPlan.comments">ZZ prefix due to being a technical sampler</stringProp>
         </JSR223Sampler>
         <hashTree>
