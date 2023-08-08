@@ -861,7 +861,7 @@ def endTimebased = vars.get(&quot;last_time_ingest_ts&quot;) as long;
 def timebasedTime = endTimebased - start;
 def timebasedPerSecond = ${member_count} / timebasedTime * 1000 as int;
 
-return &quot;\n\t\tGeospatialFragmentation time: &quot; + timebasedTime + &quot; ms (&quot; + timebasedPerSecond + &quot; per second)&quot; + &quot;\n\t\tHierarchicalTimeBasedFragmentation time: &quot; + timebasedTime + &quot; ms (&quot; + timebasedPerSecond + &quot; per second)\n\t&quot;;</stringProp>
+return &quot;\n\t\tGeospatialFragmentation time: &quot; + geoTime + &quot; ms (&quot; + geoPerSecond + &quot; per second)&quot; + &quot;\n\t\tHierarchicalTimeBasedFragmentation time: &quot; + timebasedTime + &quot; ms (&quot; + timebasedPerSecond + &quot; per second)\n\t&quot;;</stringProp>
           <stringProp name="TestPlan.comments">ZZ prefix due to being a technical sampler</stringProp>
         </JSR223Sampler>
         <hashTree>
