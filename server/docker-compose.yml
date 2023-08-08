@@ -31,7 +31,7 @@ services:
       test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
       interval: 10s
       timeout: 2s
-      retries: 5
+      retries: 10
 
   ldes-mongodb:
     container_name: jmeter_server_ldes-mongodb

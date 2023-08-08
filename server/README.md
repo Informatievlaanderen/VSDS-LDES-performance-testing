@@ -14,20 +14,27 @@ This test will test the performance of the following features:
 
 # Steps:
 
-1. Prepare directory that will contain the results
+Prerequisites:
+    - Pull the latest version of the server
 ```bash
-mkdir tests/results
-chmod 777 tests/results
-rm -rf tests/results/output
-rm -rf tests/results/report.jtl
+docker pull ghcr.io/informatievlaanderen/ldes-server:latest
 ```
+
+
+1. Prepare directory that will contain the results
+    ```bash
+    mkdir tests/results
+    chmod 777 tests/results
+    rm -rf tests/results/output
+    rm -rf tests/results/report.jtl
+    ```
 
 2. Start test
-```bash
-docker compose up
-```
+    ```bash
+    docker compose up
+    ```
 
 3. End test
-```bash
-docker compose down
-```
+    ```bash
+    docker compose down
+    ```
