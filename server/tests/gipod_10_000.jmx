@@ -726,7 +726,7 @@ if (timeCountInt &gt;= ${member_count} &amp;&amp; vars.get(&quot;last_time_inges
           </JSR223Sampler>
           <hashTree/>
           <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Wait in between polls" enabled="true">
-            <stringProp name="ConstantTimer.delay">1000</stringProp>
+            <stringProp name="ConstantTimer.delay">250</stringProp>
           </ConstantTimer>
           <hashTree/>
           <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
