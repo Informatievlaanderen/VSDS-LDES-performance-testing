@@ -30,7 +30,15 @@ docker pull ghcr.io/informatievlaanderen/ldes-server:latest
     ```
 
 2. Start test
+    Run 10k actual gipod members
     ```bash
+    export JMETER_SCRIPT=gipod_10_000.jmx
+    docker compose up
+    ```
+   
+    Run 100k templated gipod members (e.g. one real member where only the id is changed using templating)
+    ```bash
+    export JMETER_SCRIPT=gipod_100_000.jmx
     docker compose up
     ```
 
