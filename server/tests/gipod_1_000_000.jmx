@@ -19,7 +19,7 @@
           </elementProp>
           <elementProp name="member_count" elementType="Argument">
             <stringProp name="Argument.name">member_count</stringProp>
-            <stringProp name="Argument.value">50000</stringProp>
+            <stringProp name="Argument.value">1000000</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="thread_count" elementType="Argument">
@@ -30,7 +30,7 @@
           <elementProp name="members_per_thread" elementType="Argument">
             <stringProp name="Argument.name">members_per_thread</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
-            <stringProp name="Argument.value">5000</stringProp>
+            <stringProp name="Argument.value">100000</stringProp>
             <stringProp name="Argument.desc">member_count / thread_count</stringProp>
           </elementProp>
         </collectionProp>
@@ -497,24 +497,21 @@ server:by-time tree:viewDescription [&#xd;
         <stringProp name="ThreadGroup.num_threads">${thread_count}</stringProp>
         <stringProp name="ThreadGroup.ramp_time">0</stringProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
-        <stringProp name="ThreadGroup.duration">60</stringProp>
+        <stringProp name="ThreadGroup.duration">1200</stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
         <boolProp name="ThreadGroup.delayedStart">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV seed data config" enabled="true">
-          <stringProp name="delimiter">,</stringProp>
-          <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">/home/jmeter/gipod_50_000.csv</stringProp>
-          <boolProp name="ignoreFirstLine">false</boolProp>
-          <boolProp name="quotedData">true</boolProp>
-          <boolProp name="recycle">true</boolProp>
-          <stringProp name="shareMode">shareMode.all</stringProp>
-          <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames">id,model</stringProp>
-        </CSVDataSet>
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Counter" enabled="true">
+          <stringProp name="CounterConfig.start">1</stringProp>
+          <stringProp name="CounterConfig.end"></stringProp>
+          <stringProp name="CounterConfig.incr">1</stringProp>
+          <stringProp name="CounterConfig.name">member_counter</stringProp>
+          <stringProp name="CounterConfig.format"></stringProp>
+          <boolProp name="CounterConfig.per_user">true</boolProp>
+        </CounterConfig>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Ingest member" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
@@ -522,7 +519,73 @@ server:by-time tree:viewDescription [&#xd;
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">${model}</stringProp>
+                <stringProp name="Argument.value">@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .&#xd;
+@prefix ns0: &lt;http://www.w3.org/ns/locn#&gt; .&#xd;
+@prefix ns1: &lt;http://www.opengis.net/ont/geosparql#&gt; .&#xd;
+@prefix ns2: &lt;https://data.vlaanderen.be/ns/mobiliteit#Zone.&gt; .&#xd;
+@prefix ns3: &lt;https://data.vlaanderen.be/ns/mobiliteit#Inname.&gt; .&#xd;
+@prefix ns4: &lt;https://gipod.vlaanderen.be/ns/gipod#&gt; .&#xd;
+@prefix ns5: &lt;http://www.w3.org/ns/adms#&gt; .&#xd;
+@prefix ns6: &lt;https://data.vlaanderen.be/ns/mobiliteit#&gt; .&#xd;
+@prefix org: &lt;http://www.w3.org/ns/org#&gt; .&#xd;
+@prefix dc: &lt;http://purl.org/dc/terms/&gt; .&#xd;
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .&#xd;
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .&#xd;
+@prefix dc11: &lt;http://purl.org/dc/elements/1.1/&gt; .&#xd;
+@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .&#xd;
+@prefix ns7: &lt;http://data.europa.eu/m8g/&gt; .&#xd;
+&#xd;
+&lt;https://private-api.gipod.vlaanderen.be/api/v1/taxonomies/zonetypes/0fb72ef7-6ac9-4a70-b295-a30ea215d250&gt; skos:prefLabel &quot;HinderZone&quot;@nl-BE .&#xd;
+&lt;https://private-api.gipod.vlaanderen.be/api/v1/mobility-hindrances/10590560/zones/adda5d7c-bec2-4bb5-a9b4-f664e4373df7&gt;&#xd;
+  a &lt;https://data.vlaanderen.be/ns/mobiliteit#Zone&gt; ;&#xd;
+  ns0:geometry [&#xd;
+    a ns0:Geometry ;&#xd;
+    ns1:asWKT &quot;&lt;http://www.opengis.net/def/crs/EPSG/9.9.1/31370&gt; POLYGON ((156569.258415376 218419.123817213, 156570.525968926 218419.981279909, 156573.583009842 218414.277288932, 156572.203613331 218413.49438821, 156569.258415376 218419.123817213))&quot;^^ns1:wktLiteral&#xd;
+  ] ;&#xd;
+  ns2:type &lt;https://private-api.gipod.vlaanderen.be/api/v1/taxonomies/zonetypes/0fb72ef7-6ac9-4a70-b295-a30ea215d250&gt; .&#xd;
+&#xd;
+&lt;https://private-api.gipod.vlaanderen.be/api/v1/events/9196957&gt;&#xd;
+  a &lt;https://data.vlaanderen.be/ns/mobiliteit#Evenement&gt; ;&#xd;
+  ns3:heeftGevolg &lt;https://private-api.gipod.vlaanderen.be/api/v1/mobility-hindrances/${__threadNum}${member_counter}10590560/1313&gt; ;&#xd;
+  ns4:gipodId 9196957 .&#xd;
+&#xd;
+&lt;https://private-api.gipod.vlaanderen.be/api/v1/taxonomies/statuses/a411c53e-db33-436a-9bb9-d62d535b661d&gt; skos:prefLabel &quot;Onbekend&quot;@nl-BE .&#xd;
+&lt;https://private-api.gipod.vlaanderen.be/api/v1/mobility-hindrances/${__threadNum}${member_counter}10590560/1313&gt;&#xd;
+  ns5:identifier [&#xd;
+    a ns5:Identifier ;&#xd;
+    skos:notation &quot;10590560&quot;^^ns4:gipodId ;&#xd;
+    ns5:schemaAgency &quot;https://gipod.vlaanderen.be&quot;@nl-BE&#xd;
+  ] ;&#xd;
+  ns6:beheerder [&#xd;
+    a org:Organization ;&#xd;
+    dc:isVersionOf &lt;https://private-api.gipod.vlaanderen.be/api/v1/organisations/760bb1a4-bc1c-0bb8-868d-c0b6fd937233&gt; ;&#xd;
+    skos:prefLabel &quot;Gemeente Brasschaat&quot;^^rdf:langString&#xd;
+  ] ;&#xd;
+  ns3:status &lt;https://private-api.gipod.vlaanderen.be/api/v1/taxonomies/statuses/a411c53e-db33-436a-9bb9-d62d535b661d&gt; ;&#xd;
+  dc:modified &quot;2021-01-06T13:03:51.107Z&quot;^^xsd:dateTime ;&#xd;
+  ns5:versionNotes &quot;MobilityHindranceWasImportedFromLegacy&quot;@nl-BE ;&#xd;
+  dc11:creator [&#xd;
+    a org:Organization ;&#xd;
+    dc:isVersionOf &lt;https://private-api.gipod.vlaanderen.be/api/v1/organisations/760bb1a4-bc1c-0bb8-868d-c0b6fd937233&gt; ;&#xd;
+    skos:prefLabel &quot;Gemeente Brasschaat&quot;^^rdf:langString&#xd;
+  ] ;&#xd;
+  ns4:gipodId 10590560 ;&#xd;
+  ns6:zone &lt;https://private-api.gipod.vlaanderen.be/api/v1/mobility-hindrances/10590560/zones/adda5d7c-bec2-4bb5-a9b4-f664e4373df7&gt; ;&#xd;
+  dc11:contributor [&#xd;
+    a org:Organization ;&#xd;
+    dc:isVersionOf &lt;https://private-api.gipod.vlaanderen.be/api/v1/organisations/760bb1a4-bc1c-0bb8-868d-c0b6fd937233&gt; ;&#xd;
+    skos:prefLabel &quot;Gemeente Brasschaat&quot;^^rdf:langString&#xd;
+  ] ;&#xd;
+  dc:isVersionOf &lt;https://private-api.gipod.vlaanderen.be/api/v1/mobility-hindrances/10590560&gt; ;&#xd;
+  prov:generatedAtTime &quot;2021-01-06T18:05:35.713Z&quot;^^xsd:dateTime ;&#xd;
+  dc:created &quot;2021-01-06T12:58:25.483Z&quot;^^xsd:dateTime ;&#xd;
+  ns6:periode [&#xd;
+    a &lt;http://data.europa.eu/m8g/PeriodOfTime&gt; ;&#xd;
+    ns7:endTime &quot;2021-01-22T15:00:00Z&quot;^^xsd:dateTime ;&#xd;
+    ns7:startTime &quot;2021-01-11T06:00:00Z&quot;^^xsd:dateTime&#xd;
+  ] ;&#xd;
+  a ns6:Mobiliteitshinder ;&#xd;
+  dc:description &quot;2930 Brasschaat, Kasteellei 27: Huisaansluitingen/herstel kolken&quot;^^rdf:langString .</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -726,7 +789,7 @@ if (timeCountInt &gt;= ${member_count} &amp;&amp; vars.get(&quot;last_time_inges
           </JSR223Sampler>
           <hashTree/>
           <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Wait in between polls" enabled="true">
-            <stringProp name="ConstantTimer.delay">1000</stringProp>
+            <stringProp name="ConstantTimer.delay">250</stringProp>
           </ConstantTimer>
           <hashTree/>
           <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
@@ -852,11 +915,16 @@ log.info(&quot;end: &quot; + vars.get(&quot;last_geo_ingest_ts&quot;))
 log.info(&quot;end: &quot; + vars.get(&quot;last_time_ingest_ts&quot;))
 
 def start = props.get(&quot;start_ingest_ts&quot;) as long;
-def endGeo = vars.get(&quot;last_geo_ingest_ts&quot;) as long;
-def endTime = vars.get(&quot;last_time_ingest_ts&quot;) as long;
 
-//return &quot;hoi&quot;
-return &quot;\n\t\tFragmentation time GeospatialFragmentation(ms): &quot; + (endGeo - start) + &quot;. \n\t\tFragmentation time HierarchicalTimeBasedFragmentation (ms): &quot; + (endTime - start) + &quot;\n\t&quot;;</stringProp>
+def endGeo = vars.get(&quot;last_geo_ingest_ts&quot;) as long;
+def geoTime = endGeo - start;
+def geoPerSecond = ${member_count} / geoTime * 1000 as int;
+
+def endTimebased = vars.get(&quot;last_time_ingest_ts&quot;) as long;
+def timebasedTime = endTimebased - start;
+def timebasedPerSecond = ${member_count} / timebasedTime * 1000 as int;
+
+return &quot;\n\t\tGeospatialFragmentation time: &quot; + geoTime + &quot; ms (&quot; + geoPerSecond + &quot; per second)&quot; + &quot;\n\t\tHierarchicalTimeBasedFragmentation time: &quot; + timebasedTime + &quot; ms (&quot; + timebasedPerSecond + &quot; per second)\n\t&quot;;</stringProp>
           <stringProp name="TestPlan.comments">ZZ prefix due to being a technical sampler</stringProp>
         </JSR223Sampler>
         <hashTree>
