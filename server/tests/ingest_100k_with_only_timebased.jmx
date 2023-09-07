@@ -153,20 +153,23 @@
           </ResultCollector>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Create pagination view" enabled="true">
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">@prefix server: &lt;http://localhost:8080/mobility-hindrances/&gt; .&#xd;
-@prefix tree: &lt;https://w3id.org/tree#&gt; .&#xd;
-&#xd;
-server:pagination tree:viewDescription [&#xd;
-	tree:fragmentationStrategy  () ;&#xd;
-    tree:pageSize &quot;100&quot;^^&lt;http://www.w3.org/2001/XMLSchema#int&gt; ;&#xd;
- ] .&#xd;
-</stringProp>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Create timebased view" enabled="true">
+                  <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                    <collectionProp name="Arguments.arguments">
+                      <elementProp name="" elementType="HTTPArgument">
+                        <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                        <stringProp name="Argument.value">@prefix server: &lt;http://localhost:8080/mobility-hindrances/&gt; .&#xd;
+        @prefix tree: &lt;https://w3id.org/tree#&gt; .&#xd;
+        @prefix ldes: &lt;https://w3id.org/ldes#&gt; .&#xd;
+        &#xd;
+        server:by-time tree:viewDescription [&#xd;
+        	tree:fragmentationStrategy ([&#xd;
+        		a tree:HierarchicalTimeBasedFragmentation ;&#xd;
+                tree:maxGranularity &quot;day&quot; ;&#xd;
+                tree:fragmentationPath &lt;http://www.w3.org/ns/prov#generatedAtTime&gt; ;&#xd;
+            ]) ;&#xd;
+         ] .</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -184,11 +187,7 @@ server:pagination tree:viewDescription [&#xd;
           <boolProp name="HTTPSampler.concurrentDwn">false</boolProp>
           <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
           <boolProp name="HTTPSampler.md5">false</boolProp>
-          <stringProp name="HTTPSampler.ipSource">jmeter</stringProp>
           <intProp name="HTTPSampler.ipSourceType">0</intProp>
-          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
-          <stringProp name="HTTPSampler.connect_timeout">1000</stringProp>
-          <stringProp name="HTTPSampler.response_timeout">2000</stringProp>
         </HTTPSamplerProxy>
         <hashTree>
           <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
@@ -606,19 +605,19 @@ MongoClient mongoClient = new MongoClient(new ServerAddress(&quot;${mongodb_serv
 MongoDatabase database = mongoClient.getDatabase(&quot;${mongodb_database}&quot;);
 MongoCollection&lt;Document&gt; fragmentationSequence = database.getCollection(&quot;fragmentation_sequence&quot;);
 
-def paginationCountInt = 0;
+def timeCountInt = 0;
 if (fragmentationSequence != null) {
-    def paginationCount = fragmentationSequence.find(new BasicDBObject(&quot;_id&quot;, &quot;mobility-hindrances/pagination&quot;)).first();
-    if (paginationCount != null) {
-        paginationCountInt = paginationCount.get(&quot;lastProcessedSequence&quot;) as int;
+    def timeCount = fragmentationSequence.find(new BasicDBObject(&quot;_id&quot;, &quot;mobility-hindrances/by-time&quot;)).first();
+    if (timeCount != null) {
+        timeCountInt = timeCount.get(&quot;lastProcessedSequence&quot;) as int;
     }
 }
 
-vars.put(&quot;processed_count&quot;, String.valueOf(paginationCountInt));
+vars.put(&quot;processed_count&quot;, String.valueOf(timeCountInt));
 
-if (paginationCountInt &gt;= ${member_count} &amp;&amp; vars.get(&quot;last_pagination_ingest_ts&quot;) == null) {
-    log.info(&quot;setting pagination&quot;)
-    vars.put(&quot;last_pagination_ingest_ts&quot;, String.valueOf(System.currentTimeMillis()));
+if (timeCountInt &gt;= ${member_count} &amp;&amp; vars.get(&quot;last_time_ingest_ts&quot;) == null) {
+    log.info(&quot;setting time&quot;)
+    vars.put(&quot;last_time_ingest_ts&quot;, String.valueOf(System.currentTimeMillis()));
 }
 </stringProp>
             <stringProp name="TestPlan.comments">ZZ prefix due to being a technical sampler</stringProp>
@@ -747,16 +746,16 @@ if (paginationCountInt &gt;= ${member_count} &amp;&amp; vars.get(&quot;last_pagi
           <stringProp name="cacheKey">true</stringProp>
           <stringProp name="script">log.info(&quot;starting ts analysis&quot;)
 log.info(&quot;start: &quot; + props.get(&quot;start_ingest_ts&quot;))
-log.info(&quot;end: &quot; + vars.get(&quot;last_pagination_ingest_ts&quot;))
+log.info(&quot;end: &quot; + vars.get(&quot;last_time_ingest_ts&quot;))
 log.info(&quot;end: &quot; + vars.get(&quot;last_time_ingest_ts&quot;))
 
 def start = props.get(&quot;start_ingest_ts&quot;) as long;
 
-def endPagination = vars.get(&quot;last_pagination_ingest_ts&quot;) as long;
-def paginationTime = endPagination - start;
-def paginationPerSecond = ${member_count} / paginationTime * 1000 as int;
+def endTime = vars.get(&quot;last_time_ingest_ts&quot;) as long;
+def timeTime = endTime - start;
+def timePerSecond = ${member_count} / timeTime * 1000 as int;
 
-return &quot;\n\t\tPaginationFragmentation time: &quot; + paginationTime + &quot; ms (&quot; + paginationPerSecond + &quot; per second)&quot;;</stringProp>
+return &quot;\n\t\tTimeFragmentation time: &quot; + timeTime + &quot; ms (&quot; + timePerSecond + &quot; per second)&quot;;</stringProp>
           <stringProp name="TestPlan.comments">ZZ prefix due to being a technical sampler</stringProp>
         </JSR223Sampler>
         <hashTree>
@@ -807,14 +806,14 @@ return &quot;\n\t\tPaginationFragmentation time: &quot; + paginationTime + &quot
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
       </PostThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Remove pagination view" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Remove timebased view" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
           <stringProp name="HTTPSampler.domain">ldes-server</stringProp>
           <stringProp name="HTTPSampler.port">8080</stringProp>
-          <stringProp name="HTTPSampler.path">/admin/api/v1/eventstreams/mobility-hindrances/views/pagination</stringProp>
+          <stringProp name="HTTPSampler.path">/admin/api/v1/eventstreams/mobility-hindrances/views/by-time</stringProp>
           <stringProp name="HTTPSampler.method">DELETE</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>

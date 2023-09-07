@@ -93,7 +93,7 @@ To run the different tests, repeat step 1 -> 3 above and insert the results belo
 | Test                                              | Ingested members | Ingest rate | Fragmentation rate                                                     | Test file                               |   
 |---------------------------------------------------|------------------|-------------|------------------------------------------------------------------------|-----------------------------------------|
 | Without fragmentations                            | 100.000          | 888 mps     | 471 mps                                                                | ingest_100k_without_fragmentations.jmx  |  
-| With only timebased fragmentation                 | 100.000          | mps         | mps                                                                    | ingest_100k_with_only_timebased.jmx     |  
-| With only geolocation fragmentation               | 100.000          | mps         | mps                                                                    | ingest_100k_with_only_geolocation.jmx   |  
+| With only timebased fragmentation                 | 100.000          | 866 mps     | 427 mps                                                                | ingest_100k_with_only_timebased.jmx     |  
+| With only geolocation fragmentation               | 100.000          | 829 mps     | 433 mps                                                                | ingest_100k_with_only_geolocation.jmx   |  
 | With both geolocation and timebased fragmentation | 100.000          | mps         | GeospatialFragmentation  p/s & HierarchicalTimeBasedFragmentation  p/s | ingest_100k_with_all_fragmentations.jmx |  
 *mps = members per second
