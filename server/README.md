@@ -30,19 +30,38 @@ docker pull ghcr.io/informatievlaanderen/ldes-server:latest
     ```
 
 2. Start test
-    Run 10k actual gipod members
+
+   Ingest 10k actual gipod members
     ```bash
     export JMETER_SCRIPT=gipod_10_000.jmx
     docker compose up
     ```
-   
-    Run 100k templated gipod members (e.g. one real member where only the id is changed using templating)
-    ```bash
-    export JMETER_SCRIPT=gipod_100_000.jmx
-    docker compose up
+
+    Ingest 100k templated gipod members without fragmentations
+   ```bash
+   export JMETER_SCRIPT=ingest_100k_without_fragmentations.jmx
+   docker compose up
+    ```
+
+    Ingest 100k templated gipod members with timebased fragmentation
+   ```bash
+   export JMETER_SCRIPT=ingest_100k_with_only_timebased.jmx
+   docker compose up
+    ```
+
+    Ingest 100k templated gipod members with geolocation fragmentation
+   ```bash
+   export JMETER_SCRIPT=ingest_100k_with_only_geolocation.jmx
+   docker compose up
+    ```
+
+    Ingest 100k templated gipod members with both geolocation and timebased fragmentation
+   ```bash
+   export JMETER_SCRIPT=ingest_100k_with_all_fragmentations.jmx
+   docker compose up
     ```
    
-    Run 1 million templated gipod members (e.g. one real member where only the id is changed using templating)
+    Ingest 1 million templated gipod members (e.g. one real member where only the id is changed using templating)
     ```bash
     export JMETER_SCRIPT=gipod_1_000_000.jmx
     docker compose up
@@ -52,3 +71,27 @@ docker pull ghcr.io/informatievlaanderen/ldes-server:latest
     ```bash
     docker compose down
     ```
+
+4. Test results
+
+To run the different tests, repeat step 1 -> 3 above and insert the results below.
+
+- Test run:       September 7, 2023
+- Docker image:   ldes/ldes-server:1.4.0-SNAPSHOT
+- Resources:
+    ```yaml
+        deploy:
+          resources:
+            limits:
+              cpus: '4'
+              memory: '2GB'
+            reservations:
+              cpus: '2'
+              memory: '1GB'
+    ```
+
+| Test                                              | Ingested members | Ingest rate | Fragmentation rate                                                           |   
+|---------------------------------------------------|------------------|-------------|------------------------------------------------------------------------------|
+| With both geolocation and timebased fragmentation | 100.000          | 788 p/s     | GeospatialFragmentation 386 p/s & HierarchicalTimeBasedFragmentation 360 p/s |  
+|                                                   |                  |             |                                                                              |  
+|                                                   |                  |             |                                                                              | 

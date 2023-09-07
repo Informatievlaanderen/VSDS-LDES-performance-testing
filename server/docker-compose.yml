@@ -17,7 +17,8 @@ services:
 
   ldes-server:
     container_name: jmeter_server_ldes-server
-    image: ghcr.io/informatievlaanderen/ldes-server:latest
+    image: ldes/ldes-server:1.4.0-SNAPSHOT
+#    image: ghcr.io/informatievlaanderen/ldes-server:latest
     volumes:
       - ./config/ldes-server.config.yml:/application.yml:ro
       - ../data/epsg:/tmp/Databases:rw
@@ -32,6 +33,14 @@ services:
       interval: 10s
       timeout: 2s
       retries: 10
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+          memory: '2GB'
+        reservations:
+          cpus: '2'
+          memory: '1GB'
 
   ldes-mongodb:
     container_name: jmeter_server_ldes-mongodb
