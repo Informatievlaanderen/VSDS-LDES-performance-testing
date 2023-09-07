@@ -17,7 +17,7 @@ services:
 
   ldes-server:
     container_name: jmeter_server_ldes-server
-    image: ldes/ldes-server:1.4.0-SNAPSHOT
+    image: ldes/ldes-server:2.0.1-SNAPSHOT
 #    image: ghcr.io/informatievlaanderen/ldes-server:latest
     volumes:
       - ./config/ldes-server.config.yml:/application.yml:ro

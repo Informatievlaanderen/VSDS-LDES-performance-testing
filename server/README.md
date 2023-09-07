@@ -77,7 +77,7 @@ docker pull ghcr.io/informatievlaanderen/ldes-server:latest
 To run the different tests, repeat step 1 -> 3 above and insert the results below.
 
 - Test run:       September 7, 2023
-- Docker image:   ldes/ldes-server:1.4.0-SNAPSHOT
+- Docker image:   ldes/ldes-server:2.1.0-SNAPSHOT
 - Resources:
     ```yaml
         deploy:
@@ -90,8 +90,10 @@ To run the different tests, repeat step 1 -> 3 above and insert the results belo
               memory: '1GB'
     ```
 
-| Test                                              | Ingested members | Ingest rate | Fragmentation rate                                                           |   
-|---------------------------------------------------|------------------|-------------|------------------------------------------------------------------------------|
-| With both geolocation and timebased fragmentation | 100.000          | 788 p/s     | GeospatialFragmentation 386 p/s & HierarchicalTimeBasedFragmentation 360 p/s |  
-|                                                   |                  |             |                                                                              |  
-|                                                   |                  |             |                                                                              | 
+| Test                                              | Ingested members | Ingest rate | Fragmentation rate                                                     | Test file                               |   
+|---------------------------------------------------|------------------|-------------|------------------------------------------------------------------------|-----------------------------------------|
+| Without fragmentations                            | 100.000          | 888 mps     | 471 mps                                                                | ingest_100k_without_fragmentations.jmx  |  
+| With only timebased fragmentation                 | 100.000          | mps         | mps                                                                    | ingest_100k_with_only_timebased.jmx     |  
+| With only geolocation fragmentation               | 100.000          | mps         | mps                                                                    | ingest_100k_with_only_geolocation.jmx   |  
+| With both geolocation and timebased fragmentation | 100.000          | mps         | GeospatialFragmentation  p/s & HierarchicalTimeBasedFragmentation  p/s | ingest_100k_with_all_fragmentations.jmx |  
+*mps = members per second
