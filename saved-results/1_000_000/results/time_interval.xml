@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<sample>
+  <responseData class="java.lang.String">
+		GeospatialFragmentation time: 1135369 ms (880 per second)
+		HierarchicalTimeBasedFragmentation time: 1334384 ms (749 per second)
+	</responseData>
+</sample>
+
+</testResults>

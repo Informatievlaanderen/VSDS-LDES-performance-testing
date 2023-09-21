@@ -2,3 +2,4 @@
 /server/tests/jmeter.log
 /server/tests/results/
 /.idea/
+/data/epsg/
