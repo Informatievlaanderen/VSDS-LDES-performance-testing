@@ -6,19 +6,19 @@ services:
     image: jmeter:latest
     build: .
     environment:
-      - DISPLAY=:0
+      - DISPLAY=host.docker.internal:0.0
     volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix
+      #- /tmp/.X11-unix:/tmp/.X11-unix
       - ./tests:/home/jmeter
       - ../../data/epsg:/tmp/Databases:rw
-    command: -n -t gipod_10_000.jmx -l results/report.jtl -e -o results/output/
+    #command: -n -t gipod_10_000_ingest_fetch.jmx -l results/report.jtl -e -o results/output/
     depends_on:
       ldes-server:
         condition: service_healthy
 
   ldes-server:
     container_name: jmeter_server_ldes-server
-    image: ghcr.io/informatievlaanderen/ldes-server:latest
+    image: ldes/ldes-server:2.0.1-SNAPSHOT
     volumes:
       - ./config/ldes-server.config.yml:/application.yml:ro
     environment:
