@@ -505,11 +505,11 @@ server:by-time tree:viewDescription [&#xd;
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">${thread_count}</stringProp>
         <stringProp name="ThreadGroup.ramp_time">0</stringProp>
-        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration">60</stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
         <boolProp name="ThreadGroup.delayedStart">true</boolProp>
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">stoptest</stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
@@ -520,8 +520,8 @@ server:by-time tree:viewDescription [&#xd;
           <boolProp name="ignoreFirstLine">false</boolProp>
           <boolProp name="quotedData">true</boolProp>
           <boolProp name="recycle">true</boolProp>
-          <stringProp name="shareMode">shareMode.all</stringProp>
-          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.group</stringProp>
+          <boolProp name="stopThread">true</boolProp>
           <stringProp name="variableNames">id,model</stringProp>
         </CSVDataSet>
         <hashTree/>
@@ -618,6 +618,7 @@ try(MongoClient mongoClient = new MongoClient(new ServerAddress(&quot;${mongodb_
 	def fragmentToFetch = &quot;&quot;
 	def allocationToFetch = null
 	while (allocationToFetch == null) {
+		log.info(&quot;Polling for allocation for member ${id}&quot;)
 		allocationToFetch = fragmentationSequence.find(new BasicDBObject(&quot;memberId&quot;, &quot;${id}&quot;)).first();
 		if (allocationToFetch != null) {
 			fragmentToFetch = allocationToFetch.get(&quot;fragmentId&quot;);
@@ -835,36 +836,36 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 
-MongoClient mongoClient = new MongoClient(new ServerAddress(&quot;${mongodb_server}&quot;, 27017));
-MongoDatabase database = mongoClient.getDatabase(&quot;${mongodb_database}&quot;);
-MongoCollection&lt;Document&gt; fragmentationSequence = database.getCollection(&quot;fragmentation_sequence&quot;);
-
-def geoCountInt = 0;
-def timeCountInt = 0;
-if (fragmentationSequence != null) {
-	def geoCount = fragmentationSequence.find(new BasicDBObject(&quot;_id&quot;, &quot;mobility-hindrances/by-location&quot;)).first();
-	if (geoCount != null) {
-		geoCountInt = geoCount.get(&quot;lastProcessedSequence&quot;) as int;
-	}
+try(MongoClient mongoClient = new MongoClient(new ServerAddress(&quot;${mongodb_server}&quot;, 27017))) {
+	MongoDatabase database = mongoClient.getDatabase(&quot;${mongodb_database}&quot;);
+	MongoCollection&lt;Document&gt; fragmentationSequence = database.getCollection(&quot;fragmentation_sequence&quot;);
 	
-	def timeCount = fragmentationSequence.find(new BasicDBObject(&quot;_id&quot;, &quot;mobility-hindrances/by-time&quot;)).first();
-	if (timeCount != null) {
-		timeCountInt = timeCount.get(&quot;lastProcessedSequence&quot;) as int;
+	def geoCountInt = 0;
+	def timeCountInt = 0;
+	if (fragmentationSequence != null) {
+		def geoCount = fragmentationSequence.find(new BasicDBObject(&quot;_id&quot;, &quot;mobility-hindrances/by-location&quot;)).first();
+		if (geoCount != null) {
+			geoCountInt = geoCount.get(&quot;lastProcessedSequence&quot;) as int;
+		}
+		
+		def timeCount = fragmentationSequence.find(new BasicDBObject(&quot;_id&quot;, &quot;mobility-hindrances/by-time&quot;)).first();
+		if (timeCount != null) {
+			timeCountInt = timeCount.get(&quot;lastProcessedSequence&quot;) as int;
+		}
+	}
+	def processedCount = Math.min(geoCountInt, timeCountInt);
+	
+	vars.put(&quot;processed_count&quot;, String.valueOf(processedCount));
+	
+	if (geoCountInt &gt;= ${member_count} &amp;&amp; vars.get(&quot;last_geo_ingest_ts&quot;) == null) {
+		log.info(&quot;setting geo&quot;)
+		vars.put(&quot;last_geo_ingest_ts&quot;, String.valueOf(System.currentTimeMillis()));
+	}
+	if (timeCountInt &gt;= ${member_count} &amp;&amp; vars.get(&quot;last_time_ingest_ts&quot;) == null) {
+		log.info(&quot;setting time&quot;)
+		vars.put(&quot;last_time_ingest_ts&quot;, String.valueOf(System.currentTimeMillis()));
 	}
 }
-def processedCount = Math.min(geoCountInt, timeCountInt);
-
-vars.put(&quot;processed_count&quot;, String.valueOf(processedCount));
-
-if (geoCountInt &gt;= ${member_count} &amp;&amp; vars.get(&quot;last_geo_ingest_ts&quot;) == null) {
-	log.info(&quot;setting geo&quot;)
-	vars.put(&quot;last_geo_ingest_ts&quot;, String.valueOf(System.currentTimeMillis()));
-}
-if (timeCountInt &gt;= ${member_count} &amp;&amp; vars.get(&quot;last_time_ingest_ts&quot;) == null) {
-	log.info(&quot;setting time&quot;)
-	vars.put(&quot;last_time_ingest_ts&quot;, String.valueOf(System.currentTimeMillis()));
-}
-
 </stringProp>
             <stringProp name="TestPlan.comments">ZZ prefix due to being a technical sampler</stringProp>
           </JSR223Sampler>

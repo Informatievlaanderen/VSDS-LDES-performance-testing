@@ -10,7 +10,7 @@ services:
     volumes:
       #- /tmp/.X11-unix:/tmp/.X11-unix
       - ./tests:/home/jmeter
-    command: -n -t ${JMETER_SCRIPT} -l results/report.jtl -e -o results/output/
+    #command: -n -t gipod_10_000.jmx -l results/report.jtl -e -o results/output/
     depends_on:
       ldes-server:
         condition: service_healthy
