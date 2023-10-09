@@ -6,9 +6,9 @@ services:
     image: jmeter:latest
     build: .
     environment:
-      - DISPLAY=:0
+      - DISPLAY=${DISPLAY}
     volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ${X11}:/tmp/.X11-unix
       - ./tests:/home/jmeter
     command: -n -t ${JMETER_SCRIPT} -l results/report.jtl -e -o results/output/
     depends_on:
@@ -33,14 +33,14 @@ services:
       interval: 10s
       timeout: 2s
       retries: 10
-    deploy:
-      resources:
-        limits:
-          cpus: '4'
-          memory: '2GB'
-        reservations:
-          cpus: '2'
-          memory: '1GB'
+#    deploy:
+#      resources:
+#        limits:
+#          cpus: '4'
+#          memory: '2GB'
+#        reservations:
+#          cpus: '2'
+#          memory: '1GB'
 
   ldes-mongodb:
     container_name: jmeter_server_ldes-mongodb
