@@ -12,8 +12,11 @@ This test will test the performance of the following features:
 - Delete eventstream
     We test if the collection with the remain timebased fragmentation can be deleted in a reasonable time
 
+## Test Setup
+> **Note**: if needed, copy the [environment file (.env)](./.env) to a personal file (e.g. `user.env`) and change the settings as needed. If you do, you need to add ` --env-file user.env` to each `docker compose` command.
 > **_NOTE for Windows users:_**  Use [this tutorial](https://medium.com/@potatowagon/how-to-use-gui-apps-in-linux-docker-container-from-windows-host-485d3e1c64a3) to run JMeter in the docker-compose file.
 > You can use DISPLAY=host.docker.internal:0.0 as environment variable to skip the ipconfig step.
+
 # Steps:
 
 Prerequisites:
