@@ -1,0 +1,20 @@
+management:
+  tracing:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: prometheus,health
+orchestrator:
+  pipelines:
+    - name: gipod
+      input:
+        name: be.vlaanderen.informatievlaanderen.ldes.ldio.LdioHttpIn
+        adapter:
+          name: be.vlaanderen.informatievlaanderen.ldes.ldi.RdfAdapter
+      outputs:
+        - name: be.vlaanderen.informatievlaanderen.ldes.ldio.LdioHttpOut
+          config:
+            endpoint: http://ldes-server:8080/mobility-hindrances
+            rdf-writer:
+              content-type: ${CONTENT_TYPE:-application/n-quads}

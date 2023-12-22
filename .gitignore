@@ -1,5 +1,5 @@
-/server/tests/.java/
-/server/tests/jmeter.log
 /server/tests/results/
 /.idea/
 /data/epsg/
+/*/tests/.java/
+/*/tests/jmeter.log
