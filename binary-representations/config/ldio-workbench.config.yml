@@ -17,4 +17,4 @@ orchestrator:
           config:
             endpoint: http://ldes-server:8080/mobility-hindrances
             rdf-writer:
-              content-type: ${CONTENT_TYPE:-application/n-quads}
+              content-type: ${CONTENT_TYPE}
