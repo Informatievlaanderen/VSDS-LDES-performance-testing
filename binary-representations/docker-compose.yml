@@ -1,0 +1,71 @@
+version: "3.3"
+
+services:
+  jmeter:
+    container_name: jmeter_binary_jmeter
+    image: jmeter:latest
+    build: .
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - ${X11}:/tmp/.X11-unix
+      - ./tests:/home/jmeter
+    command: -n -t binary_performance_testing.jmx -l results/report.jtl -e -o results/output/
+    depends_on:
+      ldes-server:
+        condition: service_healthy
+      ldio-workbench:
+        condition: service_healthy
+
+  ldio-workbench:
+    container_name: jmeter_binary_ldio_workbench
+    image: ghcr.io/informatievlaanderen/ldi-orchestrator:latest
+    volumes:
+      - ./config/ldio-workbench.config.yml:/ldio/application.yml:ro
+    environment:
+      - SIS_DATA=/tmp
+      - CONTENT_TYPE=${CONTENT_TYPE:-application/n-quads}
+    ports:
+      - "8081:8080"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://ldio-workbench:8080/actuator/health" ]
+      interval: 10s
+      timeout: 2s
+      retries: 10
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+          memory: '2GB'
+        reservations:
+          cpus: '2'
+          memory: '1GB'
+
+  ldes-server:
+    container_name: jmeter_binary_ldes-server
+    image: ghcr.io/informatievlaanderen/ldes-server:latest
+    volumes:
+      - ./config/ldes-server.config.yml:/application.yml:ro
+      - ../data/epsg:/tmp/Databases:rw
+    environment:
+      - SIS_DATA=/tmp
+    depends_on:
+      - ldes-mongodb
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://ldes-server:8080/actuator/health"]
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+          memory: '2GB'
+        reservations:
+          cpus: '2'
+          memory: '1GB'
+
+  ldes-mongodb:
+    container_name: jmeter_binary_ldes-mongodb
+    image: mongo:${MONGODB_TAG:-latest}
+    ports:
+      - ${MONGODB_PORT:-27017}:27017
