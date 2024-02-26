@@ -1,0 +1,58 @@
+version: '3.5'
+services:
+  jmeter:
+    container_name: graphdb_jmeter
+    image: jmeter:latest
+    build: .
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - ${X11}:/tmp/.X11-unix
+      - ./tests:/home/jmeter
+    command: -n -t graphdb-performance-testing.jmx -l results/report.jtl -e -o results/output/
+    depends_on:
+      repository-initializer:
+        condition: service_completed_successfully
+      ldio-workbench:
+        condition: service_healthy
+
+  graphdb:
+    container_name: rdf4j_server
+    image: eclipse/rdf4j-workbench:4.3.4
+    ports:
+      - "8080:8080"
+
+  repository-initializer:
+    image: ubuntu
+    command: "/bin/sh /initializer/initialize.sh"
+    container_name: rdf4j-server-repo-initializer
+    volumes:
+      - ./repository-initializer:/initializer:ro
+    depends_on:
+      graphdb:
+        condition: service_started
+
+  ldio-workbench:
+    image: ldes/ldi-orchestrator:2.0.0-SNAPSHOT
+    container_name: graphdb_ldio-workbench
+    environment:
+      - SPRING_CONFIG_NAME=application
+      - SPRING_CONFIG_LOCATION=/config/
+    volumes:
+      - ./config/ldio-workbench.config.yml:/config/application.yml:ro
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8080/actuator/health"]
+      interval: 10s
+      timeout: 2s
+      retries: 10
+    ports:
+      - "8082:8080"
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+          memory: '2GB'
+        reservations:
+          cpus: '2'
+          memory: '1GB'
+

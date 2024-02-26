@@ -1,0 +1,23 @@
+server:
+  port: 8080
+orchestrator:
+  pipelines:
+    - name: gipod
+      description: "Simple http in, version creation, http out pipeline allowing to pause output."
+      input:
+        name: Ldio:HttpIn
+        adapter:
+          name: Ldio:RdfAdapter
+      outputs:
+        - name: Ldio:RepositoryMaterialiser
+          config:
+            sparql-host: http://graphdb:8080/rdf4j-server
+            repository-id: test
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  endpoints:
+    web:
+      exposure:
+        include: "*"
