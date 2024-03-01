@@ -25,7 +25,7 @@ services:
   repository-initializer:
     image: ubuntu
     command: "/bin/sh /initializer/initialize.sh"
-    container_name: rdf4j-server-repo-initializer
+    container_name: graphdb_repo-initializer
     volumes:
       - ./repository-initializer:/initializer:ro
     depends_on:
@@ -33,7 +33,7 @@ services:
         condition: service_started
 
   ldio-workbench:
-    image: ldes/ldi-orchestrator:2.0.0-SNAPSHOT
+    image: ldes/ldi-orchestrator:local
     container_name: graphdb_ldio-workbench
     environment:
       - SPRING_CONFIG_NAME=application

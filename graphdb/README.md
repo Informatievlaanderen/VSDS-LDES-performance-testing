@@ -1,4 +1,4 @@
-# LDES server RDF format performance testing
+# LDIO Repository Materialiser performance test
 
 ## Test Description
 
@@ -21,10 +21,11 @@ Use [this tutorial](https://medium.com/@potatowagon/how-to-use-gui-apps-in-linux
 
 Prerequisites:
 
-- Pull the latest version of the server
+- Pull the latest version of the ldi orchestrator
 
     ```bash
     docker pull ghcr.io/informatievlaanderen/ldi-orchestrator:latest
+    docker pull ghcr.io/informatievlaanderen/ldes-workbench-nifi:latest
     ```
 
 1. Prepare directory that will contain the results
@@ -36,10 +37,14 @@ Prerequisites:
     ```
 
 2. Start test
-   POST 10k members to LDIO via an RDF format of your choice
+   POST 10k members to LDIO to materialise to the RDF4J repository
     ```bash
-    docker compose up
+    docker compose up 
     ```
+   POST 10k members to NiFi to materialise to the RDF4J repository
+    ```shell
+    docker compose -f nifi-compose.yml up
+   ```
 
 3. End test
     ```bash
@@ -67,10 +72,9 @@ To run the different tests, repeat step 1 -> 3 above and insert the results belo
               memory: '1GB'
     ```
 
-| RDF Format               | Members successfully posted | Average duration per member (ms) |   
-|--------------------------|-----------------------------|----------------------------------|
-| text/turtle              | 7,845                       | 54.84                            |  
-| application/n-quads      | 8,685                       | 48.55                            |  
-| application/ld+json      | 5,718                       | 75.84                            |  
-| application/rdf+protobuf | 9,906                       | 39.64                            |  
-| application/rdf+thrift   | 8,887                       | 47.35                            |
+# Results 
+- `ldes/ldi-orchestrator:2.0.0-SNAPSHOT` \
+Following error was counted 230 times, or for sample it has received:
+```text
+Non HTTP response code: java.net.SocketTimeoutException/Non HTTP response message: Read timed out
+```
