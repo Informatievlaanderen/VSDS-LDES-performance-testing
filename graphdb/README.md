@@ -25,7 +25,6 @@ Prerequisites:
 
     ```bash
     docker pull ghcr.io/informatievlaanderen/ldi-orchestrator:latest
-    docker pull ghcr.io/informatievlaanderen/ldes-workbench-nifi:latest
     ```
 
 1. Prepare directory that will contain the results
@@ -39,12 +38,9 @@ Prerequisites:
 2. Start test
    POST 10k members to LDIO to materialise to the RDF4J repository
     ```bash
+    export BATCH_SIZE=500
     docker compose up 
     ```
-   POST 10k members to NiFi to materialise to the RDF4J repository
-    ```shell
-    docker compose -f nifi-compose.yml up
-   ```
 
 3. End test
     ```bash
@@ -57,9 +53,12 @@ To run the different tests, repeat step 1 -> 3 above and insert the results belo
 
 - Test run:       February 23, 2023
 - Docker image
-- 
+-
+
 [//]: # (TODO add correct image tag)
+
     - ldi-orchestrator: ghcr.io/informatievlaanderen/ldi-orchestrator: 
+
 - Resources for both the orchestrator as server:
     ```yaml
         deploy:
@@ -72,9 +71,25 @@ To run the different tests, repeat step 1 -> 3 above and insert the results belo
               memory: '1GB'
     ```
 
-# Results 
+# Results
+
 - `ldes/ldi-orchestrator:2.0.0-SNAPSHOT` \
-Following error was counted 230 times, or for sample it has received:
+  Following error was counted 230 times, or for sample it has received:
+
 ```text
 Non HTTP response code: java.net.SocketTimeoutException/Non HTTP response message: Read timed out
 ```
+
+- `ghcr.io/informatievlaanderen/ldi-orchestrator:20240301142108`
+
+10,000 members were sent to the ldio workbench in 10 different threads, which all have a life span of 45 seconds, in the
+table below, you can see how members were successfully posted to the workbench for some batch sizes and how many members
+were processed per second
+
+| Batch Size | Members successfully posted | Members processed per second |   
+|------------|-----------------------------|------------------------------|
+| 50         | 216                         | 4.69                         |  
+| 100        | 361                         | 7.75                         |  
+| 250        | 561                         | 10.71                        |  
+| 500        | 788                         | 17.58                        |  
+| 1000       | 1210                        | 26.78                        |

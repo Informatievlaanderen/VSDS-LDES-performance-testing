@@ -13,6 +13,7 @@ orchestrator:
           config:
             sparql-host: http://graphdb:8080/rdf4j-server
             repository-id: test
+            batch-size: 50
 management:
   tracing:
     sampling:
