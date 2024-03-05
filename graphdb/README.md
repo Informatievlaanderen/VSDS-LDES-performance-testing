@@ -82,6 +82,8 @@ Non HTTP response code: java.net.SocketTimeoutException/Non HTTP response messag
 
 - `ghcr.io/informatievlaanderen/ldi-orchestrator:20240301142108`
 
+Last run on: March 4th 2024
+
 10,000 members were sent to the ldio workbench in 10 different threads, which all have a life span of 45 seconds, in the
 table below, you can see how members were successfully posted to the workbench for some batch sizes and how many members
 were processed per second
