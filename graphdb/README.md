@@ -80,9 +80,12 @@ To run the different tests, repeat step 1 -> 3 above and insert the results belo
 Non HTTP response code: java.net.SocketTimeoutException/Non HTTP response message: Read timed out
 ```
 
-- `ghcr.io/informatievlaanderen/ldi-orchestrator:20240301142108`
+- `ghcr.io/informatievlaanderen/ldi-orchestrator:20240311160234`
 
-Last run on: March 4th 2024
+- Last run on: March 11th 2024
+- OS: Windows 11 Enterprise v 22H2
+- Processor: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz   2.42 GHz
+- Installed RAM: 32.0 GM
 
 10,000 members were sent to the ldio workbench in 10 different threads, which all have a life span of 45 seconds, in the
 table below, you can see how members were successfully posted to the workbench for some batch sizes and how many members
