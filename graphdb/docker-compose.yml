@@ -33,7 +33,7 @@ services:
         condition: service_started
 
   ldio-workbench:
-    image: ghcr.io/informatievlaanderen/ldi-orchestrator:20240301142108
+    image: ghcr.io/informatievlaanderen/ldi-orchestrator:20240311160234
     container_name: graphdb_ldio-workbench
     environment:
       - SPRING_CONFIG_NAME=application
