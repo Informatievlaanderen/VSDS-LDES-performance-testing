@@ -1,0 +1,25 @@
+spring:
+  data:
+    mongodb:
+      auto-index-creation: true
+
+management:
+  tracing:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - info
+          - prometheus
+  health:
+    defaults:
+      enabled: true
+    mongo:
+      enabled: true
+    dcat:
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
