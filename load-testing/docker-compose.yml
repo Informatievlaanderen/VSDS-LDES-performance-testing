@@ -13,6 +13,8 @@ services:
       - performance_testing
     ports:
       - ${MONGODB_PORT:-27017}:27017
+    volumes:
+      - ./database:/data/db:rw
     # deploy:
     #   resources:
     #     limits:
