@@ -28,5 +28,5 @@ Our pipeline now looks like:
 ### Run The Test
 To run the test:
 ```bash
-curl -X POST "http://localhost:9000" -H "Content-Type: application/xml" --data-binary @./throughput.jmx
+curl -X POST "http://localhost:9000?category=Workbench" -H "Content-Type: application/xml" --data-binary @./throughput.jmx
 ```
