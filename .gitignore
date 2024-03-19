@@ -2,4 +2,4 @@
 /.idea/
 /data/epsg/
 /*/tests/.java/
-/*/tests/jmeter.log
+jmeter.log
