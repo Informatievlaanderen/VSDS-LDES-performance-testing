@@ -31,12 +31,12 @@ services:
       - DELETE_TEST_API_KEY=${DELETE_TEST_API_KEY:-}  
     deploy:
       resources:
-        reservations:
-          cpus: '0.1'
-          memory: '0.25GB'
         limits:
           cpus: '0.5'
           memory: '1.0GB'
+        reservations:
+          cpus: '0.1'
+          memory: '0.25GB'
 
   ldes-server-workbench:
     container_name: performance_testing_ldio-workbench
@@ -59,8 +59,8 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '7.75'
-          memory: '16.0GB'
+          cpus: '3.5'
+          memory: '15.0GB'
         reservations:
           cpus: '0.10'
           memory: '0.25GB'
@@ -77,7 +77,7 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '1.5'
+          cpus: '1.0'
           memory: '3.0GB'
         reservations:
           cpus: '0.50'
@@ -89,7 +89,8 @@ services:
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.4.1-SNAPSHOT} # Geomobility
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.10.0-SNAPSHOT} # Telraam
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.11.0-SNAPSHOT}
-    image: ghcr.io/informatievlaanderen/ldes-server:latest
+    # image: ghcr.io/informatievlaanderen/ldes-server:latest
+    image: ghcr.io/informatievlaanderen/ldes-server:20240322134330
     networks:
       - performance_testing
     ports:
