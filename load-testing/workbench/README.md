@@ -26,7 +26,9 @@ Our pipeline now looks like:
 * Ldio:NoopOut dropping the version objects
 
 ### Run The Test
-To run the test:
+Several tests are provided to verify the effect of a S(mall), M(edium) and L(arge) message as well as feeding the pipeline in sequence using one thread (01T) or in parallel using multiple threads (02T, 04T or 08T).
+
+To run the large message test in parallel using 8 threads:
 ```bash
-curl -X POST "http://localhost:9000?category=Workbench" -H "Content-Type: application/xml" --data-binary @./throughput.jmx
+curl -X POST "http://localhost:9000?category=Workbench" -H "Content-Type: application/xml" --data-binary @./throughput.L-08T.jmx
 ```
