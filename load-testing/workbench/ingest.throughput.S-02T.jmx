@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Ingest Throughput Test - Small Message - 2 Threads">
+      <stringProp name="TestPlan.comments">This test measure the output rate possible for converting a GeoJSON message containing GeoJSON features into a number of object versions according to the OSLO traffic model for ingestion by a LDES server. Processing happens per GeoJSON feature.</stringProp>
+      <boolProp name="TestPlan.serialize_threadgroups">true</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="count" elementType="Argument">
+            <stringProp name="Argument.name">count</stringProp>
+            <stringProp name="Argument.value">25</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="threads" elementType="Argument">
+            <stringProp name="Argument.name">threads</stringProp>
+            <stringProp name="Argument.value">2</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="loops" elementType="Argument">
+            <stringProp name="Argument.name">loops</stringProp>
+            <stringProp name="Argument.value">10000</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="features" elementType="Argument">
+            <stringProp name="Argument.name">features</stringProp>
+            <stringProp name="Argument.value">{&quot;count&quot;:25,&quot;type&quot;:&quot;FeatureCollection&quot;,&quot;features&quot;:[{&quot;type&quot;:&quot;Feature&quot;,&quot;geometry&quot;:{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;:[[3.4440804049725826,51.076017910715585],[3.4435200539545416,51.076714826539266],[3.4433848286305224,51.07680366717121]]},&quot;properties&quot;:{&quot;LocPost&quot;:130502,&quot;Offset&quot;:14,&quot;AX&quot;:3.4440804049725826,&quot;AY&quot;:51.076017910715585,&quot;PX&quot;:3.4435200539545416,&quot;PY&quot;:51.076714826539266,&quot;BX&quot;:3.4433848286305224,&quot;BY&quot;:51.07680366717121,&quot;Lengte&quot;:101.904619949324,&quot;SD_ID&quot;:3101004522,&quot;timestamp&quot;:&quot;2024-01-01T00:00:00+01:00&quot;,&quot;int_niet_vracht&quot;:8,&quot;int_vracht&quot;:1,&quot;int_fiets&quot;:3,&quot;Vh_niet_vracht&quot;:82,&quot;Vh_vracht&quot;:62,&quot;Vh_fiets&quot;:27}},{&quot;type&quot;:&quot;Feature&quot;,&quot;geometry&quot;:{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;:[[3.4454182316002755,51.07625774651464],[3.4440507929863395,51.07670067698428],[3.443483433831686,51.07689190457879]]},&quot;properties&quot;:{&quot;LocPost&quot;:130501,&quot;Offset&quot;:45,&quot;AX&quot;:3.4454182316002755,&quot;AY&quot;:51.07625774651464,&quot;PX&quot;:3.4440507929863395,&quot;PY&quot;:51.07670067698428,&quot;BX&quot;:3.443483433831686,&quot;BY&quot;:51.07689190457879,&quot;Lengte&quot;:152.86043107212,&quot;SD_ID&quot;:3102001325,&quot;timestamp&quot;:&quot;2024-01-01T00:00:00+01:00&quot;,&quot;int_niet_vracht&quot;:8,&quot;int_vracht&quot;:1,&quot;int_fiets&quot;:3,&quot;Vh_niet_vracht&quot;:82,&quot;Vh_vracht&quot;:62,&quot;Vh_fiets&quot;:27}},{&quot;type&quot;:&quot;Feature&quot;,&quot;geometry&quot;:{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;:[[4.502192502052278,50.869022449489805],[4.502003521410355,50.86902256025339],[4.4993015281899424,50.86902326690998]]},&quot;properties&quot;:{&quot;LocPost&quot;:124801,&quot;Offset&quot;:190,&quot;AX&quot;:4.502192502052278,&quot;AY&quot;:50.869022449489805,&quot;PX&quot;:4.502003521410355,&quot;PY&quot;:50.86902256025339,&quot;BX&quot;:4.4993015281899424,&quot;BY&quot;:50.86902326690998,&quot;Lengte&quot;:203.502628047587,&quot;SD_ID&quot;:3106013114,&quot;timestamp&quot;:&quot;2024-01-01T00:00:00+01:00&quot;,&quot;int_niet_vracht&quot;:8,&quot;int_vracht&quot;:1,&quot;int_fiets&quot;:3,&quot;Vh_niet_vracht&quot;:82,&quot;Vh_vracht&quot;:62,&quot;Vh_fiets&quot;:27}},{&quot;type&quot;:&quot;Feature&quot;,&quot;geometry&quot;:{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;:[[4.170300327700649,50.88172681154557],[4.175470511833613,50.88103512072962],[4.175629471140499,50.88101373687251]]},&quot;properties&quot;:{&quot;LocPost&quot;:168801,&quot;Offset&quot;:11,&quot;AX&quot;:4.170300327700649,&quot;AY&quot;:50.88172681154557,&quot;PX&quot;:4.175470511833613,&quot;PY&quot;:50.88103512072962,&quot;BX&quot;:4.175629471140499,&quot;BY&quot;:50.88101373687251,&quot;Lengte&quot;:383.331595773994,&quot;SD_ID&quot;:3107002419,&quot;timestamp&quot;:&quot;2024-01-01T00:00:00+01:00&quot;,&quot;int_niet_vracht&quot;:8,&quot;int_vracht&quot;:1,&quot;int_fiets&quot;:3,&quot;Vh_niet_vracht&quot;:82,&quot;Vh_vracht&quot;:62,&quot;Vh_fiets&quot;:27}},{&quot;type&quot;:&quot;Feature&quot;,&quot;geometry&quot;:{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;:[[4.531663729397624,51.21182422332912],[4.532158646976242,51.21178326158535],[4.536085950650732,51.21132678298931]]},&quot;properties&quot;:{&quot;LocPost&quot;:105921,&quot;Offset&quot;:279,&quot;AX&quot;:4.531663729397624,&quot;AY&quot;:51.21182422332912,&quot;PX&quot;:4.532158646976242,&quot;PY&quot;:51.21178326158535,&quot;BX&quot;:4.536085950650732,&quot;BY&quot;:51.21132678298931,&quot;Lengte&quot;:314.082981030104,&quot;SD_ID&quot;:3114005843,&quot;timestamp&quot;:&quot;2024-01-01T00:00:00+01:00&quot;,&quot;int_niet_vracht&quot;:8,&quot;int_vracht&quot;:1,&quot;int_fiets&quot;:3,&quot;Vh_niet_vracht&quot;:82,&quot;Vh_vracht&quot;:62,&quot;Vh_fiets&quot;:27}},{&quot;type&quot;:&quot;Feature&quot;,&quot;geometry&quot;:{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;:[[5.138972837897981,51.07556831106047],[5.138712948271482,51.075682248895944],[5.135012944017768,51.076103050740684]]},&quot;properties&quot;:{&quot;LocPost&quot;:130105,&quot;Offset&quot;:264,&quot;AX&quot;:5.138972837897981,&quot;AY&quot;:51.07556831106047,&quot;PX&quot;:5.138712948271482,&quot;PY&quot;:51.075682248895944,&quot;BX&quot;:5.135012944017768,&quot;BY&quot;:51.076103050740684,&quot;Lengte&quot;:290.658768361437,&quot;SD_ID&quot;:3127002763,&quot;timestamp&quot;:&quot;2024-01-01T00:00:00+01:00&quot;,&quot;int_niet_vracht&quot;:8,&quot;int_vracht&quot;:1,&quot;int_fiets&quot;:3,&quot;Vh_niet_vracht&quot;:82,&quot;Vh_vracht&quot;:62,&quot;Vh_fiets&quot;:27}},{&quot;type&quot;:&quot;Feature&quot;,&quot;geometry&quot;:{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;:[[4.716129460250161,50.90905587024127],[4.717882945304217,50.91056219089969],[4.718536733610043,50.91112732999519]]},&quot;properties&quot;:{&quot;LocPost&quot;:170001,&quot;Offset&quot;:78,&quot;AX&quot;:4.716129460250161,&quot;AY&quot;:50.90905587024127,&quot;PX&quot;:4.717882945304217,&quot;PY&quot;:50.91056219089969,&quot;BX&quot;:4.718536733610043,&quot;BY&quot;:50.91112732999519,&quot;Lengte&quot;:285.946587264395,&quot;SD_ID&quot;:3132003153,&quot;timestamp&quot;:&quot;2024-01-01T00:00:00+01:00&quot;,&quot;int_niet_vracht&quot;:8,&quot;int_vracht&quot;:1,&quot;int_fiets&quot;:3,&quot;Vh_niet_vracht&quot;:82,&quot;Vh_vracht&quot;:62,&quot;Vh_fiets&quot;:27}},{&quot;type&quot;:&quot;Feature&quot;,&quot;geometry&quot;:{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;:[[4.8141948706741635,50.960310556158355],[4.816129357604618,50.961063891918435],[4.820437711868405,50.962457270828516]]},&quot;properties&quot;:{&quot;LocPost&quot;:171201,&quot;Offset&quot;:340,&quot;AX&quot;:4.8141948706741635,&quot;AY&quot;:50.960310556158355,&quot;PX&quot;:4.816129357604618,&quot;PY&quot;:50.961063891918435,&quot;BX&quot;:4.820437711868405,&quot;BY&quot;:50.962457270828516,&quot;Lengte&quot;:499.97157131851,&quot;SD_ID&quot;:3140011644,&quot;timestamp&quot;:&quot;2024-01-01T00:00:00+01:00&quot;,&quot;int_niet_vracht&quot;:8,&quot;int_vracht&quot;:1,&quot;int_fiets&quot;:3,&quot;Vh_niet_vracht&quot;:82,&quot;Vh_vracht&quot;:62,&quot;Vh_fiets&quot;:27}},{&quot;type&quot;:&quot;Feature&quot;,&quot;geometry&quot;:{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;:[[4.490585086433904,51.21086810421856],[4.490505699240308,51.210861694010674],[4.487438399883728,51.210584816955674]]},&quot;properties&quot;:{&quot;LocPost&quot;:137101,&quot;Offset&quot;:217,&quot;AX&quot;:4.490585086433904,&quot;AY&quot;:51.21086810421856,&quot;PX&quot;:4.490505699240308,&quot;PY&quot;:51.210861694010674,&quot;BX&quot;:4.487438399883728,&quot;BY&quot;:51.210584816955674,&quot;Lengte&quot;:222.145171496489,&quot;SD_ID&quot;:3142009232,&quot;timestamp&quot;:&quot;2024-01-01T00:00:00+01:00&quot;,&quot;int_niet_vracht&quot;:8,&quot;int_vracht&quot;:1,&quot;int_fiets&quot;:3,&quot;Vh_niet_vracht&quot;:82,&quot;Vh_vracht&quot;:62,&quot;Vh_fiets&quot;:27}},{&quot;type&quot;:&quot;Feature&quot;,&quot;geometry&quot;:{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;:[[4.491325268918146,51.21035664325102],[4.48746300417347,51.2104467663704],[4.487463004175796,51.210446767269225]]},&quot;properties&quot;:{&quot;LocPost&quot;:106108,&quot;Offset&quot;:0,&quot;AX&quot;:4.491325268918146,&quot;AY&quot;:51.21035664325102,&quot;PX&quot;:4.48746300417347,&quot;PY&quot;:51.2104467663704,&quot;BX&quot;:4.487463004175796,&quot;BY&quot;:51.210446767269225,&quot;Lengte&quot;:278.079683276118,&quot;SD_ID&quot;:3143004345,&quot;timestamp&quot;:&quot;2024-01-01T00:00:00+01:00&quot;,&quot;int_niet_vracht&quot;:8,&quot;int_vracht&quot;:1,&quot;int_fiets&quot;:3,&quot;Vh_niet_vracht&quot;:82,&quot;Vh_vracht&quot;:62,&quot;Vh_fiets&quot;:27}},{&quot;type&quot;:&quot;Feature&quot;,&quot;geometry&quot;:{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;:[[4.303644574730873,50.79406640543519],[4.303644208255433,50.79406153285093],[4.303540453811678,50.78929220042234]]},&quot;properties&quot;:{&quot;LocPost&quot;:113804,&quot;Offset&quot;:531,&quot;AX&quot;:4.303644574730873,&quot;AY&quot;:50.79406640543519,&quot;PX&quot;:4.303644208255433,&quot;PY&quot;:50.79406153285093,&quot;BX&quot;:4.303540453811678,&quot;BY&quot;:50.78929220042234,&quot;Lengte&quot;:531.254305564128,&quot;SD_ID&quot;:3144003146,&quot;timestamp&quot;:&quot;2024-01-01T00:00:00+01:00&quot;,&quot;int_niet_vracht&quot;:8,&quot;int_vracht&quot;:1,&quot;int_fiets&quot;:3,&quot;Vh_niet_vracht&quot;:82,&quot;Vh_vracht&quot;:62,&quot;Vh_fiets&quot;:27}},{&quot;type&quot;:&quot;Feature&quot;,&quot;geometry&quot;:{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;:[[4.3041253039613965,50.79213493764953],[4.303795302402973,50.78948114769295],[4.303755368062029,50.78928169789569]]},&quot;properties&quot;:{&quot;LocPost&quot;:113805,&quot;Offset&quot;:22,&quot;AX&quot;:4.3041253039613965,&quot;AY&quot;:50.79213493764953,&quot;PX&quot;:4.303795302402973,&quot;PY&quot;:50.78948114769295,&quot;BX&quot;:4.303755368062029,&quot;BY&quot;:50.78928169789569,&quot;Lengte&quot;:321.196262684397,&quot;SD_ID&quot;:3145003299,&quot;timestamp&quot;:&quot;2024-01-01T00:00:00+01:00&quot;,&quot;int_niet_vracht&quot;:8,&quot;int_vracht&quot;:1,&quot;int_fiets&quot;:3,&quot;Vh_niet_vracht&quot;:82,&quot;Vh_vracht&quot;:62,&quot;Vh_fiets&quot;:27}},{&quot;type&quot;:&quot;Feature&quot;,&quot;geometry&quot;:{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;:[[4.714129740672056,50.90778798463255],[4.715793581368154,50.908977407201526],[4.716009620490795,50.90912981148109]]},&quot;properties&quot;:{&quot;LocPost&quot;:120801,&quot;Offset&quot;:23,&quot;AX&quot;:4.714129740672056,&quot;AY&quot;:50.90778798463255,&quot;PX&quot;:4.715793581368154,&quot;PY&quot;:50.908977407201526,&quot;BX&quot;:4.716009620490795,&quot;BY&quot;:50.90912981148109,&quot;Lengte&quot;:199.711955989192,&quot;SD_ID&quot;:3152004340,&quot;timestamp&quot;:&quot;2024-01-01T00:00:00+01:00&quot;,&quot;int_niet_vracht&quot;:8,&quot;int_vracht&quot;:1,&quot;int_fiets&quot;:3,&quot;Vh_niet_vracht&quot;:82,&quot;Vh_vracht&quot;:62,&quot;Vh_fiets&quot;:27}},{&quot;type&quot;:&quot;Feature&quot;,&quot;geometry&quot;:{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;:[[4.712820847266308,50.90628846910706],[4.713072050973397,50.906468394461776],[4.716129460250161,50.90905587024127]]},&quot;properties&quot;:{&quot;LocPost&quot;:120802,&quot;Offset&quot;:359,&quot;AX&quot;:4.712820847266308,&quot;AY&quot;:50.90628846910706,&quot;PX&quot;:4.713072050973397,&quot;PY&quot;:50.906468394461776,&quot;BX&quot;:4.716129460250161,&quot;BY&quot;:50.90905587024127,&quot;Lengte&quot;:386.031101162936,&quot;SD_ID&quot;:3153003157,&quot;timestamp&quot;:&quot;2024-01-01T00:00:00+01:00&quot;,&quot;int_niet_vracht&quot;:8,&quot;int_vracht&quot;:1,&quot;int_fiets&quot;:3,&quot;Vh_niet_vracht&quot;:82,&quot;Vh_vracht&quot;:62,&quot;Vh_fiets&quot;:27}},{&quot;type&quot;:&quot;Feature&quot;,&quot;geometry&quot;:{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;:[[4.714047298501783,50.907051278377175],[4.713218175008402,50.906381492260365],[4.712228969178165,50.905724028174475]]},&quot;properties&quot;:{&quot;LocPost&quot;:120807,&quot;Offset&quot;:101,&quot;AX&quot;:4.714047298501783,&quot;AY&quot;:50.907051278377175,&quot;PX&quot;:4.713218175008402,&quot;PY&quot;:50.906381492260365,&quot;BX&quot;:4.712228969178165,&quot;BY&quot;:50.905724028174475,&quot;Lengte&quot;:195.649165269507,&quot;SD_ID&quot;:3154003158,&quot;timestamp&quot;:&quot;2024-01-01T00:00:00+01:00&quot;,&quot;int_niet_vracht&quot;:8,&quot;int_vracht&quot;:1,&quot;int_fiets&quot;:3,&quot;Vh_niet_vracht&quot;:82,&quot;Vh_vracht&quot;:62,&quot;Vh_fiets&quot;:27}},{&quot;type&quot;:&quot;Feature&quot;,&quot;geometry&quot;:{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;:[[4.7161271945373775,50.906335406700336],[4.712435302138197,50.90563761957161],[4.71235107368608,50.905611036543235]]},&quot;properties&quot;:{&quot;LocPost&quot;:120805,&quot;Offset&quot;:7,&quot;AX&quot;:4.7161271945373775,&quot;AY&quot;:50.906335406700336,&quot;PX&quot;:4.712435302138197,&quot;PY&quot;:50.90563761957161,&quot;BX&quot;:4.71235107368608,&quot;BY&quot;:50.905611036543235,&quot;Lengte&quot;:281.594401525489,&quot;SD_ID&quot;:3155004341,&quot;timestamp&quot;:&quot;2024-01-01T00:00:00+01:00&quot;,&quot;int_niet_vracht&quot;:8,&quot;int_vracht&quot;:1,&quot;int_fiets&quot;:3,&quot;Vh_niet_vracht&quot;:82,&quot;Vh_vracht&quot;:62,&quot;Vh_fiets&quot;:27}},{&quot;type&quot;:&quot;Feature&quot;,&quot;geometry&quot;:{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;:[[4.700789868099172,51.244596340542685],[4.698164748507026,51.24377445602227],[4.699048754203677,51.2435016216331]]},&quot;properties&quot;:{&quot;LocPost&quot;:128404,&quot;Offset&quot;:70,&quot;AX&quot;:4.700789868099172,&quot;AY&quot;:51.244596340542685,&quot;PX&quot;:4.698164748507026,&quot;PY&quot;:51.24377445602227,&quot;BX&quot;:4.699048754203677,&quot;BY&quot;:51.2435016216331,&quot;Lengte&quot;:396.764783907689,&quot;SD_ID&quot;:3160004357,&quot;timestamp&quot;:&quot;2024-01-01T00:00:00+01:00&quot;,&quot;int_niet_vracht&quot;:8,&quot;int_vracht&quot;:1,&quot;int_fiets&quot;:3,&quot;Vh_niet_vracht&quot;:82,&quot;Vh_vracht&quot;:62,&quot;Vh_fiets&quot;:27}},{&quot;type&quot;:&quot;Feature&quot;,&quot;geometry&quot;:{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;:[[4.694449129671227,51.24304332291608],[4.6962461866665715,51.243176632422234],[4.699034939515629,51.243352747877296]]},&quot;properties&quot;:{&quot;LocPost&quot;:128401,&quot;Offset&quot;:196,&quot;AX&quot;:4.694449129671227,&quot;AY&quot;:51.24304332291608,&quot;PX&quot;:4.6962461866665715,&quot;PY&quot;:51.243176632422234,&quot;BX&quot;:4.699034939515629,&quot;BY&quot;:51.243352747877296,&quot;Lengte&quot;:322.110000257535,&quot;SD_ID&quot;:3161002418,&quot;timestamp&quot;:&quot;2024-01-01T00:00:00+01:00&quot;,&quot;int_niet_vracht&quot;:8,&quot;int_vracht&quot;:1,&quot;int_fiets&quot;:3,&quot;Vh_niet_vracht&quot;:82,&quot;Vh_vracht&quot;:62,&quot;Vh_fiets&quot;:27}},{&quot;type&quot;:&quot;Feature&quot;,&quot;geometry&quot;:{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;:[[3.4913444445014696,50.91659999344148],[3.496839687113063,50.91834144930463],[3.49683968714639,50.91834144750689]]},&quot;properties&quot;:{&quot;LocPost&quot;:134703,&quot;Offset&quot;:0,&quot;AX&quot;:3.4913444445014696,&quot;AY&quot;:50.91659999344148,&quot;PX&quot;:3.496839687113063,&quot;PY&quot;:50.91834144930463,&quot;BX&quot;:3.49683968714639,&quot;BY&quot;:50.91834144750689,&quot;Lengte&quot;:443.494076984786,&quot;SD_ID&quot;:3174004078,&quot;timestamp&quot;:&quot;2024-01-01T00:00:00+01:00&quot;,&quot;int_niet_vracht&quot;:8,&quot;int_vracht&quot;:1,&quot;int_fiets&quot;:3,&quot;Vh_niet_vracht&quot;:82,&quot;Vh_vracht&quot;:62,&quot;Vh_fiets&quot;:27}},{&quot;type&quot;:&quot;Feature&quot;,&quot;geometry&quot;:{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;:[[3.4949888536915625,50.91636815254059],[3.495318123136009,50.91667846173573],[3.497025898918948,50.91824220493731]]},&quot;properties&quot;:{&quot;LocPost&quot;:134701,&quot;Offset&quot;:211,&quot;AX&quot;:3.4949888536915625,&quot;AY&quot;:50.91636815254059,&quot;PX&quot;:3.495318123136009,&quot;PY&quot;:50.91667846173573,&quot;BX&quot;:3.497025898918948,&quot;BY&quot;:50.91824220493731,&quot;Lengte&quot;:252.963491196661,&quot;SD_ID&quot;:3175003746,&quot;timestamp&quot;:&quot;2024-01-01T00:00:00+01:00&quot;,&quot;int_niet_vracht&quot;:8,&quot;int_vracht&quot;:1,&quot;int_fiets&quot;:3,&quot;Vh_niet_vracht&quot;:82,&quot;Vh_vracht&quot;:62,&quot;Vh_fiets&quot;:27}},{&quot;type&quot;:&quot;Feature&quot;,&quot;geometry&quot;:{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;:[[5.501297225884297,50.989934161837084],[5.501620353367735,50.991260835895396],[5.494984404744872,50.9934448592763]]},&quot;properties&quot;:{&quot;LocPost&quot;:135103,&quot;Offset&quot;:451,&quot;AX&quot;:5.501297225884297,&quot;AY&quot;:50.989934161837084,&quot;PX&quot;:5.501620353367735,&quot;PY&quot;:50.991260835895396,&quot;BX&quot;:5.494984404744872,&quot;BY&quot;:50.9934448592763,&quot;Lengte&quot;:712.741853848986,&quot;SD_ID&quot;:3182006675,&quot;timestamp&quot;:&quot;2024-01-01T00:00:00+01:00&quot;,&quot;int_niet_vracht&quot;:8,&quot;int_vracht&quot;:1,&quot;int_fiets&quot;:3,&quot;Vh_niet_vracht&quot;:82,&quot;Vh_vracht&quot;:62,&quot;Vh_fiets&quot;:27}},{&quot;type&quot;:&quot;Feature&quot;,&quot;geometry&quot;:{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;:[[5.501157520383406,50.99183679624544],[5.5015018360983285,50.99172509863215],[5.504789672344634,50.99066795876217]]},&quot;properties&quot;:{&quot;LocPost&quot;:135101,&quot;Offset&quot;:259,&quot;AX&quot;:5.501157520383406,&quot;AY&quot;:50.99183679624544,&quot;PX&quot;:5.5015018360983285,&quot;PY&quot;:50.99172509863215,&quot;BX&quot;:5.504789672344634,&quot;BY&quot;:50.99066795876217,&quot;Lengte&quot;:286.248884077342,&quot;SD_ID&quot;:3184003178,&quot;timestamp&quot;:&quot;2024-01-01T00:00:00+01:00&quot;,&quot;int_niet_vracht&quot;:8,&quot;int_vracht&quot;:1,&quot;int_fiets&quot;:3,&quot;Vh_niet_vracht&quot;:82,&quot;Vh_vracht&quot;:62,&quot;Vh_fiets&quot;:27}},{&quot;type&quot;:&quot;Feature&quot;,&quot;geometry&quot;:{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;:[[5.502896585897984,50.99327256423201],[5.5048787975223465,50.990792987026936],[5.504878801860182,50.990792989682]]},&quot;properties&quot;:{&quot;LocPost&quot;:135104,&quot;Offset&quot;:0,&quot;AX&quot;:5.502896585897984,&quot;AY&quot;:50.99327256423201,&quot;PX&quot;:5.5048787975223465,&quot;PY&quot;:50.990792987026936,&quot;BX&quot;:5.504878801860182,&quot;BY&quot;:50.990792989682,&quot;Lengte&quot;:311.417554966684,&quot;SD_ID&quot;:3185005238,&quot;timestamp&quot;:&quot;2024-01-01T00:00:00+01:00&quot;,&quot;int_niet_vracht&quot;:8,&quot;int_vracht&quot;:1,&quot;int_fiets&quot;:3,&quot;Vh_niet_vracht&quot;:82,&quot;Vh_vracht&quot;:62,&quot;Vh_fiets&quot;:27}},{&quot;type&quot;:&quot;Feature&quot;,&quot;geometry&quot;:{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;:[[3.190290114600092,50.825937342020104],[3.1901035024858384,50.82611634172282],[3.1875640711684077,50.82870298349618]]},&quot;properties&quot;:{&quot;LocPost&quot;:141005,&quot;Offset&quot;:339,&quot;AX&quot;:3.190290114600092,&quot;AY&quot;:50.825937342020104,&quot;PX&quot;:3.1901035024858384,&quot;PY&quot;:50.82611634172282,&quot;BX&quot;:3.1875640711684077,&quot;BY&quot;:50.82870298349618,&quot;Lengte&quot;:362.687209533452,&quot;SD_ID&quot;:3190002663,&quot;timestamp&quot;:&quot;2024-01-01T00:00:00+01:00&quot;,&quot;int_niet_vracht&quot;:8,&quot;int_vracht&quot;:1,&quot;int_fiets&quot;:3,&quot;Vh_niet_vracht&quot;:82,&quot;Vh_vracht&quot;:62,&quot;Vh_fiets&quot;:27}},{&quot;type&quot;:&quot;Feature&quot;,&quot;geometry&quot;:{&quot;type&quot;:&quot;LineString&quot;,&quot;coordinates&quot;:[[3.1857072741197037,50.82920351434505],[3.185700930907071,50.82920178265778],[3.1874196288283154,50.82864886911842]]},&quot;properties&quot;:{&quot;LocPost&quot;:140906,&quot;Offset&quot;:428,&quot;AX&quot;:3.1857072741197037,&quot;AY&quot;:50.82920351434505,&quot;PX&quot;:3.185700930907071,&quot;PY&quot;:50.82920178265778,&quot;BX&quot;:3.1874196288283154,&quot;BY&quot;:50.82864886911842,&quot;Lengte&quot;:428.327487453854,&quot;SD_ID&quot;:3191003906,&quot;timestamp&quot;:&quot;2024-01-01T00:00:00+01:00&quot;,&quot;int_niet_vracht&quot;:8,&quot;int_vracht&quot;:1,&quot;int_fiets&quot;:3,&quot;Vh_niet_vracht&quot;:82,&quot;Vh_vracht&quot;:62,&quot;Vh_fiets&quot;:27}}]}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="hostname" elementType="Argument">
+            <stringProp name="Argument.name">hostname</stringProp>
+            <stringProp name="Argument.value">ldes-server-workbench</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="port" elementType="Argument">
+            <stringProp name="Argument.name">port</stringProp>
+            <stringProp name="Argument.value">8080</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults">
+        <intProp name="HTTPSampler.connect_timeout">3000</intProp>
+        <intProp name="HTTPSampler.response_timeout">5000</intProp>
+        <stringProp name="HTTPSampler.domain">${hostname}</stringProp>
+        <stringProp name="HTTPSampler.port">${port}</stringProp>
+        <stringProp name="HTTPSampler.contentEncoding">utf8</stringProp>
+        <stringProp name="HTTPSampler.path">/no-output-pipeline</stringProp>
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="Setup">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </SetupThreadGroup>
+      <hashTree>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">application/yaml</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Setup - Create No-output Pipeline">
+          <stringProp name="HTTPSampler.path">/admin/api/v1/pipeline</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">name: no-output-pipeline&#xd;
+description: &quot;Accepts GeoJSON data message, converts to WKT, converts to OSLO model, creates version and outputs to LDES server.&quot;&#xd;
+input:&#xd;
+  name: Ldio:HttpIn&#xd;
+  adapter:&#xd;
+    name: Ldio:JsonToLdAdapter&#xd;
+    config:&#xd;
+      context: |&#xd;
+        {&#xd;
+          &quot;@context&quot;: [&#xd;
+            &quot;https://geojson.org/geojson-ld/geojson-context.jsonld&quot;,&#xd;
+            {&#xd;
+              &quot;@vocab&quot;: &quot;https://verkeerscentrum.be/ns/traffic#&quot;,&#xd;
+              &quot;timestamp&quot;: {&#xd;
+                &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#dateTime&quot;&#xd;
+              }&#xd;
+            }&#xd;
+          ]&#xd;
+        }&#xd;
+transformers:&#xd;
+  - name: Ldio:GeoJsonToWktTransformer&#xd;
+  - name: Ldio:SparqlConstructTransformer&#xd;
+    config:&#xd;
+      query: |&#xd;
+        PREFIX rdf:     &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;&#xd;
+        PREFIX geojson: &lt;https://purl.org/geojson/vocab#&gt;&#xd;
+        PREFIX vc:      &lt;https://verkeerscentrum.be/ns/traffic#&gt;&#xd;
+        PREFIX locn:    &lt;http://www.w3.org/ns/locn#&gt;&#xd;
+&#xd;
+        CONSTRUCT {&#xd;
+          graph ?graph {&#xd;
+            ?feature geojson:properties ?properties .&#xd;
+            ?properties ?pp ?po .&#xd;
+            ?feature locn:geometry ?geometry .&#xd;
+          }&#xd;
+        } WHERE {&#xd;
+            ?collection geojson:features ?feature .&#xd;
+            ?feature geojson:properties ?properties .&#xd;
+            ?properties ?pp ?po .&#xd;
+            ?properties vc:LocPost ?post .&#xd;
+            bind(uri(concat(&apos;http://temporary.org/&apos;, str(?post))) as ?graph) .&#xd;
+            ?feature locn:geometry ?geometry .&#xd;
+        }&#xd;
+  - name: Ldio:SparqlConstructTransformer&#xd;
+    config:&#xd;
+      query: |&#xd;
+        PREFIX rdf:          &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;&#xd;
+        PREFIX xsd:          &lt;http://www.w3.org/2001/XMLSchema#&gt;&#xd;
+        PREFIX dct:          &lt;http://purl.org/dc/terms/&gt;&#xd;
+        PREFIX schema:       &lt;https://schema.org/&gt;&#xd;
+        PREFIX geo:          &lt;http://www.opengis.net/ont/geosparql#&gt;&#xd;
+        PREFIX geojson:      &lt;https://purl.org/geojson/vocab#&gt;&#xd;
+        PREFIX locn:         &lt;http://www.w3.org/ns/locn#&gt;&#xd;
+        PREFIX sf:           &lt;http://www.opengis.net/ont/sf#&gt;&#xd;
+        PREFIX iso19156-ob:  &lt;http://def.isotc211.org/iso19156/2011/Observation#&gt;&#xd;
+        PREFIX iso19156-sp:  &lt;http://def.isotc211.org/iso19156/2011/SamplingPoint#&gt;&#xd;
+        PREFIX iso19103-mt:  &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#&gt;&#xd;
+        PREFIX cdt:          &lt;https://w3id.org/cdt/&gt;&#xd;
+        PREFIX prov:         &lt;http://www.w3.org/ns/prov#&gt;&#xd;
+        PREFIX sosa:         &lt;http://www.w3.org/ns/sosa/&gt;&#xd;
+        PREFIX time:         &lt;http://www.w3.org/2006/time#&gt;&#xd;
+&#xd;
+        PREFIX cl-vrt:       &lt;https://data.vlaanderen.be/doc/concept/VkmVoertuigType/&gt;&#xd;
+        PREFIX cl-vkt:       &lt;https://data.vlaanderen.be/doc/concept/VkmVerkeersKenmerkType/&gt;&#xd;
+        PREFIX cl-mit:       &lt;https://data.vlaanderen.be/doc/concept/VkmMeetInstrumentType/&gt;&#xd;
+        PREFIX cl-trt:       &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/&gt;&#xd;
+        PREFIX dv-weg:       &lt;https://data.vlaanderen.be/ns/weg#&gt;&#xd;
+        PREFIX dv-netwerk:   &lt;https://data.vlaanderen.be/ns/netwerk#&gt;&#xd;
+&#xd;
+        PREFIX vc:           &lt;https://verkeerscentrum.be/ns/traffic#&gt;&#xd;
+        PREFIX impl:         &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#&gt;&#xd;
+        PREFIX :             &lt;https://data.vlaanderen.be/ns/verkeersmetingen#&gt;&#xd;
+&#xd;
+&#xd;
+        CONSTRUCT {&#xd;
+          ?interval &#xd;
+            a time:TemporalEntity ;&#xd;
+            time:hasBeginning [ a time:Instant ; time:inXSDDateTimeStamp ?timestamp ] ;&#xd;
+            time:hasXSDDuration ?duration .&#xd;
+&#xd;
+          ?sensor a sosa:sensor ; dct:type cl-mit:TODO .&#xd;
+&#xd;
+          ?featureOfInterest &#xd;
+            a :Verkeersmeetpunt ;&#xd;
+            :bemonsterdObject [ &#xd;
+              a dv-weg:Rijrichting ; &#xd;
+              impl:Rijrichting.netwerkreferentieelement [ &#xd;
+                  a dv-weg:Wegsegment ;&#xd;
+                  dv-netwerk:beginknoop [ a dv-weg:Wegknoop ; dv-netwerk:Knoop.geometrie [ a sf:Point ; geo:asWKT ?geometryA ] ] ;&#xd;
+                  dv-netwerk:eindknoop [ a dv-weg:Wegknoop ; dv-netwerk:Knoop.geometrie [ a sf:Point ; geo:asWKT ?geometryB ] ] ;&#xd;
+                  dv-netwerk:Link.geometriemiddellijn [ a sf:LineString ; geo:asWKT ?roadSegment ]&#xd;
+              ] ;&#xd;
+              dv-weg:rijrichting cl-trt:inDirection&#xd;
+            ] ; &#xd;
+            iso19156-sp:SF_SamplingPoint.shape [ a sf:Point ; geo:asWKT ?geometryP ] ;&#xd;
+            impl:Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie [ &#xd;
+              a dv-netwerk:Puntreferentie ; &#xd;
+              dv-netwerk:toepassingsRichting cl-trt:bothDirection ;&#xd;
+              dv-netwerk:Puntreferentie.opPositie [ &#xd;
+                a iso19103-mt:Length ; schema:unitCode &quot;m&quot;^^cdt:ucumunit ; schema:value ?roadSegmentOffset; &#xd;
+              ]&#xd;
+            ] .&#xd;
+          &#xd;
+          GRAPH ?carCountId {&#xd;
+            ?carCountId &#xd;
+              a :Verkeersmeting, impl:Verkeerstelling;&#xd;
+              iso19156-ob:OM_Observation.phenomenonTime ?interval ;&#xd;
+              impl:Verkeerstelling.tellingresultaat ?carCount ;&#xd;
+              impl:Verkeerstelling.geobserveerdKenmerk [ a impl:Verkeerstellingkenmerk ; impl:Verkeerstellingkenmerk.kenmerktype cl-vkt:aantal; :voertuigType cl-vrt:auto ] ;&#xd;
+              :geobserveerdObject ?featureOfInterest ;&#xd;
+              sosa:madeBySensor ?sensor .&#xd;
+          }&#xd;
+&#xd;
+          GRAPH ?carVelocityId {&#xd;
+            ?carVelocityId &#xd;
+              a :Verkeersmeting, impl:Verkeerssnelheidsmeting ;&#xd;
+              iso19156-ob:OM_Observation.phenomenonTime ?interval ;&#xd;
+              iso19156-ob:OM_Observation.result [ a iso19103-mt:Speed ; schema:unitCode &quot;km/h&quot;^^cdt:ucumunit ; schema:value ?carVelocity ] ;&#xd;
+              impl:Verkeerssnelheidsmeting.geobserveerdKenmerk [ a impl:Verkeerssnelheidsmetingkenmerk ; impl:Verkeerssnelheidsmetingkenmerk.kenmerktype cl-vkt:plaatsgemiddelde_snelheid; :voertuigType cl-vrt:auto ] ;&#xd;
+              :geobserveerdObject ?featureOfInterest ;&#xd;
+              sosa:madeBySensor ?sensor .&#xd;
+          }&#xd;
+          &#xd;
+          GRAPH ?truckCountId {&#xd;
+            ?truckCountId &#xd;
+              a :Verkeersmeting, impl:Verkeerstelling;&#xd;
+              iso19156-ob:OM_Observation.phenomenonTime ?interval ;&#xd;
+              impl:Verkeerstelling.tellingresultaat ?truckCount ;&#xd;
+              impl:Verkeerstelling.geobserveerdKenmerk [ a impl:Verkeerstellingkenmerk ; impl:Verkeerstellingkenmerk.kenmerktype cl-vkt:aantal; :voertuigType cl-vrt:vrachtwagen ] ;&#xd;
+              :geobserveerdObject ?featureOfInterest ;&#xd;
+              sosa:madeBySensor ?sensor .&#xd;
+          }&#xd;
+        &#xd;
+          GRAPH ?truckVelocityId {&#xd;
+            ?truckVelocityId &#xd;
+              a :Verkeersmeting, impl:Verkeerssnelheidsmeting ;&#xd;
+              iso19156-ob:OM_Observation.phenomenonTime ?interval ;&#xd;
+              iso19156-ob:OM_Observation.result [ a iso19103-mt:Speed ; schema:unitCode &quot;km/h&quot;^^cdt:ucumunit ; schema:value ?truckVelocity ] ;&#xd;
+              impl:Verkeerssnelheidsmeting.geobserveerdKenmerk [ a impl:Verkeerssnelheidsmetingkenmerk ; impl:Verkeerssnelheidsmetingkenmerk.kenmerktype cl-vkt:plaatsgemiddelde_snelheid; :voertuigType cl-vrt:vrachtwagen ] ;&#xd;
+              :geobserveerdObject ?featureOfInterest ;&#xd;
+              sosa:madeBySensor ?sensor .&#xd;
+          }&#xd;
+          &#xd;
+          GRAPH ?bicycleCountId {&#xd;
+            ?bicycleCountId &#xd;
+              a :Verkeersmeting, impl:Verkeerstelling;&#xd;
+              iso19156-ob:OM_Observation.phenomenonTime ?interval ;&#xd;
+              impl:Verkeerstelling.tellingresultaat ?bicycleCount ;&#xd;
+              impl:Verkeerstelling.geobserveerdKenmerk [ a impl:Verkeerstellingkenmerk ; impl:Verkeerstellingkenmerk.kenmerktype cl-vkt:aantal; :voertuigType cl-vrt:fietser ] ;&#xd;
+              :geobserveerdObject ?featureOfInterest ;&#xd;
+              sosa:madeBySensor ?sensor .&#xd;
+          }&#xd;
+        &#xd;
+          GRAPH ?bicycleVelocityId {&#xd;
+            ?bicycleVelocityId &#xd;
+              a :Verkeersmeting, impl:Verkeerssnelheidsmeting ;&#xd;
+              iso19156-ob:OM_Observation.phenomenonTime ?interval ;&#xd;
+              iso19156-ob:OM_Observation.result [ a iso19103-mt:Speed ; schema:unitCode &quot;km/h&quot;^^cdt:ucumunit ; schema:value ?bicycleVelocity ] ;&#xd;
+              impl:Verkeerssnelheidsmeting.geobserveerdKenmerk [ a impl:Verkeerssnelheidsmetingkenmerk ; impl:Verkeerssnelheidsmetingkenmerk.kenmerktype cl-vkt:plaatsgemiddelde_snelheid; :voertuigType cl-vrt:fietser ] ;&#xd;
+              :geobserveerdObject ?featureOfInterest ;&#xd;
+              sosa:madeBySensor ?sensor .&#xd;
+          }&#xd;
+        &#xd;
+        } WHERE {&#xd;
+          ?feature geojson:properties ?properties .&#xd;
+&#xd;
+          ?properties vc:LocPost ?locpost .&#xd;
+          bind(uri(concat(&quot;https://verkeerscentrum.be/id/verkeerstellingen/&quot;, str(?locpost))) as ?baseUri) .&#xd;
+&#xd;
+          ?properties vc:int_niet_vracht ?carCount .&#xd;
+          bind(uri(concat(str(?baseUri), &quot;/car-count&quot;)) as ?carCountId) .&#xd;
+&#xd;
+          ?properties vc:int_vracht ?truckCount .&#xd;
+          bind(uri(concat(str(?baseUri), &quot;/truck-count&quot;)) as ?truckCountId) .&#xd;
+&#xd;
+          ?properties vc:int_fiets ?bicycleCount .&#xd;
+          bind(uri(concat(str(?baseUri), &quot;/bicycle-count&quot;)) as ?bicycleCountId) .&#xd;
+&#xd;
+          ?properties vc:Vh_niet_vracht ?carSpeed .&#xd;
+          bind(if(?carSpeed!=&quot;NULL&quot;, ?carSpeed, 1/0) as ?carVelocity) .&#xd;
+          bind(uri(concat(str(?baseUri), &quot;/car-velocity&quot;)) as ?carVelocityId) .&#xd;
+&#xd;
+          ?properties vc:Vh_vracht ?truckSpeed .&#xd;
+          bind(if(?truckSpeed!=&quot;NULL&quot;, ?truckSpeed, 1/0) as ?truckVelocity) .&#xd;
+          bind(uri(concat(str(?baseUri), &quot;/truck-velocity&quot;)) as ?truckVelocityId) .&#xd;
+&#xd;
+          ?properties vc:Vh_fiets ?bicycleSpeed .&#xd;
+          bind(if(?bicycleSpeed!=&quot;NULL&quot;, ?bicycleSpeed, 1/0) as ?bicycleVelocity) .&#xd;
+          bind(uri(concat(str(?baseUri), &quot;/bicycle-velocity&quot;)) as ?bicycleVelocityId) .&#xd;
+&#xd;
+          ?properties vc:timestamp ?timestamp .&#xd;
+          bind(xsd:duration(&quot;PT15M&quot;) as ?duration) . &#xd;
+&#xd;
+          OPTIONAL { filter(&#xd;
+              bound(?carCount) || bound(?truckCount) || bound(?bicycleCount) || &#xd;
+              bound(?carVelocity) || bound(?truckVelocity) || bound(?bicycleVelocity)&#xd;
+            )&#xd;
+            bind(bnode() as ?interval) .&#xd;
+            bind(bnode() as ?sensor) .&#xd;
+            bind(bnode() as ?featureOfInterest) .&#xd;
+          }&#xd;
+          &#xd;
+          ?feature locn:geometry ?roadSegment .&#xd;
+&#xd;
+          ?properties vc:Offset ?roadSegmentOffset .&#xd;
+          ?properties vc:AX ?AX .&#xd;
+          ?properties vc:AY ?AY .&#xd;
+          bind(strdt(concat(&quot;POINT(&quot;, str(?AX), &quot; &quot;, str(?AY), &quot;)&quot;), geo:wktLiteral) as ?geometryA).&#xd;
+          ?properties vc:PX ?PX .&#xd;
+          ?properties vc:PY ?PY .&#xd;
+          bind(strdt(concat(&quot;POINT(&quot;, str(?PX), &quot; &quot;, str(?PY), &quot;)&quot;), geo:wktLiteral) as ?geometryP).&#xd;
+          ?properties vc:BX ?BX .&#xd;
+          ?properties vc:BY ?BY .&#xd;
+          bind(strdt(concat(&quot;POINT(&quot;, str(?BX), &quot; &quot;, str(?BY), &quot;)&quot;), geo:wktLiteral) as ?geometryB).&#xd;
+        }&#xd;
+  - name: Ldio:VersionObjectCreator&#xd;
+    config:&#xd;
+      member-type: https://data.vlaanderen.be/ns/verkeersmetingen#Verkeersmeting&#xd;
+      delimiter: &quot;#&quot;&#xd;
+      date-observed-property: &lt;http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.phenomenonTime&gt;/&lt;http://www.w3.org/2006/time#hasBeginning&gt;/&lt;http://www.w3.org/2006/time#inXSDDateTimeStamp&gt;&#xd;
+      generatedAt-property: http://www.w3.org/ns/prov#generatedAtTime&#xd;
+      versionOf-property: http://purl.org/dc/terms/isVersionOf&#xd;
+outputs:&#xd;
+  - name: Ldio:NoopOut&#xd;
+</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Test">
+        <boolProp name="ThreadGroup.delayedStart">true</boolProp>
+        <stringProp name="ThreadGroup.num_threads">${threads}</stringProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <longProp name="ThreadGroup.duration">600</longProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">${loops}</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">application/json</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Test - Send ${count} features (${threads}T)">
+          <intProp name="HTTPSampler.concurrentPool">6</intProp>
+          <intProp name="HTTPSampler.response_timeout">3000</intProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${features}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <url>true</url>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <PostThreadGroup guiclass="PostThreadGroupGui" testclass="PostThreadGroup" testname="Tear Down">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </PostThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Tear Down - Delete No-output Pipeline" enabled="true">
+          <stringProp name="HTTPSampler.path">/admin/api/v1/pipeline/no-output-pipeline</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">DELETE</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
