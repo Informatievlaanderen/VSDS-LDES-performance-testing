@@ -8,7 +8,7 @@ services:
 
   jmeter-runner:
     container_name: performance_testing_jmeter-runner
-    image: ghcr.io/informatievlaanderen/jmeter-runner:latest
+    image: ghcr.io/informatievlaanderen/jmeter-runner:20240319T2055
     networks:
       - performance_testing 
     ports:
@@ -41,7 +41,8 @@ services:
   ldes-server-workbench:
     container_name: performance_testing_ldio-workbench
     # image: ldes/ldi-orchestrator:${LDI_ORCHESTRATOR_TAG:-2.2.0-SNAPSHOT}
-    image: ghcr.io/informatievlaanderen/ldi-orchestrator:latest
+    # image: ghcr.io/informatievlaanderen/ldi-orchestrator:latest
+    image: ghcr.io/informatievlaanderen/ldi-orchestrator:20240325132113
     networks:
       - performance_testing 
     ports:
@@ -53,7 +54,7 @@ services:
       test: ["CMD", "wget", "-qO-", "http://ldes-server-workbench:8080/actuator/health"]
     environment:
       - SIS_DATA=/tmp
-      - JAVA_TOOL_OPTIONS=-XX:MaxRAMPercentage=90 -XX:MinRAMPercentage=70
+      - JAVA_TOOL_OPTIONS=-XX:MaxRAMPercentage=90 -XX:MinRAMPercentage=50
       - SERVER_PORT=8080
       - ORCHESTRATOR_DIRECTORY=/ldio/pipelines
     deploy:
@@ -90,7 +91,7 @@ services:
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.10.0-SNAPSHOT} # Telraam
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.11.0-SNAPSHOT}
     # image: ghcr.io/informatievlaanderen/ldes-server:latest
-    image: ghcr.io/informatievlaanderen/ldes-server:20240322134330
+    image: ghcr.io/informatievlaanderen/ldes-server:20240325155939
     networks:
       - performance_testing
     ports:
@@ -104,7 +105,7 @@ services:
       test: ["CMD", "wget", "-qO-", "http://ldes-server:8080/actuator/health"]
     environment:
       - SIS_DATA=/tmp
-      - JAVA_TOOL_OPTIONS=-XX:MaxRAMPercentage=90 -XX:MinRAMPercentage=70
+      - JAVA_TOOL_OPTIONS=-XX:MaxRAMPercentage=90 -XX:MinRAMPercentage=50
       - SPRING_DATA_MONGODB_URI=mongodb://ldes-mongodb:27017/performance-testing
       - LDESSERVER_HOSTNAME=http://ldes-server:${LDES_SERVER_PORT:-8080}
       - SERVER_PORT=8080
