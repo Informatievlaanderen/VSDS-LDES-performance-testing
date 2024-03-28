@@ -8,13 +8,14 @@ services:
 
   jmeter-runner:
     container_name: performance_testing_jmeter-runner
-    image: ghcr.io/informatievlaanderen/jmeter-runner:20240319T2055
+    image: ghcr.io/informatievlaanderen/jmeter-runner:20240327t1117
     networks:
       - performance_testing 
     ports:
       - 9000:80
     volumes:
       - ${TEST_FOLDER:-./tests}:/home/node/jmeter-runner/tests:rw
+      - ${LOG_FOLDER:-./logs}:/home/node/jmeter-runner/logs:rw
     depends_on:
       ldes-server:
         condition: service_healthy
@@ -40,9 +41,8 @@ services:
 
   ldes-server-workbench:
     container_name: performance_testing_ldio-workbench
-    # image: ldes/ldi-orchestrator:${LDI_ORCHESTRATOR_TAG:-2.2.0-SNAPSHOT}
     # image: ghcr.io/informatievlaanderen/ldi-orchestrator:latest
-    image: ghcr.io/informatievlaanderen/ldi-orchestrator:20240325132113
+    image: ldes/ldi-orchestrator:${LDI_ORCHESTRATOR_TAG:-2.3.0-SNAPSHOT}
     networks:
       - performance_testing 
     ports:
@@ -86,12 +86,11 @@ services:
 
   ldes-server:
     container_name: performance_testing_ldes-server
+    # image: ghcr.io/informatievlaanderen/ldes-server:latest
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.3.0-SNAPSHOT} # CrowdScan
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.4.1-SNAPSHOT} # Geomobility
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.10.0-SNAPSHOT} # Telraam
-    # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.11.0-SNAPSHOT}
-    # image: ghcr.io/informatievlaanderen/ldes-server:latest
-    image: ghcr.io/informatievlaanderen/ldes-server:20240325155939
+    image: ldes/ldes-server:${LDES_SERVER_TAG:-2.12.0-SNAPSHOT}
     networks:
       - performance_testing
     ports:
