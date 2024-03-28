@@ -25,6 +25,8 @@ for the runner:
 ```bash
 mkdir -p ./tests
 chmod o+w ./tests
+mkdir -p ./logs
+chmod o+w ./logs
 ```
 
 ## Start Systems
