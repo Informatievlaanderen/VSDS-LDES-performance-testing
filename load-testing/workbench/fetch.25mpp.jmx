@@ -9,6 +9,26 @@
       </elementProp>
     </TestPlan>
     <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Labels">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="members_per_page" elementType="Argument">
+            <stringProp name="Argument.name">members_per_page</stringProp>
+            <stringProp name="Argument.value">25</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="type" elementType="Argument">
+            <stringProp name="Argument.name">type</stringProp>
+            <stringProp name="Argument.value">ldes-client-throughput</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="component" elementType="Argument">
+            <stringProp name="Argument.name">component</stringProp>
+            <stringProp name="Argument.value">LDIO-workbench</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
       <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables">
         <collectionProp name="Arguments.arguments">
           <elementProp name="ldes_name" elementType="Argument">
@@ -41,11 +61,6 @@
             <stringProp name="Argument.name">total_member_count</stringProp>
             <stringProp name="Argument.value">100000</stringProp>
             <stringProp name="Argument.desc"></stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="members_per_page" elementType="Argument">
-            <stringProp name="Argument.name">members_per_page</stringProp>
-            <stringProp name="Argument.value">25</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="total_page_count" elementType="Argument">
