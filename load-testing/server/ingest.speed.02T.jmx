@@ -57,12 +57,12 @@
           </elementProp>
           <elementProp name="loops" elementType="Argument">
             <stringProp name="Argument.name">loops</stringProp>
-            <stringProp name="Argument.value">150000</stringProp>
+            <stringProp name="Argument.value">160000</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="total_count" elementType="Argument">
             <stringProp name="Argument.name">total_count</stringProp>
-            <stringProp name="Argument.value">300K</stringProp>
+            <stringProp name="Argument.value">320K</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
