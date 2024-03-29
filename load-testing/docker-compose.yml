@@ -29,7 +29,8 @@ services:
       - REFRESH_TIME=${REFRESH_TIME:-30}
       - RUN_TEST_API_KEY=${RUN_TEST_API_KEY:-}
       - CHECK_TEST_API_KEY=${CHECK_TEST_API_KEY:-}
-      - DELETE_TEST_API_KEY=${DELETE_TEST_API_KEY:-}  
+      - DELETE_TEST_API_KEY=${DELETE_TEST_API_KEY:-}
+      - CUSTOM_LABELS=threads size type component members_per_page
     deploy:
       resources:
         limits:
