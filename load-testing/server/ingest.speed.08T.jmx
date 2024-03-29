@@ -137,7 +137,7 @@
       <hashTree>
         <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
           <intProp name="HTTPSampler.connect_timeout">3000</intProp>
-          <intProp name="HTTPSampler.response_timeout">1000</intProp>
+          <intProp name="HTTPSampler.response_timeout">3000</intProp>
           <stringProp name="HTTPSampler.domain">${hostname}</stringProp>
           <stringProp name="HTTPSampler.port">${port}</stringProp>
           <stringProp name="HTTPSampler.contentEncoding">utf8</stringProp>
@@ -233,6 +233,7 @@
       </PostThreadGroup>
       <hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Tear Down - Delete LDES" enabled="true">
+          <intProp name="HTTPSampler.response_timeout">15000</intProp>
           <stringProp name="HTTPSampler.path">/admin/api/v1/eventstreams/observations</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <stringProp name="HTTPSampler.method">DELETE</stringProp>
