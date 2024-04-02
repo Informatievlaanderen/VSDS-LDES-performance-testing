@@ -8,7 +8,7 @@ services:
 
   jmeter-runner:
     container_name: performance_testing_jmeter-runner
-    image: ghcr.io/informatievlaanderen/jmeter-runner:20240329t2008
+    image: ghcr.io/informatievlaanderen/jmeter-runner:20240402t0907
     networks:
       - performance_testing 
     ports:
@@ -30,7 +30,7 @@ services:
       - RUN_TEST_API_KEY=${RUN_TEST_API_KEY:-}
       - CHECK_TEST_API_KEY=${CHECK_TEST_API_KEY:-}
       - DELETE_TEST_API_KEY=${DELETE_TEST_API_KEY:-}
-      - CUSTOM_LABELS=threads size type component members_per_page
+      - CUSTOM_LABELS=${CUSTOM_LABELS:-threads size type component members_per_page}
     deploy:
       resources:
         limits:
