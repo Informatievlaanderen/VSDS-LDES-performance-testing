@@ -1,4 +1,4 @@
 tests/**
+temp/**
 jmeter.log
 database
-logs/**
