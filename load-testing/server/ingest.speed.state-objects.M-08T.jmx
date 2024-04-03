@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Ingest Speed Test (state objects) - 10 members - 8 Threads">
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Labels">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="threads" elementType="Argument">
+            <stringProp name="Argument.name">threads</stringProp>
+            <stringProp name="Argument.value">8</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="size" elementType="Argument">
+            <stringProp name="Argument.name">size</stringProp>
+            <stringProp name="Argument.value">medium</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="type" elementType="Argument">
+            <stringProp name="Argument.name">type</stringProp>
+            <stringProp name="Argument.value">server-ingest-state-objects</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="component" elementType="Argument">
+            <stringProp name="Argument.name">component</stringProp>
+            <stringProp name="Argument.value">LDES-server</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="ldes_definition" elementType="Argument">
+            <stringProp name="Argument.name">ldes_definition</stringProp>
+            <stringProp name="Argument.value">@prefix ldes: &lt;https://w3id.org/ldes#&gt; . @prefix tree: &lt;https://w3id.org/tree#&gt;. @prefix dcterms: &lt;http://purl.org/dc/terms/&gt; . @prefix prov: &lt;http://www.w3.org/ns/prov#&gt; . @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; . &lt;/observations&gt; a ldes:EventStream ; tree:shape [ a sh:NodeShape ] ; ldes:timestampPath prov:generatedAtTime ; ldes:createVersions true ; ldes:versionOfPath dcterms:isVersionOf .</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="view_definition" elementType="Argument">
+            <stringProp name="Argument.name">view_definition</stringProp>
+            <stringProp name="Argument.value">@prefix tree: &lt;https://w3id.org/tree#&gt;. @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; . @prefix ldes: &lt;https://w3id.org/ldes#&gt; . &lt;/observations/by-page&gt; a tree:Node ; tree:viewDescription [ a tree:ViewDescription ; tree:fragmentationStrategy () ; tree:pageSize &quot;250&quot;^^xsd:integer ; ldes:retentionPolicy [ a ldes:DurationAgoPolicy ; tree:value &quot;P2Y&quot;^^xsd:duration ] ; ] .</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="member" elementType="Argument">
+            <stringProp name="Argument.name">member</stringProp>
+            <stringProp name="Argument.value">&lt;https://verkeerscentrum.be/id/verkeerstellingen/0/${observation}/truck-velocity&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#Verkeersmeting&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/0/${observation}/truck-velocity&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmeting&gt; .
+_:Be32bbc652c634df824f23e4cbd1ecb84 &lt;http://www.w3.org/2006/time#hasXSDDuration&gt; "PT15M"^^&lt;http://www.w3.org/2001/XMLSchema#duration&gt; .
+_:B1d7f56c0a864bdbcc74c94d2661f0ebb &lt;http://www.w3.org/2006/time#inXSDDateTimeStamp&gt; "2024-01-01T00:00:00+01:00"^^&lt;http://www.w3.org/2001/XMLSchema#dateTime&gt; .
+_:B1d7f56c0a864bdbcc74c94d2661f0ebb &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/2006/time#Instant&gt; .
+_:Be32bbc652c634df824f23e4cbd1ecb84 &lt;http://www.w3.org/2006/time#hasBeginning&gt; _:B1d7f56c0a864bdbcc74c94d2661f0ebb .
+_:Be32bbc652c634df824f23e4cbd1ecb84 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/2006/time#TemporalEntity&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/0/${observation}/truck-velocity&gt; &lt;http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.phenomenonTime&gt; _:Be32bbc652c634df824f23e4cbd1ecb84 .
+_:B9a99b496f869e521b8c7d2e91af9b7db &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Speed&gt; .
+_:B9a99b496f869e521b8c7d2e91af9b7db &lt;https://schema.org/unitCode&gt; "km/h"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
+_:B9a99b496f869e521b8c7d2e91af9b7db &lt;https://schema.org/value&gt; "62"^^&lt;http://www.w3.org/2001/XMLSchema#integer&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/0/${observation}/truck-velocity&gt; &lt;http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.result&gt; _:B9a99b496f869e521b8c7d2e91af9b7db .
+_:Bc7a2ce526bf474df8113e2a6fecce7be &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmetingkenmerk&gt; .
+_:Bc7a2ce526bf474df8113e2a6fecce7be &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmetingkenmerk.kenmerktype&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmVerkeersKenmerkType/plaatsgemiddelde_snelheid&gt; .
+_:Bc7a2ce526bf474df8113e2a6fecce7be &lt;https://data.vlaanderen.be/ns/verkeersmetingen#voertuigType&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmVoertuigType/vrachtwagen&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/0/${observation}/truck-velocity&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmeting.geobserveerdKenmerk&gt; _:Bc7a2ce526bf474df8113e2a6fecce7be .
+_:B7cc9968f00cab1a2bf0653996b758556 &lt;https://schema.org/value&gt; "14"^^&lt;http://www.w3.org/2001/XMLSchema#integer&gt; .
+_:B7cc9968f00cab1a2bf0653996b758556 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
+_:B7cc9968f00cab1a2bf0653996b758556 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
+_:B0f1091a818173d1322cc91b13e55b6b9 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B7cc9968f00cab1a2bf0653996b758556 .
+_:B0f1091a818173d1322cc91b13e55b6b9 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B0f1091a818173d1322cc91b13e55b6b9 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
+_:B6884ae28914a6d34024689d7c69c848a &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B0f1091a818173d1322cc91b13e55b6b9 .
+_:B5566b990fbf64f3accae951a847d9d26 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:B5566b990fbf64f3accae951a847d9d26 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:B6884ae28914a6d34024689d7c69c848a &lt;http://def.isotc211.org/iso19156/2011/SamplingPoint#SF_SamplingPoint.shape&gt; _:B5566b990fbf64f3accae951a847d9d26 .
+_:Bfc5538b8bbbc67756376731210bf120f &lt;https://data.vlaanderen.be/ns/weg#rijrichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/inDirection&gt; .
+_:Bc7d4ecb25d48c6722beeb08fc166508b &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "LINESTRING (3.444080404972583 51.07601791071558, 3.443520053954542 51.07671482653927, 3.443384828630522 51.07680366717121)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:Bc7d4ecb25d48c6722beeb08fc166508b &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#LineString&gt; .
+_:Bd45552e1438b2250ff2e3dfbf9afd08e &lt;https://data.vlaanderen.be/ns/netwerk#Link.geometriemiddellijn&gt; _:Bc7d4ecb25d48c6722beeb08fc166508b .
+_:B54e93b19f7dc1b8606fb0e917ae8921d &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443384828630522E0 5.107680366717121E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:B54e93b19f7dc1b8606fb0e917ae8921d &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:B9b4aa1b5b0b6a01b60884cde294285e0 &lt;https://data.vlaanderen.be/ns/netwerk#Knoop.geometrie&gt; _:B54e93b19f7dc1b8606fb0e917ae8921d .
+_:B9b4aa1b5b0b6a01b60884cde294285e0 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegknoop&gt; .
+_:Bd45552e1438b2250ff2e3dfbf9afd08e &lt;https://data.vlaanderen.be/ns/netwerk#eindknoop&gt; _:B9b4aa1b5b0b6a01b60884cde294285e0 .
+_:B11f6dab8f729a535279de220597d04a7 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.444080404972583E0 5.107601791071558E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:B11f6dab8f729a535279de220597d04a7 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:B7c28c222367be882dc049002c4bd4891 &lt;https://data.vlaanderen.be/ns/netwerk#Knoop.geometrie&gt; _:B11f6dab8f729a535279de220597d04a7 .
+_:B7c28c222367be882dc049002c4bd4891 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegknoop&gt; .
+_:Bd45552e1438b2250ff2e3dfbf9afd08e &lt;https://data.vlaanderen.be/ns/netwerk#beginknoop&gt; _:B7c28c222367be882dc049002c4bd4891 .
+_:Bd45552e1438b2250ff2e3dfbf9afd08e &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegsegment&gt; .
+_:Bfc5538b8bbbc67756376731210bf120f &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Rijrichting.netwerkreferentieelement&gt; _:Bd45552e1438b2250ff2e3dfbf9afd08e .
+_:Bfc5538b8bbbc67756376731210bf120f &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Rijrichting&gt; .
+_:B6884ae28914a6d34024689d7c69c848a &lt;https://data.vlaanderen.be/ns/verkeersmetingen#bemonsterdObject&gt; _:Bfc5538b8bbbc67756376731210bf120f .
+_:B6884ae28914a6d34024689d7c69c848a &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#Verkeersmeetpunt&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/0/${observation}/truck-velocity&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#geobserveerdObject&gt; _:B6884ae28914a6d34024689d7c69c848a .
+_:B80dcd9c2512381c270b4a556238c30fa &lt;http://purl.org/dc/terms/type&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmMeetInstrumentType/TODO&gt; .
+_:B80dcd9c2512381c270b4a556238c30fa &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/ns/sosa/sensor&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/0/${observation}/truck-velocity&gt; &lt;http://www.w3.org/ns/sosa/madeBySensor&gt; _:B80dcd9c2512381c270b4a556238c30fa .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/1/${observation}/truck-velocity&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#Verkeersmeting&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/1/${observation}/truck-velocity&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmeting&gt; .
+_:B5d8a18e9bf60662cf0473fee2470ea9d &lt;http://www.w3.org/2006/time#hasXSDDuration&gt; "PT15M"^^&lt;http://www.w3.org/2001/XMLSchema#duration&gt; .
+_:Bcfd1c11de80a46addd4b082c69cea68d &lt;http://www.w3.org/2006/time#inXSDDateTimeStamp&gt; "2024-01-01T00:00:00+01:00"^^&lt;http://www.w3.org/2001/XMLSchema#dateTime&gt; .
+_:Bcfd1c11de80a46addd4b082c69cea68d &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/2006/time#Instant&gt; .
+_:B5d8a18e9bf60662cf0473fee2470ea9d &lt;http://www.w3.org/2006/time#hasBeginning&gt; _:Bcfd1c11de80a46addd4b082c69cea68d .
+_:B5d8a18e9bf60662cf0473fee2470ea9d &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/2006/time#TemporalEntity&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/1/${observation}/truck-velocity&gt; &lt;http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.phenomenonTime&gt; _:B5d8a18e9bf60662cf0473fee2470ea9d .
+_:B59df1001886182eba976814a12ec9ac2 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Speed&gt; .
+_:B59df1001886182eba976814a12ec9ac2 &lt;https://schema.org/unitCode&gt; "km/h"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
+_:B59df1001886182eba976814a12ec9ac2 &lt;https://schema.org/value&gt; "62"^^&lt;http://www.w3.org/2001/XMLSchema#integer&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/1/${observation}/truck-velocity&gt; &lt;http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.result&gt; _:B59df1001886182eba976814a12ec9ac2 .
+_:Ba6ab60056253a0e61c70ac6b7af77fcb &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmetingkenmerk&gt; .
+_:Ba6ab60056253a0e61c70ac6b7af77fcb &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmetingkenmerk.kenmerktype&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmVerkeersKenmerkType/plaatsgemiddelde_snelheid&gt; .
+_:Ba6ab60056253a0e61c70ac6b7af77fcb &lt;https://data.vlaanderen.be/ns/verkeersmetingen#voertuigType&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmVoertuigType/vrachtwagen&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/1/${observation}/truck-velocity&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmeting.geobserveerdKenmerk&gt; _:Ba6ab60056253a0e61c70ac6b7af77fcb .
+_:B208463541d974b82e9259a5eb95226ba &lt;https://schema.org/value&gt; "14"^^&lt;http://www.w3.org/2001/XMLSchema#integer&gt; .
+_:B208463541d974b82e9259a5eb95226ba &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
+_:B208463541d974b82e9259a5eb95226ba &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
+_:B856d896d7e49507925a0764df822ec90 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B208463541d974b82e9259a5eb95226ba .
+_:B856d896d7e49507925a0764df822ec90 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B856d896d7e49507925a0764df822ec90 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
+_:B3496f67c57e6191c54d94997d61ded03 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B856d896d7e49507925a0764df822ec90 .
+_:B673ab12d4890ddf9017717a9f3898195 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:B673ab12d4890ddf9017717a9f3898195 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:B3496f67c57e6191c54d94997d61ded03 &lt;http://def.isotc211.org/iso19156/2011/SamplingPoint#SF_SamplingPoint.shape&gt; _:B673ab12d4890ddf9017717a9f3898195 .
+_:B887cdfc9e186d00c1860be129acbbe36 &lt;https://data.vlaanderen.be/ns/weg#rijrichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/inDirection&gt; .
+_:Bf0d65e23a4f19587141a5d49acc7562d &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "LINESTRING (3.444080404972583 51.07601791071558, 3.443520053954542 51.07671482653927, 3.443384828630522 51.07680366717121)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:Bf0d65e23a4f19587141a5d49acc7562d &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#LineString&gt; .
+_:B3d2233530a752abd7064fb54377c11d5 &lt;https://data.vlaanderen.be/ns/netwerk#Link.geometriemiddellijn&gt; _:Bf0d65e23a4f19587141a5d49acc7562d .
+_:Be474771e6d5712fe04f27a831342ee6f &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443384828630522E0 5.107680366717121E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:Be474771e6d5712fe04f27a831342ee6f &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:Ba3d87803c2b4562678b363d502eaccdf &lt;https://data.vlaanderen.be/ns/netwerk#Knoop.geometrie&gt; _:Be474771e6d5712fe04f27a831342ee6f .
+_:Ba3d87803c2b4562678b363d502eaccdf &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegknoop&gt; .
+_:B3d2233530a752abd7064fb54377c11d5 &lt;https://data.vlaanderen.be/ns/netwerk#eindknoop&gt; _:Ba3d87803c2b4562678b363d502eaccdf .
+_:B0a8f63d06b9b05d4faa88f1b961e29f0 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.444080404972583E0 5.107601791071558E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:B0a8f63d06b9b05d4faa88f1b961e29f0 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:Bd97c695fb1e756cf24f10425aa02fe07 &lt;https://data.vlaanderen.be/ns/netwerk#Knoop.geometrie&gt; _:B0a8f63d06b9b05d4faa88f1b961e29f0 .
+_:Bd97c695fb1e756cf24f10425aa02fe07 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegknoop&gt; .
+_:B3d2233530a752abd7064fb54377c11d5 &lt;https://data.vlaanderen.be/ns/netwerk#beginknoop&gt; _:Bd97c695fb1e756cf24f10425aa02fe07 .
+_:B3d2233530a752abd7064fb54377c11d5 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegsegment&gt; .
+_:B887cdfc9e186d00c1860be129acbbe36 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Rijrichting.netwerkreferentieelement&gt; _:B3d2233530a752abd7064fb54377c11d5 .
+_:B887cdfc9e186d00c1860be129acbbe36 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Rijrichting&gt; .
+_:B3496f67c57e6191c54d94997d61ded03 &lt;https://data.vlaanderen.be/ns/verkeersmetingen#bemonsterdObject&gt; _:B887cdfc9e186d00c1860be129acbbe36 .
+_:B3496f67c57e6191c54d94997d61ded03 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#Verkeersmeetpunt&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/1/${observation}/truck-velocity&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#geobserveerdObject&gt; _:B3496f67c57e6191c54d94997d61ded03 .
+_:B25eaabdc56115b0cd9f55ed3385a6579 &lt;http://purl.org/dc/terms/type&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmMeetInstrumentType/TODO&gt; .
+_:B25eaabdc56115b0cd9f55ed3385a6579 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/ns/sosa/sensor&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/1/${observation}/truck-velocity&gt; &lt;http://www.w3.org/ns/sosa/madeBySensor&gt; _:B25eaabdc56115b0cd9f55ed3385a6579 .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/2/${observation}/truck-velocity&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#Verkeersmeting&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/2/${observation}/truck-velocity&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmeting&gt; .
+_:Bd2e1445483029cb4290106af19da97ca &lt;http://www.w3.org/2006/time#hasXSDDuration&gt; "PT15M"^^&lt;http://www.w3.org/2001/XMLSchema#duration&gt; .
+_:B1c21867a76013257657eac1a75cb5b38 &lt;http://www.w3.org/2006/time#inXSDDateTimeStamp&gt; "2024-01-01T00:00:00+01:00"^^&lt;http://www.w3.org/2001/XMLSchema#dateTime&gt; .
+_:B1c21867a76013257657eac1a75cb5b38 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/2006/time#Instant&gt; .
+_:Bd2e1445483029cb4290106af19da97ca &lt;http://www.w3.org/2006/time#hasBeginning&gt; _:B1c21867a76013257657eac1a75cb5b38 .
+_:Bd2e1445483029cb4290106af19da97ca &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/2006/time#TemporalEntity&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/2/${observation}/truck-velocity&gt; &lt;http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.phenomenonTime&gt; _:Bd2e1445483029cb4290106af19da97ca .
+_:Bebf83b87ca7f952495abe0752c01adf4 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Speed&gt; .
+_:Bebf83b87ca7f952495abe0752c01adf4 &lt;https://schema.org/unitCode&gt; "km/h"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
+_:Bebf83b87ca7f952495abe0752c01adf4 &lt;https://schema.org/value&gt; "62"^^&lt;http://www.w3.org/2001/XMLSchema#integer&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/2/${observation}/truck-velocity&gt; &lt;http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.result&gt; _:Bebf83b87ca7f952495abe0752c01adf4 .
+_:Bc3542bd09bc126667c2e62fc61cb218c &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmetingkenmerk&gt; .
+_:Bc3542bd09bc126667c2e62fc61cb218c &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmetingkenmerk.kenmerktype&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmVerkeersKenmerkType/plaatsgemiddelde_snelheid&gt; .
+_:Bc3542bd09bc126667c2e62fc61cb218c &lt;https://data.vlaanderen.be/ns/verkeersmetingen#voertuigType&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmVoertuigType/vrachtwagen&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/2/${observation}/truck-velocity&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmeting.geobserveerdKenmerk&gt; _:Bc3542bd09bc126667c2e62fc61cb218c .
+_:Bec1c0ddb9c8374eaab2cdb15c7dd3fd9 &lt;https://schema.org/value&gt; "14"^^&lt;http://www.w3.org/2001/XMLSchema#integer&gt; .
+_:Bec1c0ddb9c8374eaab2cdb15c7dd3fd9 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
+_:Bec1c0ddb9c8374eaab2cdb15c7dd3fd9 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
+_:B95ae16574145477013f6dc29a7bfd1a7 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bec1c0ddb9c8374eaab2cdb15c7dd3fd9 .
+_:B95ae16574145477013f6dc29a7bfd1a7 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B95ae16574145477013f6dc29a7bfd1a7 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
+_:B5f89f42a2f8eb7b08315b3665c21b009 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B95ae16574145477013f6dc29a7bfd1a7 .
+_:B01e306689a35badb7cf70082346b7477 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:B01e306689a35badb7cf70082346b7477 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:B5f89f42a2f8eb7b08315b3665c21b009 &lt;http://def.isotc211.org/iso19156/2011/SamplingPoint#SF_SamplingPoint.shape&gt; _:B01e306689a35badb7cf70082346b7477 .
+_:B3be338e6b05fb7b4baaf35d3438e370f &lt;https://data.vlaanderen.be/ns/weg#rijrichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/inDirection&gt; .
+_:B7597a9bb9f4192a86b336ea0d7e4fac7 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "LINESTRING (3.444080404972583 51.07601791071558, 3.443520053954542 51.07671482653927, 3.443384828630522 51.07680366717121)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:B7597a9bb9f4192a86b336ea0d7e4fac7 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#LineString&gt; .
+_:Bf5817fca88223c8f5f4e1ac1e4c5a602 &lt;https://data.vlaanderen.be/ns/netwerk#Link.geometriemiddellijn&gt; _:B7597a9bb9f4192a86b336ea0d7e4fac7 .
+_:B539238a9724bbd9e46cc99e7c8f1f4c6 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443384828630522E0 5.107680366717121E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:B539238a9724bbd9e46cc99e7c8f1f4c6 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:Be42030a63a3b1f61dede276af549e1ee &lt;https://data.vlaanderen.be/ns/netwerk#Knoop.geometrie&gt; _:B539238a9724bbd9e46cc99e7c8f1f4c6 .
+_:Be42030a63a3b1f61dede276af549e1ee &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegknoop&gt; .
+_:Bf5817fca88223c8f5f4e1ac1e4c5a602 &lt;https://data.vlaanderen.be/ns/netwerk#eindknoop&gt; _:Be42030a63a3b1f61dede276af549e1ee .
+_:B4b253d1ace6b364c486ed28ba0b1397f &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.444080404972583E0 5.107601791071558E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:B4b253d1ace6b364c486ed28ba0b1397f &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:Bc2a6afa2f01dedea54e4bc22d59461e3 &lt;https://data.vlaanderen.be/ns/netwerk#Knoop.geometrie&gt; _:B4b253d1ace6b364c486ed28ba0b1397f .
+_:Bc2a6afa2f01dedea54e4bc22d59461e3 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegknoop&gt; .
+_:Bf5817fca88223c8f5f4e1ac1e4c5a602 &lt;https://data.vlaanderen.be/ns/netwerk#beginknoop&gt; _:Bc2a6afa2f01dedea54e4bc22d59461e3 .
+_:Bf5817fca88223c8f5f4e1ac1e4c5a602 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegsegment&gt; .
+_:B3be338e6b05fb7b4baaf35d3438e370f &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Rijrichting.netwerkreferentieelement&gt; _:Bf5817fca88223c8f5f4e1ac1e4c5a602 .
+_:B3be338e6b05fb7b4baaf35d3438e370f &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Rijrichting&gt; .
+_:B5f89f42a2f8eb7b08315b3665c21b009 &lt;https://data.vlaanderen.be/ns/verkeersmetingen#bemonsterdObject&gt; _:B3be338e6b05fb7b4baaf35d3438e370f .
+_:B5f89f42a2f8eb7b08315b3665c21b009 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#Verkeersmeetpunt&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/2/${observation}/truck-velocity&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#geobserveerdObject&gt; _:B5f89f42a2f8eb7b08315b3665c21b009 .
+_:Bc4b483855b9ade13b12fba2b23c9f3d3 &lt;http://purl.org/dc/terms/type&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmMeetInstrumentType/TODO&gt; .
+_:Bc4b483855b9ade13b12fba2b23c9f3d3 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/ns/sosa/sensor&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/2/${observation}/truck-velocity&gt; &lt;http://www.w3.org/ns/sosa/madeBySensor&gt; _:Bc4b483855b9ade13b12fba2b23c9f3d3 .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/3/${observation}/truck-velocity&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#Verkeersmeting&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/3/${observation}/truck-velocity&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmeting&gt; .
+_:Bbdd5cf92391818d74e71445947cbb3d3 &lt;http://www.w3.org/2006/time#hasXSDDuration&gt; "PT15M"^^&lt;http://www.w3.org/2001/XMLSchema#duration&gt; .
+_:B10394eeef9ae6560ee22e53805568284 &lt;http://www.w3.org/2006/time#inXSDDateTimeStamp&gt; "2024-01-01T00:00:00+01:00"^^&lt;http://www.w3.org/2001/XMLSchema#dateTime&gt; .
+_:B10394eeef9ae6560ee22e53805568284 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/2006/time#Instant&gt; .
+_:Bbdd5cf92391818d74e71445947cbb3d3 &lt;http://www.w3.org/2006/time#hasBeginning&gt; _:B10394eeef9ae6560ee22e53805568284 .
+_:Bbdd5cf92391818d74e71445947cbb3d3 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/2006/time#TemporalEntity&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/3/${observation}/truck-velocity&gt; &lt;http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.phenomenonTime&gt; _:Bbdd5cf92391818d74e71445947cbb3d3 .
+_:Bc916e7704b7f697e99e84a9770e4a1df &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Speed&gt; .
+_:Bc916e7704b7f697e99e84a9770e4a1df &lt;https://schema.org/unitCode&gt; "km/h"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
+_:Bc916e7704b7f697e99e84a9770e4a1df &lt;https://schema.org/value&gt; "62"^^&lt;http://www.w3.org/2001/XMLSchema#integer&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/3/${observation}/truck-velocity&gt; &lt;http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.result&gt; _:Bc916e7704b7f697e99e84a9770e4a1df .
+_:Bf2830d97d94df4d1d70e80447b07f3f4 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmetingkenmerk&gt; .
+_:Bf2830d97d94df4d1d70e80447b07f3f4 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmetingkenmerk.kenmerktype&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmVerkeersKenmerkType/plaatsgemiddelde_snelheid&gt; .
+_:Bf2830d97d94df4d1d70e80447b07f3f4 &lt;https://data.vlaanderen.be/ns/verkeersmetingen#voertuigType&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmVoertuigType/vrachtwagen&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/3/${observation}/truck-velocity&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmeting.geobserveerdKenmerk&gt; _:Bf2830d97d94df4d1d70e80447b07f3f4 .
+_:B2f1cd9ba6449f78cc37fda1534004043 &lt;https://schema.org/value&gt; "14"^^&lt;http://www.w3.org/2001/XMLSchema#integer&gt; .
+_:B2f1cd9ba6449f78cc37fda1534004043 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
+_:B2f1cd9ba6449f78cc37fda1534004043 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
+_:B4214b0e4aa6134cf32c88b1db417ea37 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B2f1cd9ba6449f78cc37fda1534004043 .
+_:B4214b0e4aa6134cf32c88b1db417ea37 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B4214b0e4aa6134cf32c88b1db417ea37 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
+_:B2829a8086b23422d81a97b4a5935a86b &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B4214b0e4aa6134cf32c88b1db417ea37 .
+_:B5617908c0f6ecab6d0bfa8cb1f47a37d &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:B5617908c0f6ecab6d0bfa8cb1f47a37d &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:B2829a8086b23422d81a97b4a5935a86b &lt;http://def.isotc211.org/iso19156/2011/SamplingPoint#SF_SamplingPoint.shape&gt; _:B5617908c0f6ecab6d0bfa8cb1f47a37d .
+_:Bd9eb8aee3503f4a07a559984d248ad36 &lt;https://data.vlaanderen.be/ns/weg#rijrichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/inDirection&gt; .
+_:B637639740b0566ec80fb3391cc3e2491 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "LINESTRING (3.444080404972583 51.07601791071558, 3.443520053954542 51.07671482653927, 3.443384828630522 51.07680366717121)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:B637639740b0566ec80fb3391cc3e2491 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#LineString&gt; .
+_:B9ce50e219952957b6c687abe8c70c4c1 &lt;https://data.vlaanderen.be/ns/netwerk#Link.geometriemiddellijn&gt; _:B637639740b0566ec80fb3391cc3e2491 .
+_:B8530601a9a2b8612ebe4fe66d45850c2 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443384828630522E0 5.107680366717121E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:B8530601a9a2b8612ebe4fe66d45850c2 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:Bb6ad90b5030b9399e6b06c0ee604e080 &lt;https://data.vlaanderen.be/ns/netwerk#Knoop.geometrie&gt; _:B8530601a9a2b8612ebe4fe66d45850c2 .
+_:Bb6ad90b5030b9399e6b06c0ee604e080 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegknoop&gt; .
+_:B9ce50e219952957b6c687abe8c70c4c1 &lt;https://data.vlaanderen.be/ns/netwerk#eindknoop&gt; _:Bb6ad90b5030b9399e6b06c0ee604e080 .
+_:Bf6dbb84b568c5b83111c6571360795eb &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.444080404972583E0 5.107601791071558E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:Bf6dbb84b568c5b83111c6571360795eb &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:B7a4924d64e84d72ee99d16c78dced9ac &lt;https://data.vlaanderen.be/ns/netwerk#Knoop.geometrie&gt; _:Bf6dbb84b568c5b83111c6571360795eb .
+_:B7a4924d64e84d72ee99d16c78dced9ac &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegknoop&gt; .
+_:B9ce50e219952957b6c687abe8c70c4c1 &lt;https://data.vlaanderen.be/ns/netwerk#beginknoop&gt; _:B7a4924d64e84d72ee99d16c78dced9ac .
+_:B9ce50e219952957b6c687abe8c70c4c1 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegsegment&gt; .
+_:Bd9eb8aee3503f4a07a559984d248ad36 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Rijrichting.netwerkreferentieelement&gt; _:B9ce50e219952957b6c687abe8c70c4c1 .
+_:Bd9eb8aee3503f4a07a559984d248ad36 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Rijrichting&gt; .
+_:B2829a8086b23422d81a97b4a5935a86b &lt;https://data.vlaanderen.be/ns/verkeersmetingen#bemonsterdObject&gt; _:Bd9eb8aee3503f4a07a559984d248ad36 .
+_:B2829a8086b23422d81a97b4a5935a86b &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#Verkeersmeetpunt&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/3/${observation}/truck-velocity&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#geobserveerdObject&gt; _:B2829a8086b23422d81a97b4a5935a86b .
+_:B28f9eedde46a94f06336aab27b2913ac &lt;http://purl.org/dc/terms/type&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmMeetInstrumentType/TODO&gt; .
+_:B28f9eedde46a94f06336aab27b2913ac &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/ns/sosa/sensor&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/3/${observation}/truck-velocity&gt; &lt;http://www.w3.org/ns/sosa/madeBySensor&gt; _:B28f9eedde46a94f06336aab27b2913ac .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/4/${observation}/truck-velocity&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#Verkeersmeting&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/4/${observation}/truck-velocity&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmeting&gt; .
+_:B4cd2da17d807ffc20d20927aa588deb8 &lt;http://www.w3.org/2006/time#hasXSDDuration&gt; "PT15M"^^&lt;http://www.w3.org/2001/XMLSchema#duration&gt; .
+_:B6c85387cb05170a0fc4ac8e1d967d32b &lt;http://www.w3.org/2006/time#inXSDDateTimeStamp&gt; "2024-01-01T00:00:00+01:00"^^&lt;http://www.w3.org/2001/XMLSchema#dateTime&gt; .
+_:B6c85387cb05170a0fc4ac8e1d967d32b &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/2006/time#Instant&gt; .
+_:B4cd2da17d807ffc20d20927aa588deb8 &lt;http://www.w3.org/2006/time#hasBeginning&gt; _:B6c85387cb05170a0fc4ac8e1d967d32b .
+_:B4cd2da17d807ffc20d20927aa588deb8 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/2006/time#TemporalEntity&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/4/${observation}/truck-velocity&gt; &lt;http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.phenomenonTime&gt; _:B4cd2da17d807ffc20d20927aa588deb8 .
+_:B8023f967d4645695e321162b17ae5974 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Speed&gt; .
+_:B8023f967d4645695e321162b17ae5974 &lt;https://schema.org/unitCode&gt; "km/h"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
+_:B8023f967d4645695e321162b17ae5974 &lt;https://schema.org/value&gt; "62"^^&lt;http://www.w3.org/2001/XMLSchema#integer&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/4/${observation}/truck-velocity&gt; &lt;http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.result&gt; _:B8023f967d4645695e321162b17ae5974 .
+_:B0e56c614f7dcee0550dc8a8b9851306f &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmetingkenmerk&gt; .
+_:B0e56c614f7dcee0550dc8a8b9851306f &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmetingkenmerk.kenmerktype&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmVerkeersKenmerkType/plaatsgemiddelde_snelheid&gt; .
+_:B0e56c614f7dcee0550dc8a8b9851306f &lt;https://data.vlaanderen.be/ns/verkeersmetingen#voertuigType&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmVoertuigType/vrachtwagen&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/4/${observation}/truck-velocity&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmeting.geobserveerdKenmerk&gt; _:B0e56c614f7dcee0550dc8a8b9851306f .
+_:Bda003a558a3212215b1b9a532b588b63 &lt;https://schema.org/value&gt; "14"^^&lt;http://www.w3.org/2001/XMLSchema#integer&gt; .
+_:Bda003a558a3212215b1b9a532b588b63 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
+_:Bda003a558a3212215b1b9a532b588b63 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
+_:B130c4e22fb5e3714b30c8d10e5e72f54 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bda003a558a3212215b1b9a532b588b63 .
+_:B130c4e22fb5e3714b30c8d10e5e72f54 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B130c4e22fb5e3714b30c8d10e5e72f54 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
+_:Bbca42fd6aafb3e84126528addcb27ca4 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B130c4e22fb5e3714b30c8d10e5e72f54 .
+_:B0fef1ab369aa49a3f05ca11d58044d68 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:B0fef1ab369aa49a3f05ca11d58044d68 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:Bbca42fd6aafb3e84126528addcb27ca4 &lt;http://def.isotc211.org/iso19156/2011/SamplingPoint#SF_SamplingPoint.shape&gt; _:B0fef1ab369aa49a3f05ca11d58044d68 .
+_:Bc731454fe5e30a8c8f6e68e3177898e8 &lt;https://data.vlaanderen.be/ns/weg#rijrichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/inDirection&gt; .
+_:B7e772d6c853b0ebaf7720a0e97350838 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "LINESTRING (3.444080404972583 51.07601791071558, 3.443520053954542 51.07671482653927, 3.443384828630522 51.07680366717121)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:B7e772d6c853b0ebaf7720a0e97350838 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#LineString&gt; .
+_:B6d9eef6ceee8c4ee42461d471307185b &lt;https://data.vlaanderen.be/ns/netwerk#Link.geometriemiddellijn&gt; _:B7e772d6c853b0ebaf7720a0e97350838 .
+_:Bffe6ee1a55f22362caef2168a6ec7d4e &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443384828630522E0 5.107680366717121E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:Bffe6ee1a55f22362caef2168a6ec7d4e &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:Bb71fbd853753799e52bb6d00cba6cb60 &lt;https://data.vlaanderen.be/ns/netwerk#Knoop.geometrie&gt; _:Bffe6ee1a55f22362caef2168a6ec7d4e .
+_:Bb71fbd853753799e52bb6d00cba6cb60 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegknoop&gt; .
+_:B6d9eef6ceee8c4ee42461d471307185b &lt;https://data.vlaanderen.be/ns/netwerk#eindknoop&gt; _:Bb71fbd853753799e52bb6d00cba6cb60 .
+_:B35b6057de6ce45bd40656b8fc619addb &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.444080404972583E0 5.107601791071558E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:B35b6057de6ce45bd40656b8fc619addb &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:B7cd67745698894f660c83adf84978350 &lt;https://data.vlaanderen.be/ns/netwerk#Knoop.geometrie&gt; _:B35b6057de6ce45bd40656b8fc619addb .
+_:B7cd67745698894f660c83adf84978350 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegknoop&gt; .
+_:B6d9eef6ceee8c4ee42461d471307185b &lt;https://data.vlaanderen.be/ns/netwerk#beginknoop&gt; _:B7cd67745698894f660c83adf84978350 .
+_:B6d9eef6ceee8c4ee42461d471307185b &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegsegment&gt; .
+_:Bc731454fe5e30a8c8f6e68e3177898e8 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Rijrichting.netwerkreferentieelement&gt; _:B6d9eef6ceee8c4ee42461d471307185b .
+_:Bc731454fe5e30a8c8f6e68e3177898e8 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Rijrichting&gt; .
+_:Bbca42fd6aafb3e84126528addcb27ca4 &lt;https://data.vlaanderen.be/ns/verkeersmetingen#bemonsterdObject&gt; _:Bc731454fe5e30a8c8f6e68e3177898e8 .
+_:Bbca42fd6aafb3e84126528addcb27ca4 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#Verkeersmeetpunt&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/4/${observation}/truck-velocity&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#geobserveerdObject&gt; _:Bbca42fd6aafb3e84126528addcb27ca4 .
+_:B723cdfab4dd7d8978786e5c9c1a9fbfa &lt;http://purl.org/dc/terms/type&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmMeetInstrumentType/TODO&gt; .
+_:B723cdfab4dd7d8978786e5c9c1a9fbfa &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/ns/sosa/sensor&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/4/${observation}/truck-velocity&gt; &lt;http://www.w3.org/ns/sosa/madeBySensor&gt; _:B723cdfab4dd7d8978786e5c9c1a9fbfa .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/5/${observation}/truck-velocity&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#Verkeersmeting&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/5/${observation}/truck-velocity&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmeting&gt; .
+_:Bc33fad37567a91a5064a268b1bffc306 &lt;http://www.w3.org/2006/time#hasXSDDuration&gt; "PT15M"^^&lt;http://www.w3.org/2001/XMLSchema#duration&gt; .
+_:B093b365faed0304988e110bb5225f0e0 &lt;http://www.w3.org/2006/time#inXSDDateTimeStamp&gt; "2024-01-01T00:00:00+01:00"^^&lt;http://www.w3.org/2001/XMLSchema#dateTime&gt; .
+_:B093b365faed0304988e110bb5225f0e0 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/2006/time#Instant&gt; .
+_:Bc33fad37567a91a5064a268b1bffc306 &lt;http://www.w3.org/2006/time#hasBeginning&gt; _:B093b365faed0304988e110bb5225f0e0 .
+_:Bc33fad37567a91a5064a268b1bffc306 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/2006/time#TemporalEntity&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/5/${observation}/truck-velocity&gt; &lt;http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.phenomenonTime&gt; _:Bc33fad37567a91a5064a268b1bffc306 .
+_:Ba8cda1605f419634c0ed7750c0f2da76 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Speed&gt; .
+_:Ba8cda1605f419634c0ed7750c0f2da76 &lt;https://schema.org/unitCode&gt; "km/h"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
+_:Ba8cda1605f419634c0ed7750c0f2da76 &lt;https://schema.org/value&gt; "62"^^&lt;http://www.w3.org/2001/XMLSchema#integer&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/5/${observation}/truck-velocity&gt; &lt;http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.result&gt; _:Ba8cda1605f419634c0ed7750c0f2da76 .
+_:B0a74e7106c8993c9bb760f0c53df266f &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmetingkenmerk&gt; .
+_:B0a74e7106c8993c9bb760f0c53df266f &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmetingkenmerk.kenmerktype&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmVerkeersKenmerkType/plaatsgemiddelde_snelheid&gt; .
+_:B0a74e7106c8993c9bb760f0c53df266f &lt;https://data.vlaanderen.be/ns/verkeersmetingen#voertuigType&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmVoertuigType/vrachtwagen&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/5/${observation}/truck-velocity&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmeting.geobserveerdKenmerk&gt; _:B0a74e7106c8993c9bb760f0c53df266f .
+_:B6a68fe827a1675cf8e4e2d8049daa90f &lt;https://schema.org/value&gt; "14"^^&lt;http://www.w3.org/2001/XMLSchema#integer&gt; .
+_:B6a68fe827a1675cf8e4e2d8049daa90f &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
+_:B6a68fe827a1675cf8e4e2d8049daa90f &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
+_:B283890911e881589e472a05cfb717cbb &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B6a68fe827a1675cf8e4e2d8049daa90f .
+_:B283890911e881589e472a05cfb717cbb &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B283890911e881589e472a05cfb717cbb &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
+_:B4e079d4df22c076197c2924aba937ece &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B283890911e881589e472a05cfb717cbb .
+_:Bda29350dab4d43b343128aec49e1a0eb &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:Bda29350dab4d43b343128aec49e1a0eb &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:B4e079d4df22c076197c2924aba937ece &lt;http://def.isotc211.org/iso19156/2011/SamplingPoint#SF_SamplingPoint.shape&gt; _:Bda29350dab4d43b343128aec49e1a0eb .
+_:B7d03e1acdc35823754cb5282681678fb &lt;https://data.vlaanderen.be/ns/weg#rijrichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/inDirection&gt; .
+_:Bad6f0e2b49d3aa2eb426ec3a563ea09a &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "LINESTRING (3.444080404972583 51.07601791071558, 3.443520053954542 51.07671482653927, 3.443384828630522 51.07680366717121)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:Bad6f0e2b49d3aa2eb426ec3a563ea09a &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#LineString&gt; .
+_:B5c24447e5eabaae8e66c668fb10a4b48 &lt;https://data.vlaanderen.be/ns/netwerk#Link.geometriemiddellijn&gt; _:Bad6f0e2b49d3aa2eb426ec3a563ea09a .
+_:B1861eca201f67b7b540563d2c3199aae &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443384828630522E0 5.107680366717121E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:B1861eca201f67b7b540563d2c3199aae &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:B7c8042ef6d92a6777c3bdb5458dfe090 &lt;https://data.vlaanderen.be/ns/netwerk#Knoop.geometrie&gt; _:B1861eca201f67b7b540563d2c3199aae .
+_:B7c8042ef6d92a6777c3bdb5458dfe090 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegknoop&gt; .
+_:B5c24447e5eabaae8e66c668fb10a4b48 &lt;https://data.vlaanderen.be/ns/netwerk#eindknoop&gt; _:B7c8042ef6d92a6777c3bdb5458dfe090 .
+_:B9de0ac78d1c1a4a9de847e7dacc4cced &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.444080404972583E0 5.107601791071558E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:B9de0ac78d1c1a4a9de847e7dacc4cced &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:Bb0c5238d970148c7804fa6bbcbc5516d &lt;https://data.vlaanderen.be/ns/netwerk#Knoop.geometrie&gt; _:B9de0ac78d1c1a4a9de847e7dacc4cced .
+_:Bb0c5238d970148c7804fa6bbcbc5516d &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegknoop&gt; .
+_:B5c24447e5eabaae8e66c668fb10a4b48 &lt;https://data.vlaanderen.be/ns/netwerk#beginknoop&gt; _:Bb0c5238d970148c7804fa6bbcbc5516d .
+_:B5c24447e5eabaae8e66c668fb10a4b48 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegsegment&gt; .
+_:B7d03e1acdc35823754cb5282681678fb &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Rijrichting.netwerkreferentieelement&gt; _:B5c24447e5eabaae8e66c668fb10a4b48 .
+_:B7d03e1acdc35823754cb5282681678fb &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Rijrichting&gt; .
+_:B4e079d4df22c076197c2924aba937ece &lt;https://data.vlaanderen.be/ns/verkeersmetingen#bemonsterdObject&gt; _:B7d03e1acdc35823754cb5282681678fb .
+_:B4e079d4df22c076197c2924aba937ece &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#Verkeersmeetpunt&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/5/${observation}/truck-velocity&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#geobserveerdObject&gt; _:B4e079d4df22c076197c2924aba937ece .
+_:B063046349cc58ba5254958fe3c5190d0 &lt;http://purl.org/dc/terms/type&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmMeetInstrumentType/TODO&gt; .
+_:B063046349cc58ba5254958fe3c5190d0 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/ns/sosa/sensor&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/5/${observation}/truck-velocity&gt; &lt;http://www.w3.org/ns/sosa/madeBySensor&gt; _:B063046349cc58ba5254958fe3c5190d0 .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/6/${observation}/truck-velocity&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#Verkeersmeting&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/6/${observation}/truck-velocity&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmeting&gt; .
+_:Bdb405b33c53cda891cd3f8d6bd20d07a &lt;http://www.w3.org/2006/time#hasXSDDuration&gt; "PT15M"^^&lt;http://www.w3.org/2001/XMLSchema#duration&gt; .
+_:B81a5a2708e52bd17c4c07b6a94e5e848 &lt;http://www.w3.org/2006/time#inXSDDateTimeStamp&gt; "2024-01-01T00:00:00+01:00"^^&lt;http://www.w3.org/2001/XMLSchema#dateTime&gt; .
+_:B81a5a2708e52bd17c4c07b6a94e5e848 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/2006/time#Instant&gt; .
+_:Bdb405b33c53cda891cd3f8d6bd20d07a &lt;http://www.w3.org/2006/time#hasBeginning&gt; _:B81a5a2708e52bd17c4c07b6a94e5e848 .
+_:Bdb405b33c53cda891cd3f8d6bd20d07a &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/2006/time#TemporalEntity&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/6/${observation}/truck-velocity&gt; &lt;http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.phenomenonTime&gt; _:Bdb405b33c53cda891cd3f8d6bd20d07a .
+_:Bc1829305977864f4a8db9bb1870753b5 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Speed&gt; .
+_:Bc1829305977864f4a8db9bb1870753b5 &lt;https://schema.org/unitCode&gt; "km/h"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
+_:Bc1829305977864f4a8db9bb1870753b5 &lt;https://schema.org/value&gt; "62"^^&lt;http://www.w3.org/2001/XMLSchema#integer&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/6/${observation}/truck-velocity&gt; &lt;http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.result&gt; _:Bc1829305977864f4a8db9bb1870753b5 .
+_:B8bf6aa57ce02b075ef9bace00d128e07 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmetingkenmerk&gt; .
+_:B8bf6aa57ce02b075ef9bace00d128e07 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmetingkenmerk.kenmerktype&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmVerkeersKenmerkType/plaatsgemiddelde_snelheid&gt; .
+_:B8bf6aa57ce02b075ef9bace00d128e07 &lt;https://data.vlaanderen.be/ns/verkeersmetingen#voertuigType&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmVoertuigType/vrachtwagen&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/6/${observation}/truck-velocity&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmeting.geobserveerdKenmerk&gt; _:B8bf6aa57ce02b075ef9bace00d128e07 .
+_:B9c66d086805626f9f86c6c32000104ec &lt;https://schema.org/value&gt; "14"^^&lt;http://www.w3.org/2001/XMLSchema#integer&gt; .
+_:B9c66d086805626f9f86c6c32000104ec &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
+_:B9c66d086805626f9f86c6c32000104ec &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
+_:Bf75c4a28003f29d80f51440707b5db98 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B9c66d086805626f9f86c6c32000104ec .
+_:Bf75c4a28003f29d80f51440707b5db98 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Bf75c4a28003f29d80f51440707b5db98 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
+_:B16c5c80a80ffea9914adab515b6f104c &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bf75c4a28003f29d80f51440707b5db98 .
+_:B5d37af892c0bde7bda475060a418efd9 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:B5d37af892c0bde7bda475060a418efd9 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:B16c5c80a80ffea9914adab515b6f104c &lt;http://def.isotc211.org/iso19156/2011/SamplingPoint#SF_SamplingPoint.shape&gt; _:B5d37af892c0bde7bda475060a418efd9 .
+_:B3b82cd1c3d75c59a5978b164c427ded8 &lt;https://data.vlaanderen.be/ns/weg#rijrichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/inDirection&gt; .
+_:Bf320564d41d7dc0db00a527e00229e2c &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "LINESTRING (3.444080404972583 51.07601791071558, 3.443520053954542 51.07671482653927, 3.443384828630522 51.07680366717121)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:Bf320564d41d7dc0db00a527e00229e2c &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#LineString&gt; .
+_:Bd4b50fbe83646f4a6e961f727b65fb69 &lt;https://data.vlaanderen.be/ns/netwerk#Link.geometriemiddellijn&gt; _:Bf320564d41d7dc0db00a527e00229e2c .
+_:Bbd5631db63dd21d8c3f604cd5dbb129c &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443384828630522E0 5.107680366717121E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:Bbd5631db63dd21d8c3f604cd5dbb129c &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:B656b57e145a345551fe77e222d3c60cf &lt;https://data.vlaanderen.be/ns/netwerk#Knoop.geometrie&gt; _:Bbd5631db63dd21d8c3f604cd5dbb129c .
+_:B656b57e145a345551fe77e222d3c60cf &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegknoop&gt; .
+_:Bd4b50fbe83646f4a6e961f727b65fb69 &lt;https://data.vlaanderen.be/ns/netwerk#eindknoop&gt; _:B656b57e145a345551fe77e222d3c60cf .
+_:B0207fe06b05f5bd16e54baa997f98926 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.444080404972583E0 5.107601791071558E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:B0207fe06b05f5bd16e54baa997f98926 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:Bfb3e9c0e7d12dd0be86de39a77965b94 &lt;https://data.vlaanderen.be/ns/netwerk#Knoop.geometrie&gt; _:B0207fe06b05f5bd16e54baa997f98926 .
+_:Bfb3e9c0e7d12dd0be86de39a77965b94 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegknoop&gt; .
+_:Bd4b50fbe83646f4a6e961f727b65fb69 &lt;https://data.vlaanderen.be/ns/netwerk#beginknoop&gt; _:Bfb3e9c0e7d12dd0be86de39a77965b94 .
+_:Bd4b50fbe83646f4a6e961f727b65fb69 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegsegment&gt; .
+_:B3b82cd1c3d75c59a5978b164c427ded8 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Rijrichting.netwerkreferentieelement&gt; _:Bd4b50fbe83646f4a6e961f727b65fb69 .
+_:B3b82cd1c3d75c59a5978b164c427ded8 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Rijrichting&gt; .
+_:B16c5c80a80ffea9914adab515b6f104c &lt;https://data.vlaanderen.be/ns/verkeersmetingen#bemonsterdObject&gt; _:B3b82cd1c3d75c59a5978b164c427ded8 .
+_:B16c5c80a80ffea9914adab515b6f104c &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#Verkeersmeetpunt&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/6/${observation}/truck-velocity&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#geobserveerdObject&gt; _:B16c5c80a80ffea9914adab515b6f104c .
+_:Bddd6234e0bbf993f78a1386e04ae4512 &lt;http://purl.org/dc/terms/type&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmMeetInstrumentType/TODO&gt; .
+_:Bddd6234e0bbf993f78a1386e04ae4512 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/ns/sosa/sensor&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/6/${observation}/truck-velocity&gt; &lt;http://www.w3.org/ns/sosa/madeBySensor&gt; _:Bddd6234e0bbf993f78a1386e04ae4512 .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/7/${observation}/truck-velocity&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#Verkeersmeting&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/7/${observation}/truck-velocity&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmeting&gt; .
+_:Bddcfeb537c726089f1e01c6a48dd5fa2 &lt;http://www.w3.org/2006/time#hasXSDDuration&gt; "PT15M"^^&lt;http://www.w3.org/2001/XMLSchema#duration&gt; .
+_:B8af727bcff8f42b1b948741250bbcfa7 &lt;http://www.w3.org/2006/time#inXSDDateTimeStamp&gt; "2024-01-01T00:00:00+01:00"^^&lt;http://www.w3.org/2001/XMLSchema#dateTime&gt; .
+_:B8af727bcff8f42b1b948741250bbcfa7 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/2006/time#Instant&gt; .
+_:Bddcfeb537c726089f1e01c6a48dd5fa2 &lt;http://www.w3.org/2006/time#hasBeginning&gt; _:B8af727bcff8f42b1b948741250bbcfa7 .
+_:Bddcfeb537c726089f1e01c6a48dd5fa2 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/2006/time#TemporalEntity&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/7/${observation}/truck-velocity&gt; &lt;http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.phenomenonTime&gt; _:Bddcfeb537c726089f1e01c6a48dd5fa2 .
+_:B7c9ee9678c5a308fb3668fc546672ccf &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Speed&gt; .
+_:B7c9ee9678c5a308fb3668fc546672ccf &lt;https://schema.org/unitCode&gt; "km/h"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
+_:B7c9ee9678c5a308fb3668fc546672ccf &lt;https://schema.org/value&gt; "62"^^&lt;http://www.w3.org/2001/XMLSchema#integer&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/7/${observation}/truck-velocity&gt; &lt;http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.result&gt; _:B7c9ee9678c5a308fb3668fc546672ccf .
+_:Babccbcc161665a58ad7142790759c420 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmetingkenmerk&gt; .
+_:Babccbcc161665a58ad7142790759c420 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmetingkenmerk.kenmerktype&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmVerkeersKenmerkType/plaatsgemiddelde_snelheid&gt; .
+_:Babccbcc161665a58ad7142790759c420 &lt;https://data.vlaanderen.be/ns/verkeersmetingen#voertuigType&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmVoertuigType/vrachtwagen&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/7/${observation}/truck-velocity&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmeting.geobserveerdKenmerk&gt; _:Babccbcc161665a58ad7142790759c420 .
+_:Bc41130d01e9b134d6368029a7851dcc8 &lt;https://schema.org/value&gt; "14"^^&lt;http://www.w3.org/2001/XMLSchema#integer&gt; .
+_:Bc41130d01e9b134d6368029a7851dcc8 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
+_:Bc41130d01e9b134d6368029a7851dcc8 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
+_:B28c3c3fcfa5564f854625a5431bfe30d &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bc41130d01e9b134d6368029a7851dcc8 .
+_:B28c3c3fcfa5564f854625a5431bfe30d &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B28c3c3fcfa5564f854625a5431bfe30d &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
+_:B0f07730b81b7c43fb5f238c977e2af2a &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B28c3c3fcfa5564f854625a5431bfe30d .
+_:B2b8e4d6957a8e17fa7587693216ac77b &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:B2b8e4d6957a8e17fa7587693216ac77b &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:B0f07730b81b7c43fb5f238c977e2af2a &lt;http://def.isotc211.org/iso19156/2011/SamplingPoint#SF_SamplingPoint.shape&gt; _:B2b8e4d6957a8e17fa7587693216ac77b .
+_:B829e7d1183cb9af68fb4c9ac4ca4c2ca &lt;https://data.vlaanderen.be/ns/weg#rijrichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/inDirection&gt; .
+_:B8e8df4fd99ab32536de521f3eb28489c &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "LINESTRING (3.444080404972583 51.07601791071558, 3.443520053954542 51.07671482653927, 3.443384828630522 51.07680366717121)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:B8e8df4fd99ab32536de521f3eb28489c &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#LineString&gt; .
+_:B964f73c2c1aca21e794937052c8ad759 &lt;https://data.vlaanderen.be/ns/netwerk#Link.geometriemiddellijn&gt; _:B8e8df4fd99ab32536de521f3eb28489c .
+_:B510ec0adf9fac1636a66c095f6a9570a &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443384828630522E0 5.107680366717121E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:B510ec0adf9fac1636a66c095f6a9570a &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:B81a70b932eebe6f99b1419cc251a6281 &lt;https://data.vlaanderen.be/ns/netwerk#Knoop.geometrie&gt; _:B510ec0adf9fac1636a66c095f6a9570a .
+_:B81a70b932eebe6f99b1419cc251a6281 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegknoop&gt; .
+_:B964f73c2c1aca21e794937052c8ad759 &lt;https://data.vlaanderen.be/ns/netwerk#eindknoop&gt; _:B81a70b932eebe6f99b1419cc251a6281 .
+_:Be67a972ab5792746e2b232af724163aa &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.444080404972583E0 5.107601791071558E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:Be67a972ab5792746e2b232af724163aa &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:Bb95aa83dc81ae29f1e41aeb8ec0c9aa2 &lt;https://data.vlaanderen.be/ns/netwerk#Knoop.geometrie&gt; _:Be67a972ab5792746e2b232af724163aa .
+_:Bb95aa83dc81ae29f1e41aeb8ec0c9aa2 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegknoop&gt; .
+_:B964f73c2c1aca21e794937052c8ad759 &lt;https://data.vlaanderen.be/ns/netwerk#beginknoop&gt; _:Bb95aa83dc81ae29f1e41aeb8ec0c9aa2 .
+_:B964f73c2c1aca21e794937052c8ad759 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegsegment&gt; .
+_:B829e7d1183cb9af68fb4c9ac4ca4c2ca &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Rijrichting.netwerkreferentieelement&gt; _:B964f73c2c1aca21e794937052c8ad759 .
+_:B829e7d1183cb9af68fb4c9ac4ca4c2ca &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Rijrichting&gt; .
+_:B0f07730b81b7c43fb5f238c977e2af2a &lt;https://data.vlaanderen.be/ns/verkeersmetingen#bemonsterdObject&gt; _:B829e7d1183cb9af68fb4c9ac4ca4c2ca .
+_:B0f07730b81b7c43fb5f238c977e2af2a &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#Verkeersmeetpunt&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/7/${observation}/truck-velocity&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#geobserveerdObject&gt; _:B0f07730b81b7c43fb5f238c977e2af2a .
+_:Baec10f11cc85656ade9d0219d02c5e8c &lt;http://purl.org/dc/terms/type&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmMeetInstrumentType/TODO&gt; .
+_:Baec10f11cc85656ade9d0219d02c5e8c &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/ns/sosa/sensor&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/7/${observation}/truck-velocity&gt; &lt;http://www.w3.org/ns/sosa/madeBySensor&gt; _:Baec10f11cc85656ade9d0219d02c5e8c .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/8/${observation}/truck-velocity&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#Verkeersmeting&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/8/${observation}/truck-velocity&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmeting&gt; .
+_:B573b544707784b5c4b9fdb075dabbafe &lt;http://www.w3.org/2006/time#hasXSDDuration&gt; "PT15M"^^&lt;http://www.w3.org/2001/XMLSchema#duration&gt; .
+_:B8f45663720d2bf7c2467c48d8c451ae2 &lt;http://www.w3.org/2006/time#inXSDDateTimeStamp&gt; "2024-01-01T00:00:00+01:00"^^&lt;http://www.w3.org/2001/XMLSchema#dateTime&gt; .
+_:B8f45663720d2bf7c2467c48d8c451ae2 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/2006/time#Instant&gt; .
+_:B573b544707784b5c4b9fdb075dabbafe &lt;http://www.w3.org/2006/time#hasBeginning&gt; _:B8f45663720d2bf7c2467c48d8c451ae2 .
+_:B573b544707784b5c4b9fdb075dabbafe &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/2006/time#TemporalEntity&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/8/${observation}/truck-velocity&gt; &lt;http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.phenomenonTime&gt; _:B573b544707784b5c4b9fdb075dabbafe .
+_:B9f0c7a4296295149f183b99def400c11 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Speed&gt; .
+_:B9f0c7a4296295149f183b99def400c11 &lt;https://schema.org/unitCode&gt; "km/h"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
+_:B9f0c7a4296295149f183b99def400c11 &lt;https://schema.org/value&gt; "62"^^&lt;http://www.w3.org/2001/XMLSchema#integer&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/8/${observation}/truck-velocity&gt; &lt;http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.result&gt; _:B9f0c7a4296295149f183b99def400c11 .
+_:B522cd67f8597049885f8d50391d190a4 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmetingkenmerk&gt; .
+_:B522cd67f8597049885f8d50391d190a4 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmetingkenmerk.kenmerktype&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmVerkeersKenmerkType/plaatsgemiddelde_snelheid&gt; .
+_:B522cd67f8597049885f8d50391d190a4 &lt;https://data.vlaanderen.be/ns/verkeersmetingen#voertuigType&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmVoertuigType/vrachtwagen&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/8/${observation}/truck-velocity&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmeting.geobserveerdKenmerk&gt; _:B522cd67f8597049885f8d50391d190a4 .
+_:B227113a236471014090180b9891c5bbd &lt;https://schema.org/value&gt; "14"^^&lt;http://www.w3.org/2001/XMLSchema#integer&gt; .
+_:B227113a236471014090180b9891c5bbd &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
+_:B227113a236471014090180b9891c5bbd &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
+_:B84f2dc0838713000e2b33904f1dbb94c &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B227113a236471014090180b9891c5bbd .
+_:B84f2dc0838713000e2b33904f1dbb94c &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B84f2dc0838713000e2b33904f1dbb94c &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
+_:Bb34853c8205abec78884790cd84992dc &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B84f2dc0838713000e2b33904f1dbb94c .
+_:B4a286d64b9bb2499448ccb45578d5051 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:B4a286d64b9bb2499448ccb45578d5051 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:Bb34853c8205abec78884790cd84992dc &lt;http://def.isotc211.org/iso19156/2011/SamplingPoint#SF_SamplingPoint.shape&gt; _:B4a286d64b9bb2499448ccb45578d5051 .
+_:B597030d478afdf69f05e9a03f129b034 &lt;https://data.vlaanderen.be/ns/weg#rijrichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/inDirection&gt; .
+_:Bbeb3ca653bcfa9399967173725c859b3 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "LINESTRING (3.444080404972583 51.07601791071558, 3.443520053954542 51.07671482653927, 3.443384828630522 51.07680366717121)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:Bbeb3ca653bcfa9399967173725c859b3 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#LineString&gt; .
+_:Bf6a079c1e5b0d7957ceb03437628a8c4 &lt;https://data.vlaanderen.be/ns/netwerk#Link.geometriemiddellijn&gt; _:Bbeb3ca653bcfa9399967173725c859b3 .
+_:Bf8ec35f86b6cea704a77d3a196e19e3e &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443384828630522E0 5.107680366717121E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:Bf8ec35f86b6cea704a77d3a196e19e3e &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:Baa53e907dd584242c1f086a40232babf &lt;https://data.vlaanderen.be/ns/netwerk#Knoop.geometrie&gt; _:Bf8ec35f86b6cea704a77d3a196e19e3e .
+_:Baa53e907dd584242c1f086a40232babf &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegknoop&gt; .
+_:Bf6a079c1e5b0d7957ceb03437628a8c4 &lt;https://data.vlaanderen.be/ns/netwerk#eindknoop&gt; _:Baa53e907dd584242c1f086a40232babf .
+_:B9af86e274688f2d43503950b80ac7c01 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.444080404972583E0 5.107601791071558E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:B9af86e274688f2d43503950b80ac7c01 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:Bcadda56779e3a1e797b0ac851ea08045 &lt;https://data.vlaanderen.be/ns/netwerk#Knoop.geometrie&gt; _:B9af86e274688f2d43503950b80ac7c01 .
+_:Bcadda56779e3a1e797b0ac851ea08045 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegknoop&gt; .
+_:Bf6a079c1e5b0d7957ceb03437628a8c4 &lt;https://data.vlaanderen.be/ns/netwerk#beginknoop&gt; _:Bcadda56779e3a1e797b0ac851ea08045 .
+_:Bf6a079c1e5b0d7957ceb03437628a8c4 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegsegment&gt; .
+_:B597030d478afdf69f05e9a03f129b034 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Rijrichting.netwerkreferentieelement&gt; _:Bf6a079c1e5b0d7957ceb03437628a8c4 .
+_:B597030d478afdf69f05e9a03f129b034 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Rijrichting&gt; .
+_:Bb34853c8205abec78884790cd84992dc &lt;https://data.vlaanderen.be/ns/verkeersmetingen#bemonsterdObject&gt; _:B597030d478afdf69f05e9a03f129b034 .
+_:Bb34853c8205abec78884790cd84992dc &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#Verkeersmeetpunt&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/8/${observation}/truck-velocity&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#geobserveerdObject&gt; _:Bb34853c8205abec78884790cd84992dc .
+_:B0705a00749e1cebf646b0e297d9d040a &lt;http://purl.org/dc/terms/type&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmMeetInstrumentType/TODO&gt; .
+_:B0705a00749e1cebf646b0e297d9d040a &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/ns/sosa/sensor&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/8/${observation}/truck-velocity&gt; &lt;http://www.w3.org/ns/sosa/madeBySensor&gt; _:B0705a00749e1cebf646b0e297d9d040a .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/9/${observation}/truck-velocity&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#Verkeersmeting&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/9/${observation}/truck-velocity&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmeting&gt; .
+_:B834bc6a5b004219d57bca973174c0ad7 &lt;http://www.w3.org/2006/time#hasXSDDuration&gt; "PT15M"^^&lt;http://www.w3.org/2001/XMLSchema#duration&gt; .
+_:B8ddf4e831dfaa80fcfd1f0f3560aa854 &lt;http://www.w3.org/2006/time#inXSDDateTimeStamp&gt; "2024-01-01T00:00:00+01:00"^^&lt;http://www.w3.org/2001/XMLSchema#dateTime&gt; .
+_:B8ddf4e831dfaa80fcfd1f0f3560aa854 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/2006/time#Instant&gt; .
+_:B834bc6a5b004219d57bca973174c0ad7 &lt;http://www.w3.org/2006/time#hasBeginning&gt; _:B8ddf4e831dfaa80fcfd1f0f3560aa854 .
+_:B834bc6a5b004219d57bca973174c0ad7 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/2006/time#TemporalEntity&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/9/${observation}/truck-velocity&gt; &lt;http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.phenomenonTime&gt; _:B834bc6a5b004219d57bca973174c0ad7 .
+_:B1fd2d422d3d08ce9643e1fe53cc6c0a2 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Speed&gt; .
+_:B1fd2d422d3d08ce9643e1fe53cc6c0a2 &lt;https://schema.org/unitCode&gt; "km/h"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
+_:B1fd2d422d3d08ce9643e1fe53cc6c0a2 &lt;https://schema.org/value&gt; "62"^^&lt;http://www.w3.org/2001/XMLSchema#integer&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/9/${observation}/truck-velocity&gt; &lt;http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.result&gt; _:B1fd2d422d3d08ce9643e1fe53cc6c0a2 .
+_:Babebc2fda4cfcff523f47cd85e622d0d &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmetingkenmerk&gt; .
+_:Babebc2fda4cfcff523f47cd85e622d0d &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmetingkenmerk.kenmerktype&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmVerkeersKenmerkType/plaatsgemiddelde_snelheid&gt; .
+_:Babebc2fda4cfcff523f47cd85e622d0d &lt;https://data.vlaanderen.be/ns/verkeersmetingen#voertuigType&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmVoertuigType/vrachtwagen&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/9/${observation}/truck-velocity&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmeting.geobserveerdKenmerk&gt; _:Babebc2fda4cfcff523f47cd85e622d0d .
+_:Bb1c6e78a67e8c47f2c3ee933216e1a48 &lt;https://schema.org/value&gt; "14"^^&lt;http://www.w3.org/2001/XMLSchema#integer&gt; .
+_:Bb1c6e78a67e8c47f2c3ee933216e1a48 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
+_:Bb1c6e78a67e8c47f2c3ee933216e1a48 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
+_:B6d4c3e59e294200245506dfada4d44ed &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bb1c6e78a67e8c47f2c3ee933216e1a48 .
+_:B6d4c3e59e294200245506dfada4d44ed &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B6d4c3e59e294200245506dfada4d44ed &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
+_:B9cc5a8d4f96d901325b9424a7fbe4ffe &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B6d4c3e59e294200245506dfada4d44ed .
+_:B6145fc6aa8608e791208d7a4570f88e1 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:B6145fc6aa8608e791208d7a4570f88e1 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:B9cc5a8d4f96d901325b9424a7fbe4ffe &lt;http://def.isotc211.org/iso19156/2011/SamplingPoint#SF_SamplingPoint.shape&gt; _:B6145fc6aa8608e791208d7a4570f88e1 .
+_:Bd02010d0797a71be718894a9d568acba &lt;https://data.vlaanderen.be/ns/weg#rijrichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/inDirection&gt; .
+_:Ba943dbcaaef77274d95924ee34924149 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "LINESTRING (3.444080404972583 51.07601791071558, 3.443520053954542 51.07671482653927, 3.443384828630522 51.07680366717121)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:Ba943dbcaaef77274d95924ee34924149 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#LineString&gt; .
+_:B69f3528f0ed62d6906dc1c40188b888f &lt;https://data.vlaanderen.be/ns/netwerk#Link.geometriemiddellijn&gt; _:Ba943dbcaaef77274d95924ee34924149 .
+_:Ba55a0f7b58b01e124f3e1196d8f84d18 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443384828630522E0 5.107680366717121E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:Ba55a0f7b58b01e124f3e1196d8f84d18 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:Bc8d6e4846ed1ac29160755127aec081a &lt;https://data.vlaanderen.be/ns/netwerk#Knoop.geometrie&gt; _:Ba55a0f7b58b01e124f3e1196d8f84d18 .
+_:Bc8d6e4846ed1ac29160755127aec081a &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegknoop&gt; .
+_:B69f3528f0ed62d6906dc1c40188b888f &lt;https://data.vlaanderen.be/ns/netwerk#eindknoop&gt; _:Bc8d6e4846ed1ac29160755127aec081a .
+_:B4dfe54403f59d42f30fb4cd1e2f302e3 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.444080404972583E0 5.107601791071558E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
+_:B4dfe54403f59d42f30fb4cd1e2f302e3 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .
+_:Bdd135dbd190f4623cc985230a66f2751 &lt;https://data.vlaanderen.be/ns/netwerk#Knoop.geometrie&gt; _:B4dfe54403f59d42f30fb4cd1e2f302e3 .
+_:Bdd135dbd190f4623cc985230a66f2751 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegknoop&gt; .
+_:B69f3528f0ed62d6906dc1c40188b888f &lt;https://data.vlaanderen.be/ns/netwerk#beginknoop&gt; _:Bdd135dbd190f4623cc985230a66f2751 .
+_:B69f3528f0ed62d6906dc1c40188b888f &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegsegment&gt; .
+_:Bd02010d0797a71be718894a9d568acba &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Rijrichting.netwerkreferentieelement&gt; _:B69f3528f0ed62d6906dc1c40188b888f .
+_:Bd02010d0797a71be718894a9d568acba &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Rijrichting&gt; .
+_:B9cc5a8d4f96d901325b9424a7fbe4ffe &lt;https://data.vlaanderen.be/ns/verkeersmetingen#bemonsterdObject&gt; _:Bd02010d0797a71be718894a9d568acba .
+_:B9cc5a8d4f96d901325b9424a7fbe4ffe &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#Verkeersmeetpunt&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/9/${observation}/truck-velocity&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#geobserveerdObject&gt; _:B9cc5a8d4f96d901325b9424a7fbe4ffe .
+_:Ba04b7f34be503bbd0762a4c820bb9e07 &lt;http://purl.org/dc/terms/type&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmMeetInstrumentType/TODO&gt; .
+_:Ba04b7f34be503bbd0762a4c820bb9e07 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/ns/sosa/sensor&gt; .
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/9/${observation}/truck-velocity&gt; &lt;http://www.w3.org/ns/sosa/madeBySensor&gt; _:Ba04b7f34be503bbd0762a4c820bb9e07 .
+</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="hostname" elementType="Argument">
+            <stringProp name="Argument.name">hostname</stringProp>
+            <stringProp name="Argument.value">ldes-server</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="port" elementType="Argument">
+            <stringProp name="Argument.name">port</stringProp>
+            <stringProp name="Argument.value">8080</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="loops" elementType="Argument">
+            <stringProp name="Argument.name">loops</stringProp>
+            <stringProp name="Argument.value">4000</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="total_count" elementType="Argument">
+            <stringProp name="Argument.name">total_count</stringProp>
+            <stringProp name="Argument.value">320K</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults">
+        <intProp name="HTTPSampler.connect_timeout">3000</intProp>
+        <intProp name="HTTPSampler.response_timeout">5000</intProp>
+        <stringProp name="HTTPSampler.domain">${hostname}</stringProp>
+        <stringProp name="HTTPSampler.port">${port}</stringProp>
+        <stringProp name="HTTPSampler.contentEncoding">utf8</stringProp>
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="Setup">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </SetupThreadGroup>
+      <hashTree>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">text/turtle</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Setup - Create LDES">
+          <stringProp name="HTTPSampler.path">/admin/api/v1/eventstreams</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${ldes_definition}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Setup - Create by-page View">
+          <stringProp name="HTTPSampler.path">/admin/api/v1/eventstreams/observations/views</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${view_definition}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Test">
+        <boolProp name="ThreadGroup.delayedStart">true</boolProp>
+        <stringProp name="ThreadGroup.num_threads">${threads}</stringProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <longProp name="ThreadGroup.duration">600</longProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">${loops}</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults">
+          <intProp name="HTTPSampler.connect_timeout">3000</intProp>
+          <intProp name="HTTPSampler.response_timeout">10000</intProp>
+          <stringProp name="HTTPSampler.domain">${hostname}</stringProp>
+          <stringProp name="HTTPSampler.port">${port}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf8</stringProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">application/n-triples</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Counter">
+          <stringProp name="CounterConfig.start">1</stringProp>
+          <stringProp name="CounterConfig.end"></stringProp>
+          <stringProp name="CounterConfig.incr">1</stringProp>
+          <stringProp name="CounterConfig.name">observation</stringProp>
+          <stringProp name="CounterConfig.format"></stringProp>
+          <boolProp name="CounterConfig.per_user">false</boolProp>
+        </CounterConfig>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Test - Send ${total_count} state objects (${threads}T)">
+          <intProp name="HTTPSampler.concurrentPool">6</intProp>
+          <stringProp name="HTTPSampler.path">/observations</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${__eval(${member})}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <url>true</url>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <PostThreadGroup guiclass="PostThreadGroupGui" testclass="PostThreadGroup" testname="Tear Down">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </PostThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Tear Down - Delete LDES">
+          <stringProp name="HTTPSampler.path">/admin/api/v1/eventstreams/observations</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">DELETE</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

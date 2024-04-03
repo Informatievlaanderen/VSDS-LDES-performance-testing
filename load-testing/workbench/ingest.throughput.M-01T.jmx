@@ -24,7 +24,7 @@
           </elementProp>
           <elementProp name="type" elementType="Argument">
             <stringProp name="Argument.name">type</stringProp>
-            <stringProp name="Argument.value">throughput</stringProp>
+            <stringProp name="Argument.value">pipeline-throughput</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="component" elementType="Argument">

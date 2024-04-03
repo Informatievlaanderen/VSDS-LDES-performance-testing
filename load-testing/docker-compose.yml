@@ -8,14 +8,14 @@ services:
 
   jmeter-runner:
     container_name: performance_testing_jmeter-runner
-    image: ghcr.io/informatievlaanderen/jmeter-runner:20240402t0837
+    image: ghcr.io/informatievlaanderen/jmeter-runner:20240403t0752
     networks:
       - performance_testing 
     ports:
       - 9000:80
     volumes:
       - ${TEST_FOLDER:-./tests}:/home/node/jmeter-runner/tests:rw
-      - ${LOG_FOLDER:-./logs}:/home/node/jmeter-runner/logs:rw
+      - ${TEMP_FOLDER:-./temp}:/home/node/jmeter-runner/temp:rw
     depends_on:
       ldes-server:
         condition: service_healthy
@@ -23,18 +23,20 @@ services:
         condition: service_healthy
     environment:
       - TEST_FOLDER_BASE=/home/node/jmeter-runner/tests
+      - TEMP_FOLDER_BASE=/home/node/jmeter-runner/temp
       - BASE_URL=${BASE_URL:-http://localhost:9000}
       - SILENT=${SILENT:-true}
       - MAX_RUNNING=${MAX_RUNNING:-1}
       - REFRESH_TIME=${REFRESH_TIME:-30}
       - RUN_TEST_API_KEY=${RUN_TEST_API_KEY:-}
       - CHECK_TEST_API_KEY=${CHECK_TEST_API_KEY:-}
-      - DELETE_TEST_API_KEY=${DELETE_TEST_API_KEY:-}  
+      - DELETE_TEST_API_KEY=${DELETE_TEST_API_KEY:-}
+      - CUSTOM_LABELS=${CUSTOM_LABELS:-threads size type component members_per_page}
     deploy:
       resources:
         limits:
           cpus: '0.5'
-          memory: '1.0GB'
+          memory: '1.5GB'
         reservations:
           cpus: '0.1'
           memory: '0.25GB'
@@ -44,7 +46,7 @@ services:
     # image: ghcr.io/informatievlaanderen/ldi-orchestrator:latest
     image: ldes/ldi-orchestrator:${LDI_ORCHESTRATOR_TAG:-2.3.0-SNAPSHOT}
     networks:
-      - performance_testing 
+      - performance_testing
     ports:
       - ${LDIO_WORKBENCH_PORT:-8081}:8080
     volumes:
@@ -90,7 +92,8 @@ services:
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.3.0-SNAPSHOT} # CrowdScan
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.4.1-SNAPSHOT} # Geomobility
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.10.0-SNAPSHOT} # Telraam
-    image: ldes/ldes-server:${LDES_SERVER_TAG:-2.12.0-SNAPSHOT}
+    # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.12.0-SNAPSHOT}
+    image: ghcr.io/informatievlaanderen/ldes-server:20240403070538
     networks:
       - performance_testing
     ports:
