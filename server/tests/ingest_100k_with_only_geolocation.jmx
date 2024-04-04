@@ -108,7 +108,7 @@
           <boolProp name="HTTPSampler.concurrentDwn">false</boolProp>
           <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
           <boolProp name="HTTPSampler.md5">false</boolProp>
-          <stringProp name="HTTPSampler.ipSource">jmeter</stringProp>
+          
           <intProp name="HTTPSampler.ipSourceType">0</intProp>
           <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
           <stringProp name="HTTPSampler.connect_timeout">1000</stringProp>
@@ -250,7 +250,7 @@
           <boolProp name="HTTPSampler.concurrentDwn">false</boolProp>
           <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
           <boolProp name="HTTPSampler.md5">false</boolProp>
-          <stringProp name="HTTPSampler.ipSource">jmeter</stringProp>
+          
           <intProp name="HTTPSampler.ipSourceType">0</intProp>
           <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
           <stringProp name="HTTPSampler.connect_timeout">2000</stringProp>
@@ -454,7 +454,7 @@
           <boolProp name="HTTPSampler.concurrentDwn">false</boolProp>
           <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
           <boolProp name="HTTPSampler.md5">false</boolProp>
-          <stringProp name="HTTPSampler.ipSource">jmeter</stringProp>
+          
           <intProp name="HTTPSampler.ipSourceType">0</intProp>
           <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
           <stringProp name="HTTPSampler.connect_timeout">1000</stringProp>
@@ -828,7 +828,7 @@ return &quot;\n\t\tGeospatialFragmentation time: &quot; + geoTime + &quot; ms (&
           <boolProp name="HTTPSampler.concurrentDwn">false</boolProp>
           <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
           <boolProp name="HTTPSampler.md5">false</boolProp>
-          <stringProp name="HTTPSampler.ipSource">jmeter</stringProp>
+          
           <intProp name="HTTPSampler.ipSourceType">0</intProp>
           <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
           <stringProp name="HTTPSampler.connect_timeout">2000</stringProp>
@@ -853,7 +853,7 @@ return &quot;\n\t\tGeospatialFragmentation time: &quot; + geoTime + &quot; ms (&
           <boolProp name="HTTPSampler.concurrentDwn">false</boolProp>
           <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
           <boolProp name="HTTPSampler.md5">false</boolProp>
-          <stringProp name="HTTPSampler.ipSource">jmeter</stringProp>
+          
           <intProp name="HTTPSampler.ipSourceType">0</intProp>
           <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
           <stringProp name="HTTPSampler.connect_timeout">2000</stringProp>
