@@ -37,7 +37,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="ldes_definition" elementType="Argument">
             <stringProp name="Argument.name">ldes_definition</stringProp>
-            <stringProp name="Argument.value">@prefix ldes: &lt;https://w3id.org/ldes#&gt; . @prefix tree: &lt;https://w3id.org/tree#&gt;. @prefix dcterms: &lt;http://purl.org/dc/terms/&gt; . @prefix prov: &lt;http://www.w3.org/ns/prov#&gt; . @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; . &lt;/observations&gt; a ldes:EventStream ; tree:shape [ a sh:NodeShape ] ; ldes:timestampPath prov:generatedAtTime ; ldes:createVersions true ; ldes:versionOfPath dcterms:isVersionOf .</stringProp>
+            <stringProp name="Argument.value">@prefix ldes: &lt;https://w3id.org/ldes#&gt; . @prefix tree: &lt;https://w3id.org/tree#&gt;. @prefix dcterms: &lt;http://purl.org/dc/terms/&gt; . @prefix prov: &lt;http://www.w3.org/ns/prov#&gt; . @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; . &lt;/observations&gt; a ldes:EventStream ; tree:shape [ a sh:NodeShape ; sh:targetClass &lt;https://data.vlaanderen.be/ns/verkeersmetingen#Verkeersmeting&gt; ] ; ldes:timestampPath prov:generatedAtTime ; ldes:createVersions true ; ldes:versionOfPath dcterms:isVersionOf .</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="view_definition" elementType="Argument">
