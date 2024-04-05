@@ -33,17 +33,17 @@
           </elementProp>
           <elementProp name="total_count" elementType="Argument">
             <stringProp name="Argument.name">total_count</stringProp>
-            <stringProp name="Argument.value">600M</stringProp>
+            <stringProp name="Argument.value">30M</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="threads" elementType="Argument">
             <stringProp name="Argument.name">threads</stringProp>
-            <stringProp name="Argument.value">8</stringProp>
+            <stringProp name="Argument.value">4</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="loops" elementType="Argument">
             <stringProp name="Argument.name">loops</stringProp>
-            <stringProp name="Argument.value">75000000</stringProp>
+            <stringProp name="Argument.value">7500000</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -277,8 +277,7 @@ _:B56e84f09X2D89aeX2D4f0fX2Dbd18X2D80ec0e031082 &lt;http://www.w3.org/1999/02/22
         </elementProp>
       </PostThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Tear Down - Delete LDES" enabled="false">
-          <stringProp name="TestPlan.comments">TODO: re-enable this after adding a check for the total storage size</stringProp>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Tear Down - Delete LDES" enabled="true">
           <intProp name="HTTPSampler.response_timeout">30000</intProp>
           <stringProp name="HTTPSampler.path">/admin/api/v1/eventstreams/observations</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
