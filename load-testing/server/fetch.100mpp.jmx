@@ -30,7 +30,7 @@
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables">
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables" enabled="true">
         <collectionProp name="Arguments.arguments">
           <elementProp name="ldes_name" elementType="Argument">
             <stringProp name="Argument.name">ldes_name</stringProp>
@@ -110,6 +110,23 @@
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">@prefix ldes: &lt;https://w3id.org/ldes#&gt; . @prefix tree: &lt;https://w3id.org/tree#&gt;. @prefix dcterms: &lt;http://purl.org/dc/terms/&gt; . @prefix prov: &lt;http://www.w3.org/ns/prov#&gt; . @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; . &lt;/${ldes_name}&gt; a ldes:EventStream ; tree:shape [ a sh:NodeShape; sh:targetClass &lt;https://data.vlaanderen.be/ns/verkeersmetingen#Verkeersmeting&gt; ] ; ldes:timestampPath prov:generatedAtTime ; ldes:versionOfPath dcterms:isVersionOf .</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Setup - create view">
+          <stringProp name="HTTPSampler.path">/admin/api/v1/eventstreams/${ldes_name}/views</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">@prefix tree: &lt;https://w3id.org/tree#&gt;. @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; . @prefix ldes: &lt;https://w3id.org/ldes#&gt; . &lt;/${ldes_name}/${view_name}&gt; a tree:Node ; tree:viewDescription [ a tree:ViewDescription ; tree:fragmentationStrategy () ; tree:pageSize &quot;${members_per_page}&quot;^^xsd:integer ] .</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -251,23 +268,6 @@ _:B56e84f09X2D89aeX2D4f0fX2Dbd18X2D80ec0e031082 &lt;http://www.w3.org/1999/02/22
           <stringProp name="cacheKey">true</stringProp>
           <stringProp name="script">vars.put(&quot;fragmentation_starttime&quot;, String.valueOf(System.currentTimeMillis()))</stringProp>
         </JSR223PreProcessor>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Setup - create view">
-          <stringProp name="HTTPSampler.path">/admin/api/v1/eventstreams/${ldes_name}/views</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">@prefix tree: &lt;https://w3id.org/tree#&gt;. @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; . @prefix ldes: &lt;https://w3id.org/ldes#&gt; . &lt;/${ldes_name}/${view_name}&gt; a tree:Node ; tree:viewDescription [ a tree:ViewDescription ; tree:fragmentationStrategy () ; tree:pageSize &quot;${members_per_page}&quot;^^xsd:integer ] .</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-        </HTTPSamplerProxy>
         <hashTree/>
         <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While not last page exists" enabled="true">
           <stringProp name="WhileController.condition">${__groovy(vars.get(&quot;get_last_page_result&quot;) != &quot;200&quot;)}</stringProp>
