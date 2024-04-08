@@ -111,7 +111,7 @@
         <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
       </ConfigTestElement>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Setup - Create LDES">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Setup - Create LDES" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -122,7 +122,7 @@
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
           <collectionProp name="HeaderManager.headers">
             <elementProp name="" elementType="Header">
               <stringProp name="Header.name">Content-Type</stringProp>
@@ -148,6 +148,32 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Setup - create view">
+          <stringProp name="HTTPSampler.path">/admin/api/v1/eventstreams/${ldes_name}/views</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">@prefix tree: &lt;https://w3id.org/tree#&gt;. @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; . @prefix ldes: &lt;https://w3id.org/ldes#&gt; . &lt;/${ldes_name}/${view_name}&gt; a tree:Node ; tree:viewDescription [ a tree:ViewDescription ; tree:fragmentationStrategy () ; tree:pageSize &quot;${members_per_page}&quot;^^xsd:integer ] .</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">props.put(&quot;fragmentation_starttime&quot;, String.valueOf(System.currentTimeMillis()))</stringProp>
+          </JSR223PostProcessor>
+          <hashTree/>
+        </hashTree>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Setup - Seed LDES" enabled="true">
         <boolProp name="ThreadGroup.delayedStart">true</boolProp>
@@ -285,7 +311,7 @@ _:B56e84f09X2D89aeX2D4f0fX2Dbd18X2D80ec0e031082 &lt;http://www.w3.org/1999/02/22
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Setup - Fragmentation" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Setup - Fragmentation">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <longProp name="ThreadGroup.duration">300</longProp>
@@ -298,41 +324,6 @@ _:B56e84f09X2D89aeX2D4f0fX2Dbd18X2D80ec0e031082 &lt;http://www.w3.org/1999/02/22
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
-          <collectionProp name="HeaderManager.headers">
-            <elementProp name="" elementType="Header">
-              <stringProp name="Header.name">Content-Type</stringProp>
-              <stringProp name="Header.value">text/turtle</stringProp>
-            </elementProp>
-          </collectionProp>
-        </HeaderManager>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Setup - create view">
-          <stringProp name="HTTPSampler.path">/admin/api/v1/eventstreams/${ldes_name}/views</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">@prefix tree: &lt;https://w3id.org/tree#&gt;. @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; . @prefix ldes: &lt;https://w3id.org/ldes#&gt; . &lt;/${ldes_name}/${view_name}&gt; a tree:Node ; tree:viewDescription [ a tree:ViewDescription ; tree:fragmentationStrategy () ; tree:pageSize &quot;${members_per_page}&quot;^^xsd:integer ] .</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
-            <stringProp name="scriptLanguage">groovy</stringProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="script">props.put(&quot;fragmentation_starttime&quot;, String.valueOf(System.currentTimeMillis()))</stringProp>
-          </JSR223PostProcessor>
-          <hashTree/>
-        </hashTree>
         <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While not last page exists" enabled="true">
           <stringProp name="WhileController.condition">${__groovy(vars.get(&quot;get_last_page_result&quot;) != &quot;200&quot;)}</stringProp>
         </WhileController>
