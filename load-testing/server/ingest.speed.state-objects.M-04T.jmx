@@ -552,12 +552,12 @@ _:Ba04b7f34be503bbd0762a4c820bb9e07 &lt;http://www.w3.org/1999/02/22-rdf-syntax-
           </elementProp>
           <elementProp name="loops" elementType="Argument">
             <stringProp name="Argument.name">loops</stringProp>
-            <stringProp name="Argument.value">8000</stringProp>
+            <stringProp name="Argument.value">2500</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="total_count" elementType="Argument">
             <stringProp name="Argument.name">total_count</stringProp>
-            <stringProp name="Argument.value">320K</stringProp>
+            <stringProp name="Argument.value">100K</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
