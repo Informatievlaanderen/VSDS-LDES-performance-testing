@@ -3,3 +3,4 @@
 /data/epsg/
 /*/tests/.java/
 jmeter.log
+.DS_Store

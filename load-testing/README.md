@@ -6,11 +6,6 @@ Here you can find load tests for:
 ## Initialization
 Before running the tests you need to create the required locations (with the correct permissions):
 
-for the runner:
-```bash
-mkdir -p ./database
-chmod o+w ./database
-```
 for the server:
 ```bash
 mkdir -p ./server/tmp/epsg
