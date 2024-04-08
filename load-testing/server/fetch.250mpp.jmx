@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Fetch Speed Test - 1000 Members / Page">
+      <boolProp name="TestPlan.serialize_threadgroups">true</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Labels">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="members_per_page" elementType="Argument">
+            <stringProp name="Argument.name">members_per_page</stringProp>
+            <stringProp name="Argument.value">250</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="type" elementType="Argument">
+            <stringProp name="Argument.name">type</stringProp>
+            <stringProp name="Argument.value">server-request-fragment</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="component" elementType="Argument">
+            <stringProp name="Argument.name">component</stringProp>
+            <stringProp name="Argument.value">LDES-server</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="ldes_name" elementType="Argument">
+            <stringProp name="Argument.name">ldes_name</stringProp>
+            <stringProp name="Argument.value">observations</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="view_name" elementType="Argument">
+            <stringProp name="Argument.name">view_name</stringProp>
+            <stringProp name="Argument.value">by-page</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="hostname" elementType="Argument">
+            <stringProp name="Argument.name">hostname</stringProp>
+            <stringProp name="Argument.value">ldes-server</stringProp>
+            <stringProp name="Argument.desc">only the hostname, typically localhost or ldes-server</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="port" elementType="Argument">
+            <stringProp name="Argument.name">port</stringProp>
+            <stringProp name="Argument.value">8080</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="total_member_count" elementType="Argument">
+            <stringProp name="Argument.name">total_member_count</stringProp>
+            <stringProp name="Argument.value">100000</stringProp>
+            <stringProp name="Argument.desc"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="total_page_count" elementType="Argument">
+            <stringProp name="Argument.name">total_page_count</stringProp>
+            <stringProp name="Argument.value">400</stringProp>
+            <stringProp name="Argument.desc">total_member_count / members_per_page</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <intProp name="HTTPSampler.connect_timeout">3000</intProp>
+        <intProp name="HTTPSampler.response_timeout">5000</intProp>
+        <stringProp name="HTTPSampler.domain">${hostname}</stringProp>
+        <stringProp name="HTTPSampler.port">${port}</stringProp>
+        <stringProp name="HTTPSampler.contentEncoding">utf8</stringProp>
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="Setup">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </SetupThreadGroup>
+      <hashTree>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">text/turtle</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Setup - create LDES">
+          <stringProp name="HTTPSampler.path">/admin/api/v1/eventstreams</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">@prefix ldes: &lt;https://w3id.org/ldes#&gt; . @prefix tree: &lt;https://w3id.org/tree#&gt;. @prefix dcterms: &lt;http://purl.org/dc/terms/&gt; . @prefix prov: &lt;http://www.w3.org/ns/prov#&gt; . @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; . &lt;/${ldes_name}&gt; a ldes:EventStream ; tree:shape [ a sh:NodeShape; sh:targetClass &lt;https://data.vlaanderen.be/ns/verkeersmetingen#Verkeersmeting&gt; ] ; ldes:timestampPath prov:generatedAtTime ; ldes:versionOfPath dcterms:isVersionOf .</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Setup - create view">
+          <stringProp name="HTTPSampler.path">/admin/api/v1/eventstreams/${ldes_name}/views</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">@prefix tree: &lt;https://w3id.org/tree#&gt;. @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; . @prefix ldes: &lt;https://w3id.org/ldes#&gt; . &lt;/${ldes_name}/${view_name}&gt; a tree:Node ; tree:viewDescription [ a tree:ViewDescription ; tree:fragmentationStrategy () ; tree:pageSize &quot;${members_per_page}&quot;^^xsd:integer ] .</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <stringProp name="LoopController.loops">${total_member_count}</stringProp>
+        </LoopController>
+        <hashTree>
+          <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Counter" enabled="true">
+            <stringProp name="CounterConfig.start">1</stringProp>
+            <stringProp name="CounterConfig.end"></stringProp>
+            <stringProp name="CounterConfig.incr">1</stringProp>
+            <stringProp name="CounterConfig.name">observation</stringProp>
+            <stringProp name="CounterConfig.format"></stringProp>
+            <boolProp name="CounterConfig.per_user">false</boolProp>
+          </CounterConfig>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/n-triples</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Setup - seed LDES" enabled="true">
+            <intProp name="HTTPSampler.concurrentPool">6</intProp>
+            <stringProp name="HTTPSampler.path">/observations</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">_:Bb9083862X2Db7c5X2D4cf8X2Dbc2bX2D2f15f4c9b1f0 &lt;http://purl.org/dc/terms/type&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmMeetInstrumentType/TODO&gt; .&#xd;
+_:Bb9083862X2Db7c5X2D4cf8X2Dbc2bX2D2f15f4c9b1f0 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/ns/sosa/sensor&gt; .&#xd;
+_:Bbb673069X2Dac82X2D4b57X2D964aX2D0dc17e808899 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; &quot;POINT(3.443384828630522E0 5.107680366717121E1)&quot;^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .&#xd;
+_:Bbb673069X2Dac82X2D4b57X2D964aX2D0dc17e808899 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .&#xd;
+_:B0571e676X2Dde36X2D44c2X2D95c7X2Dcd36ce2a5c76 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmetingkenmerk&gt; .&#xd;
+_:B0571e676X2Dde36X2D44c2X2D95c7X2Dcd36ce2a5c76 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmetingkenmerk.kenmerktype&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmVerkeersKenmerkType/plaatsgemiddelde_snelheid&gt; .&#xd;
+_:B0571e676X2Dde36X2D44c2X2D95c7X2Dcd36ce2a5c76 &lt;https://data.vlaanderen.be/ns/verkeersmetingen#voertuigType&gt; &lt;https://data.vlaanderen.be/doc/concept/VkmVoertuigType/vrachtwagen&gt; .&#xd;
+_:B8c72dc9dX2D8331X2D4a7aX2Dab29X2Ded898d9b2a6b &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bd7dcbefcX2Dcbc1X2D433eX2Dae43X2D968b193b225a .&#xd;
+_:B8c72dc9dX2D8331X2D4a7aX2Dab29X2Ded898d9b2a6b &lt;http://def.isotc211.org/iso19156/2011/SamplingPoint#SF_SamplingPoint.shape&gt; _:Ba638f941X2De4bdX2D4637X2D8de4X2De6aaed734611 .&#xd;
+_:B8c72dc9dX2D8331X2D4a7aX2Dab29X2Ded898d9b2a6b &lt;https://data.vlaanderen.be/ns/verkeersmetingen#bemonsterdObject&gt; _:B670d2e0dX2D120bX2D450cX2D9768X2Db727201537e5 .&#xd;
+_:B8c72dc9dX2D8331X2D4a7aX2Dab29X2Ded898d9b2a6b &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#Verkeersmeetpunt&gt; .&#xd;
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/${observation}/truck-velocity#2024-01-01T00:00:00+01:00&gt; &lt;http://purl.org/dc/terms/isVersionOf&gt; &lt;https://verkeerscentrum.be/id/verkeerstellingen/${observation}/truck-velocity&gt; .&#xd;
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/${observation}/truck-velocity#2024-01-01T00:00:00+01:00&gt; &lt;http://www.w3.org/ns/prov#generatedAtTime&gt; &quot;2024-01-01T00:00:00+01:00&quot;^^&lt;http://www.w3.org/2001/XMLSchema#dateTime&gt; .&#xd;
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/${observation}/truck-velocity#2024-01-01T00:00:00+01:00&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#Verkeersmeting&gt; .&#xd;
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/${observation}/truck-velocity#2024-01-01T00:00:00+01:00&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmeting&gt; .&#xd;
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/${observation}/truck-velocity#2024-01-01T00:00:00+01:00&gt; &lt;http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.phenomenonTime&gt; _:B5600cc26X2D54d4X2D4da0X2D9a98X2D95fcddd43660 .&#xd;
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/${observation}/truck-velocity#2024-01-01T00:00:00+01:00&gt; &lt;http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.result&gt; _:B6e9be13cX2D9147X2D458dX2DbfcfX2D2d489eefcf76 .&#xd;
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/${observation}/truck-velocity#2024-01-01T00:00:00+01:00&gt; &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeerssnelheidsmeting.geobserveerdKenmerk&gt; _:B0571e676X2Dde36X2D44c2X2D95c7X2Dcd36ce2a5c76 .&#xd;
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/${observation}/truck-velocity#2024-01-01T00:00:00+01:00&gt; &lt;https://data.vlaanderen.be/ns/verkeersmetingen#geobserveerdObject&gt; _:B8c72dc9dX2D8331X2D4a7aX2Dab29X2Ded898d9b2a6b .&#xd;
+&lt;https://verkeerscentrum.be/id/verkeerstellingen/${observation}/truck-velocity#2024-01-01T00:00:00+01:00&gt; &lt;http://www.w3.org/ns/sosa/madeBySensor&gt; _:Bb9083862X2Db7c5X2D4cf8X2Dbc2bX2D2f15f4c9b1f0 .&#xd;
+_:Ba341716fX2D7ba3X2D4fdeX2Db87aX2De8b67dd67103 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; &quot;LINESTRING (3.444080404972583 51.07601791071558, 3.443520053954542 51.07671482653927, 3.443384828630522 51.07680366717121)&quot;^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .&#xd;
+_:Ba341716fX2D7ba3X2D4fdeX2Db87aX2De8b67dd67103 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#LineString&gt; .&#xd;
+_:Bd7dcbefcX2Dcbc1X2D433eX2Dae43X2D968b193b225a &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B688b284cX2D1664X2D427fX2D9a97X2D1730d07da455 .&#xd;
+_:Bd7dcbefcX2Dcbc1X2D433eX2Dae43X2D968b193b225a &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .&#xd;
+_:Bd7dcbefcX2Dcbc1X2D433eX2Dae43X2D968b193b225a &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .&#xd;
+_:B0fa893e8X2D0570X2D4735X2Da516X2Dfbb10baeb794 &lt;https://data.vlaanderen.be/ns/netwerk#Knoop.geometrie&gt; _:Bbb673069X2Dac82X2D4b57X2D964aX2D0dc17e808899 .&#xd;
+_:B0fa893e8X2D0570X2D4735X2Da516X2Dfbb10baeb794 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegknoop&gt; .&#xd;
+_:B688b284cX2D1664X2D427fX2D9a97X2D1730d07da455 &lt;https://schema.org/value&gt; &quot;14&quot;^^&lt;http://www.w3.org/2001/XMLSchema#integer&gt; .&#xd;
+_:B688b284cX2D1664X2D427fX2D9a97X2D1730d07da455 &lt;https://schema.org/unitCode&gt; &quot;m&quot;^^&lt;https://w3id.org/cdt/ucumunit&gt; .&#xd;
+_:B688b284cX2D1664X2D427fX2D9a97X2D1730d07da455 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .&#xd;
+_:Bad35d6b6X2D8e71X2D4baeX2D91c4X2D1d51a27edf87 &lt;https://data.vlaanderen.be/ns/netwerk#Knoop.geometrie&gt; _:Bc2ee294dX2Dbc57X2D42ddX2Da2eaX2Df355eb567ace .&#xd;
+_:Bad35d6b6X2D8e71X2D4baeX2D91c4X2D1d51a27edf87 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegknoop&gt; .&#xd;
+_:Be11d58e9X2Dda3aX2D4691X2Dbd28X2Da86b0c2327fa &lt;http://www.w3.org/2006/time#inXSDDateTimeStamp&gt; &quot;2024-01-01T00:00:00+01:00&quot;^^&lt;http://www.w3.org/2001/XMLSchema#dateTime&gt; .&#xd;
+_:Be11d58e9X2Dda3aX2D4691X2Dbd28X2Da86b0c2327fa &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/2006/time#Instant&gt; .&#xd;
+_:B6e9be13cX2D9147X2D458dX2DbfcfX2D2d489eefcf76 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Speed&gt; .&#xd;
+_:B6e9be13cX2D9147X2D458dX2DbfcfX2D2d489eefcf76 &lt;https://schema.org/unitCode&gt; &quot;km/h&quot;^^&lt;https://w3id.org/cdt/ucumunit&gt; .&#xd;
+_:B6e9be13cX2D9147X2D458dX2DbfcfX2D2d489eefcf76 &lt;https://schema.org/value&gt; &quot;62&quot;^^&lt;http://www.w3.org/2001/XMLSchema#integer&gt; .&#xd;
+_:Bc2ee294dX2Dbc57X2D42ddX2Da2eaX2Df355eb567ace &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; &quot;POINT(3.444080404972583E0 5.107601791071558E1)&quot;^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .&#xd;
+_:Bc2ee294dX2Dbc57X2D42ddX2Da2eaX2Df355eb567ace &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .&#xd;
+_:B5600cc26X2D54d4X2D4da0X2D9a98X2D95fcddd43660 &lt;http://www.w3.org/2006/time#hasXSDDuration&gt; &quot;PT15M&quot;^^&lt;http://www.w3.org/2001/XMLSchema#duration&gt; .&#xd;
+_:B5600cc26X2D54d4X2D4da0X2D9a98X2D95fcddd43660 &lt;http://www.w3.org/2006/time#hasBeginning&gt; _:Be11d58e9X2Dda3aX2D4691X2Dbd28X2Da86b0c2327fa .&#xd;
+_:B5600cc26X2D54d4X2D4da0X2D9a98X2D95fcddd43660 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/2006/time#TemporalEntity&gt; .&#xd;
+_:B670d2e0dX2D120bX2D450cX2D9768X2Db727201537e5 &lt;https://data.vlaanderen.be/ns/weg#rijrichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/inDirection&gt; .&#xd;
+_:B670d2e0dX2D120bX2D450cX2D9768X2Db727201537e5 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Rijrichting.netwerkreferentieelement&gt; _:B56e84f09X2D89aeX2D4f0fX2Dbd18X2D80ec0e031082 .&#xd;
+_:B670d2e0dX2D120bX2D450cX2D9768X2Db727201537e5 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Rijrichting&gt; .&#xd;
+_:Ba638f941X2De4bdX2D4637X2D8de4X2De6aaed734611 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; &quot;POINT(3.443520053954542E0 5.107671482653927E1)&quot;^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .&#xd;
+_:Ba638f941X2De4bdX2D4637X2D8de4X2De6aaed734611 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#Point&gt; .&#xd;
+_:B56e84f09X2D89aeX2D4f0fX2Dbd18X2D80ec0e031082 &lt;https://data.vlaanderen.be/ns/netwerk#Link.geometriemiddellijn&gt; _:Ba341716fX2D7ba3X2D4fdeX2Db87aX2De8b67dd67103 .&#xd;
+_:B56e84f09X2D89aeX2D4f0fX2Dbd18X2D80ec0e031082 &lt;https://data.vlaanderen.be/ns/netwerk#eindknoop&gt; _:B0fa893e8X2D0570X2D4735X2Da516X2Dfbb10baeb794 .&#xd;
+_:B56e84f09X2D89aeX2D4f0fX2Dbd18X2D80ec0e031082 &lt;https://data.vlaanderen.be/ns/netwerk#beginknoop&gt; _:Bad35d6b6X2D8e71X2D4baeX2D91c4X2D1d51a27edf87 .&#xd;
+_:B56e84f09X2D89aeX2D4f0fX2Dbd18X2D80ec0e031082 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegsegment&gt; .</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+              <boolProp name="ResultCollector.error_logging">false</boolProp>
+              <objProp>
+                <name>saveConfig</name>
+                <value class="SampleSaveConfiguration">
+                  <time>true</time>
+                  <latency>true</latency>
+                  <timestamp>true</timestamp>
+                  <success>true</success>
+                  <label>true</label>
+                  <code>true</code>
+                  <message>true</message>
+                  <threadName>true</threadName>
+                  <dataType>true</dataType>
+                  <encoding>false</encoding>
+                  <assertions>true</assertions>
+                  <subresults>true</subresults>
+                  <responseData>false</responseData>
+                  <samplerData>false</samplerData>
+                  <xml>false</xml>
+                  <fieldNames>true</fieldNames>
+                  <responseHeaders>false</responseHeaders>
+                  <requestHeaders>false</requestHeaders>
+                  <responseDataOnError>false</responseDataOnError>
+                  <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                  <assertionsResultsToSave>0</assertionsResultsToSave>
+                  <bytes>true</bytes>
+                  <sentBytes>true</sentBytes>
+                  <url>true</url>
+                  <threadCounts>true</threadCounts>
+                  <idleTime>true</idleTime>
+                  <connectTime>true</connectTime>
+                </value>
+              </objProp>
+              <stringProp name="filename"></stringProp>
+            </ResultCollector>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Set Fragmentation Start Time" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">vars.put(&quot;fragmentation_starttime&quot;, String.valueOf(System.currentTimeMillis()))</stringProp>
+        </JSR223PreProcessor>
+        <hashTree/>
+        <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While not last page exists" enabled="true">
+          <stringProp name="WhileController.condition">${__groovy(vars.get(&quot;get_last_page_result&quot;) != &quot;200&quot;)}</stringProp>
+        </WhileController>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/n-triples</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Setup - Get Last Page" enabled="true">
+            <stringProp name="HTTPSampler.path">/${ldes_name}/${view_name}?pageNumber=${total_page_count}</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Ignore Failures" enabled="true">
+              <collectionProp name="Asserion.test_strings"/>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">true</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Get Last Page Response Code" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">code</stringProp>
+              <stringProp name="RegexExtractor.refname">get_last_page_result</stringProp>
+              <stringProp name="RegexExtractor.regex">(\d+)</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
+              <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Set Fragmentation End Time" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">if ( vars.get(&quot;get_last_page_result&quot;) == &quot;200&quot;) {
+	vars.put(&quot;fragmentation_endtime&quot;, String.valueOf(System.currentTimeMillis()));
+}
+</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+          </hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Wait in between checks" enabled="true">
+            <stringProp name="ConstantTimer.delay">3000</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <url>true</url>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+          <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <url>true</url>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+          <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <url>true</url>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+        </hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Setup - Fragmentation result writer" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">log.info(&quot;starting fragmentation analysis&quot;);
+log.info(&quot;start: &quot; + vars.get(&quot;fragmentation_starttime&quot;));
+log.info(&quot;end: &quot; + vars.get(&quot;fragmentation_endtime&quot;));
+
+def start = vars.get(&quot;fragmentation_starttime&quot;) as long;
+def end = vars.get(&quot;fragmentation_endtime&quot;) as long;
+def time = end - start;
+def perSecond = ${total_member_count} / time * 1000 as int;
+
+return &quot;\n\t\tFragmentation time: &quot; + time + &quot; ms (&quot; + perSecond + &quot; per second)&quot;;
+</stringProp>
+        </JSR223Sampler>
+        <hashTree>
+          <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>false</time>
+                <latency>false</latency>
+                <timestamp>false</timestamp>
+                <success>false</success>
+                <label>false</label>
+                <code>false</code>
+                <message>false</message>
+                <threadName>false</threadName>
+                <dataType>false</dataType>
+                <encoding>false</encoding>
+                <assertions>false</assertions>
+                <subresults>false</subresults>
+                <responseData>true</responseData>
+                <samplerData>false</samplerData>
+                <xml>true</xml>
+                <fieldNames>false</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+              </value>
+            </objProp>
+            <stringProp name="filename">results/time_interval.xml</stringProp>
+          </ResultCollector>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Test" enabled="true">
+        <boolProp name="ThreadGroup.delayedStart">true</boolProp>
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <longProp name="ThreadGroup.duration">600</longProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">${total_page_count}</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Accept</stringProp>
+              <stringProp name="Header.value">application/n-triples</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Counter" enabled="true">
+          <stringProp name="CounterConfig.start">1</stringProp>
+          <stringProp name="CounterConfig.end"></stringProp>
+          <stringProp name="CounterConfig.incr">1</stringProp>
+          <stringProp name="CounterConfig.name">page</stringProp>
+          <stringProp name="CounterConfig.format"></stringProp>
+          <boolProp name="CounterConfig.per_user">false</boolProp>
+        </CounterConfig>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Test - Fetch ${total_page_count} pages of ${members_per_page} members (1T)" enabled="true">
+          <intProp name="HTTPSampler.concurrentPool">6</intProp>
+          <stringProp name="HTTPSampler.path">/${ldes_name}/${view_name}?pageNumber=${page}</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <url>true</url>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <PostThreadGroup guiclass="PostThreadGroupGui" testclass="PostThreadGroup" testname="Tear Down" enabled="true">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </PostThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Tear Down - Delete LDES" enabled="true">
+          <intProp name="HTTPSampler.response_timeout">15000</intProp>
+          <stringProp name="HTTPSampler.path">/admin/api/v1/eventstreams/${ldes_name}</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">DELETE</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
