@@ -6,6 +6,55 @@ networks:
 
 services:
 
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: performance_testing_prometheus
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--web.enable-lifecycle'
+    expose:
+      - 9090
+    networks:
+      - performance_testing
+
+
+  pyroscope:
+    container_name: performance_testing_pyroscope
+    image: grafana/pyroscope:${PYROSCOPE_TAG:-latest}
+    ports:
+      - ${PYROSCOPE_PORT:-4040}:4040
+    networks:
+      - performance_testing
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://pyroscope:4040/ready"]
+      interval: 12s
+      timeout: 3s
+      retries: 20
+
+
+  grafana:
+    container_name: performance_testing_grafana
+    image: grafana/grafana:${GRAFANA_TAG:-main}
+    environment:
+      - GF_FEATURE_TOGGLES_ENABLE=flameGraph
+    ports:
+      - ${GRAFANA_PORT:-3000}:3000
+    networks:
+      - performance_testing
+    depends_on:
+      - pyroscope
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://grafana:3000/api/health"]
+      interval: 12s
+      timeout: 3s
+      retries: 20
+
+
   jmeter-runner:
     container_name: performance_testing_jmeter-runner
     image: ghcr.io/informatievlaanderen/jmeter-runner:20240409t1532
