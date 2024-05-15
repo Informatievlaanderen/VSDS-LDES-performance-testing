@@ -57,7 +57,7 @@ services:
 
   jmeter-runner:
     container_name: performance_testing_jmeter-runner
-    image: ghcr.io/informatievlaanderen/jmeter-runner:20240409t1532
+    image: ghcr.io/informatievlaanderen/jmeter-runner:20240424t1412
     networks:
       - performance_testing 
     ports:
@@ -93,7 +93,7 @@ services:
   ldes-server-workbench:
     container_name: performance_testing_ldio-workbench
     # image: ghcr.io/informatievlaanderen/ldi-orchestrator:latest
-    image: ldes/ldi-orchestrator:${LDI_ORCHESTRATOR_TAG:-2.5.0-SNAPSHOT}
+    image: ldes/ldi-orchestrator:${LDI_ORCHESTRATOR_TAG:-2.5.1-SNAPSHOT}
     networks:
       - performance_testing
     ports:
