@@ -582,7 +582,7 @@ return &quot;\n\t\tFragmentation time: &quot; + time + &quot; ms (&quot; + perSe
       </PostThreadGroup>
       <hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Tear Down - Delete LDES" enabled="true">
-          <intProp name="HTTPSampler.response_timeout">15000</intProp>
+          <intProp name="HTTPSampler.response_timeout">90000</intProp>
           <stringProp name="HTTPSampler.path">/admin/api/v1/eventstreams/${ldes_name}</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <stringProp name="HTTPSampler.method">DELETE</stringProp>
