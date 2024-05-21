@@ -132,8 +132,18 @@
             </collectionProp>
           </elementProp>
         </HTTPSamplerProxy>
-        <hashTree/>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+        <hashTree>
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">vars.put(&quot;starttime&quot;, String.valueOf(System.currentTimeMillis()));
+</stringProp>
+          </JSR223PostProcessor>
+          <hashTree/>
+        </hashTree>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
           <stringProp name="LoopController.loops">${total_member_count}</stringProp>
         </LoopController>
         <hashTree>
@@ -155,7 +165,7 @@
             </collectionProp>
           </HeaderManager>
           <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Setup - seed LDES" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Setup - seed LDES">
             <intProp name="HTTPSampler.concurrentPool">6</intProp>
             <stringProp name="HTTPSampler.path">/observations</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
@@ -222,7 +232,7 @@ _:B56e84f09X2D89aeX2D4f0fX2Dbd18X2D80ec0e031082 &lt;http://www.w3.org/1999/02/22
             <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+            <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report">
               <boolProp name="ResultCollector.error_logging">false</boolProp>
               <objProp>
                 <name>saveConfig</name>
@@ -261,15 +271,15 @@ _:B56e84f09X2D89aeX2D4f0fX2Dbd18X2D80ec0e031082 &lt;http://www.w3.org/1999/02/22
             <hashTree/>
           </hashTree>
         </hashTree>
-        <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Set Fragmentation Start Time" enabled="true">
-          <stringProp name="scriptLanguage">groovy</stringProp>
-          <stringProp name="parameters"></stringProp>
-          <stringProp name="filename"></stringProp>
+        <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor">
           <stringProp name="cacheKey">true</stringProp>
-          <stringProp name="script">vars.put(&quot;fragmentation_starttime&quot;, String.valueOf(System.currentTimeMillis()))</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">vars.put(&quot;ingest_endtime&quot;, String.valueOf(System.currentTimeMillis()));</stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
         </JSR223PreProcessor>
         <hashTree/>
-        <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While not last page exists" enabled="true">
+        <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While not last page exists">
           <stringProp name="WhileController.condition">${__groovy(vars.get(&quot;get_last_page_result&quot;) != &quot;200&quot;)}</stringProp>
         </WhileController>
         <hashTree>
@@ -282,7 +292,7 @@ _:B56e84f09X2D89aeX2D4f0fX2Dbd18X2D80ec0e031082 &lt;http://www.w3.org/1999/02/22
             </collectionProp>
           </HeaderManager>
           <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Setup - Get Last Page" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Setup - Get Last Page">
             <stringProp name="HTTPSampler.path">/${ldes_name}/${view_name}?pageNumber=${total_page_count}</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
@@ -293,7 +303,7 @@ _:B56e84f09X2D89aeX2D4f0fX2Dbd18X2D80ec0e031082 &lt;http://www.w3.org/1999/02/22
             </elementProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Ignore Failures" enabled="true">
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Ignore Failures">
               <collectionProp name="Asserion.test_strings"/>
               <stringProp name="Assertion.custom_message"></stringProp>
               <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
@@ -301,7 +311,7 @@ _:B56e84f09X2D89aeX2D4f0fX2Dbd18X2D80ec0e031082 &lt;http://www.w3.org/1999/02/22
               <intProp name="Assertion.test_type">16</intProp>
             </ResponseAssertion>
             <hashTree/>
-            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Get Last Page Response Code" enabled="true">
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Get Last Page Response Code">
               <stringProp name="RegexExtractor.useHeaders">code</stringProp>
               <stringProp name="RegexExtractor.refname">get_last_page_result</stringProp>
               <stringProp name="RegexExtractor.regex">(\d+)</stringProp>
@@ -311,7 +321,7 @@ _:B56e84f09X2D89aeX2D4f0fX2Dbd18X2D80ec0e031082 &lt;http://www.w3.org/1999/02/22
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
-            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Set Fragmentation End Time" enabled="true">
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Set Fragmentation End Time">
               <stringProp name="scriptLanguage">groovy</stringProp>
               <stringProp name="parameters"></stringProp>
               <stringProp name="filename"></stringProp>
@@ -439,25 +449,25 @@ _:B56e84f09X2D89aeX2D4f0fX2Dbd18X2D80ec0e031082 &lt;http://www.w3.org/1999/02/22
           </ResultCollector>
           <hashTree/>
         </hashTree>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Setup - Fragmentation result writer" enabled="true">
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Setup - Fragmentation result writer">
           <stringProp name="scriptLanguage">groovy</stringProp>
           <stringProp name="parameters"></stringProp>
           <stringProp name="filename"></stringProp>
           <stringProp name="cacheKey">true</stringProp>
-          <stringProp name="script">log.info(&quot;starting fragmentation analysis&quot;);
-log.info(&quot;start: &quot; + vars.get(&quot;fragmentation_starttime&quot;));
-log.info(&quot;end: &quot; + vars.get(&quot;fragmentation_endtime&quot;));
+          <stringProp name="script">def start = vars.get(&quot;starttime&quot;) as long;
+def ingest_end = vars.get(&quot;ingest_endtime&quot;) as long;
+def fragmentation_end = vars.get(&quot;fragmentation_endtime&quot;) as long;
 
-def start = vars.get(&quot;fragmentation_starttime&quot;) as long;
-def end = vars.get(&quot;fragmentation_endtime&quot;) as long;
-def time = end - start;
-def perSecond = ${total_member_count} / time * 1000 as int;
+def ingest_time = ingest_end - start;
+def ingestedPerSecond = ${total_member_count} / ingest_time * 1000 as int;
+def fragmentation_time = fragmentation_end - start;
+def fragmentedPerSecond = ${total_member_count} / fragmentation_time * 1000 as int;
 
-return &quot;\n\t\tFragmentation time: &quot; + time + &quot; ms (&quot; + perSecond + &quot; per second)&quot;;
+return &quot;\n\t\tIngest time: &quot; + ingest_time + &quot; ms (&quot; + ingestedPerSecond + &quot; per second)&quot; + &quot;\n\t\tFragmentation time: &quot; + fragmentation_time + &quot; ms (&quot; + fragmentedPerSecond + &quot; per second)&quot;;
 </stringProp>
         </JSR223Sampler>
         <hashTree>
-          <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer" enabled="true">
+          <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer">
             <boolProp name="ResultCollector.error_logging">false</boolProp>
             <objProp>
               <name>saveConfig</name>
@@ -485,12 +495,12 @@ return &quot;\n\t\tFragmentation time: &quot; + time + &quot; ms (&quot; + perSe
                 <assertionsResultsToSave>0</assertionsResultsToSave>
               </value>
             </objProp>
-            <stringProp name="filename">results/time_interval.xml</stringProp>
+            <stringProp name="filename">stats.xml</stringProp>
           </ResultCollector>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Test" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Test">
         <boolProp name="ThreadGroup.delayedStart">true</boolProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <longProp name="ThreadGroup.duration">600</longProp>
@@ -520,7 +530,7 @@ return &quot;\n\t\tFragmentation time: &quot; + time + &quot; ms (&quot; + perSe
           <boolProp name="CounterConfig.per_user">false</boolProp>
         </CounterConfig>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Test - Fetch ${total_page_count} pages of ${members_per_page} members (1T)" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Test - Fetch ${total_page_count} pages of ${members_per_page} members (1T)">
           <intProp name="HTTPSampler.concurrentPool">6</intProp>
           <stringProp name="HTTPSampler.path">/${ldes_name}/${view_name}?pageNumber=${page}</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
@@ -531,7 +541,7 @@ return &quot;\n\t\tFragmentation time: &quot; + time + &quot; ms (&quot; + perSe
           <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+          <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report">
             <boolProp name="ResultCollector.error_logging">false</boolProp>
             <objProp>
               <name>saveConfig</name>
@@ -570,7 +580,7 @@ return &quot;\n\t\tFragmentation time: &quot; + time + &quot; ms (&quot; + perSe
           <hashTree/>
         </hashTree>
       </hashTree>
-      <PostThreadGroup guiclass="PostThreadGroupGui" testclass="PostThreadGroup" testname="Tear Down">
+      <PostThreadGroup guiclass="PostThreadGroupGui" testclass="PostThreadGroup" testname="Tear Down" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -581,7 +591,7 @@ return &quot;\n\t\tFragmentation time: &quot; + time + &quot; ms (&quot; + perSe
         </elementProp>
       </PostThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Tear Down - Delete LDES">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Tear Down - Delete LDES" enabled="true">
           <intProp name="HTTPSampler.response_timeout">90000</intProp>
           <stringProp name="HTTPSampler.path">/admin/api/v1/eventstreams/${ldes_name}</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
