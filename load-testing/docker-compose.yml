@@ -1,26 +1,26 @@
-version: '3.3'
-
 networks:
-  performance_testing:
-    name: performance_testing_network
+  performance-testing:
+    name: performance-testing-network
 
 services:
 
   jmeter-runner:
-    container_name: performance_testing_jmeter-runner
-    image: ghcr.io/informatievlaanderen/jmeter-runner:20240409t1532
+    container_name: performance-testing_jmeter-runner
+    image: ghcr.io/informatievlaanderen/jmeter-runner:20240424t1412
     networks:
-      - performance_testing 
+      - performance-testing 
     ports:
       - 9000:80
     volumes:
       - ${TEST_FOLDER:-./tests}:/home/node/jmeter-runner/tests:rw
       - ${TEMP_FOLDER:-./temp}:/home/node/jmeter-runner/temp:rw
     depends_on:
-      ldes-server:
-        condition: service_healthy
-      ldes-server-workbench:
-        condition: service_healthy
+      # ldes-server:
+      #   condition: service_healthy
+      # ldes-server-workbench:
+      #   condition: service_healthy
+      - ldes-server
+      - ldes-server-workbench
     environment:
       - TEST_FOLDER_BASE=/home/node/jmeter-runner/tests
       - TEMP_FOLDER_BASE=/home/node/jmeter-runner/temp
@@ -42,13 +42,12 @@ services:
           memory: '0.25GB'
 
   ldes-server-workbench:
-    container_name: performance_testing_ldio-workbench
-    # image: ghcr.io/informatievlaanderen/ldi-orchestrator:latest
-    image: ldes/ldi-orchestrator:${LDI_ORCHESTRATOR_TAG:-2.5.0-SNAPSHOT}
+    container_name: performance-testing_ldio-workbench
+    image: ldes/ldi-orchestrator:${LDI_ORCHESTRATOR_TAG:-2.5.1-SNAPSHOT}
     networks:
-      - performance_testing
+      - performance-testing
     ports:
-      - ${LDIO_WORKBENCH_PORT:-8081}:8080
+      - 8081:8080
     volumes:
       - ./workbench/tmp/epsg:/tmp/Databases:rw
       - ./workbench/config.yml:/ldio/application.yml:ro
@@ -68,50 +67,58 @@ services:
           cpus: '0.10'
           memory: '0.25GB'
 
-  ldes-mongodb:
-    container_name: performance_testing_ldes-mongodb
-    image: mongo:${MONGODB_TAG:-latest}
-    networks:
-      - performance_testing
-    ports:
-      - ${MONGODB_PORT:-27017}:27017
-    # volumes:
-    #   - ./database:/data/db:rw
-    deploy:
-      resources:
-        limits:
-          cpus: '1.0'
-          memory: '3.0GB'
-        reservations:
-          cpus: '0.50'
-          memory: '0.5GB'
+  # ldes-mongodb:
+  #   container_name: performance-testing_ldes-mongodb
+  #   image: mongo:${MONGODB_TAG:-latest}
+  #   networks:
+  #     - performance-testing
+  #   ports:
+  #     - 27017:27017
+  #   # volumes:
+  #   #   - ./database:/data/db:rw
+  #   deploy:
+  #     resources:
+  #       limits:
+  #         cpus: '1.0'
+  #         memory: '3.0GB'
+  #       reservations:
+  #         cpus: '0.50'
+  #         memory: '0.5GB'
+
 
   ldes-server:
-    container_name: performance_testing_ldes-server
     # image: ghcr.io/informatievlaanderen/ldes-server:latest
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.3.0-SNAPSHOT} # CrowdScan
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.4.1-SNAPSHOT} # Geomobility
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.10.0-SNAPSHOT} # Telraam
-    image: ldes/ldes-server:${LDES_SERVER_TAG:-2.14.0-SNAPSHOT}
-    # image: ghcr.io/informatievlaanderen/ldes-server:20240405144556
-    # image: ghcr.io/informatievlaanderen/ldes-server:20240405143052
+    # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.14.0-SNAPSHOT}
+    # image: ldes/ldes-server:${LDES_SERVER_TAG:-postgres-exp-1}
+    image: docker.io/vsds/ldes-server:equivalent
+    container_name: performance-testing_ldes-server
     networks:
-      - performance_testing
+      - performance-testing
     ports:
-      - ${LDES_SERVER_PORT:-8080}:8080
+      - 8080:8080
     volumes:
       - ./server/tmp/epsg:/tmp/Databases:rw
       - ./server/config.yml:/application.yml:ro
     depends_on:
-      - ldes-mongodb
+      # - ldes-mongodb
+      - ldes-postgresdb
     healthcheck:
       test: ["CMD", "wget", "-qO-", "http://ldes-server:8080/actuator/health"]
     environment:
       - SIS_DATA=/tmp
       - JAVA_TOOL_OPTIONS=-XX:MaxRAMPercentage=90 -XX:MinRAMPercentage=50
-      - SPRING_DATA_MONGODB_URI=mongodb://ldes-mongodb:27017/performance-testing
+      # - SPRING_DATA_MONGODB_URI=mongodb://ldes-mongodb:27017/performance-testing
       - LDESSERVER_HOSTNAME=http://ldes-server:${LDES_SERVER_PORT:-8080}
       - SERVER_PORT=8080
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://ldes-postgresdb:5432/performance-testing
+      - SPRING_DATASOURCE_USERNAME=admin
+      - SPRING_DATASOURCE_PASSWORD=admin
+      - SPRING_JPA_HIBERNATE_DDLAUTO=update
+      - SPRING_BATCH_JDBC_INITIALIZESCHEMA=always
+      - LDESSERVER_MIGRATEMONGO=false
     deploy:
       resources:
         limits:
@@ -120,3 +127,83 @@ services:
         reservations:
           cpus: '0.50'
           memory: '0.5GB'
+
+
+  ldes-postgresdb:
+    image: postgres:${POSTGRES_TAG:-latest}
+    container_name: performance-testing_ldes-postgresdb
+    shm_size: 128mb
+    networks:
+      - performance-testing
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_USER=admin
+      - POSTGRES_DB=performance-testing
+
+
+  adminer:
+    image: adminer:${POSTGRES_TAG:-latest}
+    container_name: performance-testing_adminer
+    networks:
+      - performance-testing
+    ports:
+      - 8088:8080
+    depends_on:
+      - ldes-postgresdb
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://adminer:8080/"]
+
+
+  # ldes-server:
+  #   image: nginx:${NGINX_TAG:-stable}
+  #   container_name: performance-testing_nginx
+  #   ports:
+  #     - 8080:8080
+  #   volumes:
+  #     - ./load-balancer/nginx.conf:/etc/nginx/conf.d/fwd-ldes-server.conf:ro
+  #   networks:
+  #     - performance-testing
+  #   deploy:
+  #     resources:
+  #       limits:
+  #         cpus: '0.25'
+  #         memory: '0.25GB'
+  #       reservations:
+  #         cpus: '0.125'
+  #         memory: '0.125GB'
+  #   depends_on:
+  #     # ldes-server-backend:
+  #     #   condition: service_healthy
+  #     - ldes-server-backend
+
+
+  # ldes-server-backend:
+  #   image: docker.io/vsds/ldes-server-js:1.0.0
+  #   # container_name: performance-testing_ldes-server
+  #   networks:
+  #     - performance-testing
+  #   # ports:
+  #   #   - 8080:8080
+  #   depends_on:
+  #     - ldes-postgresdb
+  #   # healthcheck:
+  #   #   test: ["CMD", "wget", "-qO-", "http://ldes-server-backend:8080/actuator/health"]
+  #   environment:
+  #     - PORT=8080
+  #     - CONNECTION_URI=postgres://admin:admin@ldes-postgresdb:5432/performance-testing
+  #     - SILENT=${SILENT:-false}
+  #   deploy:
+  #     replicas: 2
+  #     restart_policy:
+  #       max_attempts: 10
+  #       condition: on-failure
+  #       delay: 3s
+  #     resources:
+  #       limits:
+  #         cpus: '3.0'
+  #         memory: '2.0GB'
+  #       reservations:
+  #         cpus: '0.50'
+  #         memory: '0.5GB'
