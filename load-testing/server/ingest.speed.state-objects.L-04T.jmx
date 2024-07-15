@@ -67,7 +67,7 @@ _:B7cc9968f00cab1a2bf0653996b758556 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B7cc9968f00cab1a2bf0653996b758556 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B7cc9968f00cab1a2bf0653996b758556 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B0f1091a818173d1322cc91b13e55b6b9 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B7cc9968f00cab1a2bf0653996b758556 .
-_:B0f1091a818173d1322cc91b13e55b6b9 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B0f1091a818173d1322cc91b13e55b6b9 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B0f1091a818173d1322cc91b13e55b6b9 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B6884ae28914a6d34024689d7c69c848a &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B0f1091a818173d1322cc91b13e55b6b9 .
 _:B5566b990fbf64f3accae951a847d9d26 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -116,7 +116,7 @@ _:B208463541d974b82e9259a5eb95226ba &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B208463541d974b82e9259a5eb95226ba &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B208463541d974b82e9259a5eb95226ba &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B856d896d7e49507925a0764df822ec90 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B208463541d974b82e9259a5eb95226ba .
-_:B856d896d7e49507925a0764df822ec90 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B856d896d7e49507925a0764df822ec90 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B856d896d7e49507925a0764df822ec90 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B3496f67c57e6191c54d94997d61ded03 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B856d896d7e49507925a0764df822ec90 .
 _:B673ab12d4890ddf9017717a9f3898195 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -165,7 +165,7 @@ _:Bec1c0ddb9c8374eaab2cdb15c7dd3fd9 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bec1c0ddb9c8374eaab2cdb15c7dd3fd9 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bec1c0ddb9c8374eaab2cdb15c7dd3fd9 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B95ae16574145477013f6dc29a7bfd1a7 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bec1c0ddb9c8374eaab2cdb15c7dd3fd9 .
-_:B95ae16574145477013f6dc29a7bfd1a7 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B95ae16574145477013f6dc29a7bfd1a7 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B95ae16574145477013f6dc29a7bfd1a7 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B5f89f42a2f8eb7b08315b3665c21b009 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B95ae16574145477013f6dc29a7bfd1a7 .
 _:B01e306689a35badb7cf70082346b7477 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -214,7 +214,7 @@ _:B2f1cd9ba6449f78cc37fda1534004043 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B2f1cd9ba6449f78cc37fda1534004043 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B2f1cd9ba6449f78cc37fda1534004043 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B4214b0e4aa6134cf32c88b1db417ea37 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B2f1cd9ba6449f78cc37fda1534004043 .
-_:B4214b0e4aa6134cf32c88b1db417ea37 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B4214b0e4aa6134cf32c88b1db417ea37 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B4214b0e4aa6134cf32c88b1db417ea37 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B2829a8086b23422d81a97b4a5935a86b &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B4214b0e4aa6134cf32c88b1db417ea37 .
 _:B5617908c0f6ecab6d0bfa8cb1f47a37d &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -263,7 +263,7 @@ _:Bda003a558a3212215b1b9a532b588b63 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bda003a558a3212215b1b9a532b588b63 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bda003a558a3212215b1b9a532b588b63 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B130c4e22fb5e3714b30c8d10e5e72f54 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bda003a558a3212215b1b9a532b588b63 .
-_:B130c4e22fb5e3714b30c8d10e5e72f54 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B130c4e22fb5e3714b30c8d10e5e72f54 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B130c4e22fb5e3714b30c8d10e5e72f54 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Bbca42fd6aafb3e84126528addcb27ca4 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B130c4e22fb5e3714b30c8d10e5e72f54 .
 _:B0fef1ab369aa49a3f05ca11d58044d68 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -312,7 +312,7 @@ _:B6a68fe827a1675cf8e4e2d8049daa90f &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B6a68fe827a1675cf8e4e2d8049daa90f &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B6a68fe827a1675cf8e4e2d8049daa90f &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B283890911e881589e472a05cfb717cbb &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B6a68fe827a1675cf8e4e2d8049daa90f .
-_:B283890911e881589e472a05cfb717cbb &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B283890911e881589e472a05cfb717cbb &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B283890911e881589e472a05cfb717cbb &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B4e079d4df22c076197c2924aba937ece &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B283890911e881589e472a05cfb717cbb .
 _:Bda29350dab4d43b343128aec49e1a0eb &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -361,7 +361,7 @@ _:B9c66d086805626f9f86c6c32000104ec &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B9c66d086805626f9f86c6c32000104ec &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B9c66d086805626f9f86c6c32000104ec &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Bf75c4a28003f29d80f51440707b5db98 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B9c66d086805626f9f86c6c32000104ec .
-_:Bf75c4a28003f29d80f51440707b5db98 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Bf75c4a28003f29d80f51440707b5db98 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Bf75c4a28003f29d80f51440707b5db98 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B16c5c80a80ffea9914adab515b6f104c &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bf75c4a28003f29d80f51440707b5db98 .
 _:B5d37af892c0bde7bda475060a418efd9 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -410,7 +410,7 @@ _:Bc41130d01e9b134d6368029a7851dcc8 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bc41130d01e9b134d6368029a7851dcc8 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bc41130d01e9b134d6368029a7851dcc8 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B28c3c3fcfa5564f854625a5431bfe30d &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bc41130d01e9b134d6368029a7851dcc8 .
-_:B28c3c3fcfa5564f854625a5431bfe30d &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B28c3c3fcfa5564f854625a5431bfe30d &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B28c3c3fcfa5564f854625a5431bfe30d &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B0f07730b81b7c43fb5f238c977e2af2a &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B28c3c3fcfa5564f854625a5431bfe30d .
 _:B2b8e4d6957a8e17fa7587693216ac77b &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -459,7 +459,7 @@ _:B227113a236471014090180b9891c5bbd &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B227113a236471014090180b9891c5bbd &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B227113a236471014090180b9891c5bbd &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B84f2dc0838713000e2b33904f1dbb94c &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B227113a236471014090180b9891c5bbd .
-_:B84f2dc0838713000e2b33904f1dbb94c &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B84f2dc0838713000e2b33904f1dbb94c &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B84f2dc0838713000e2b33904f1dbb94c &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Bb34853c8205abec78884790cd84992dc &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B84f2dc0838713000e2b33904f1dbb94c .
 _:B4a286d64b9bb2499448ccb45578d5051 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -508,7 +508,7 @@ _:Bb1c6e78a67e8c47f2c3ee933216e1a48 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bb1c6e78a67e8c47f2c3ee933216e1a48 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bb1c6e78a67e8c47f2c3ee933216e1a48 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B6d4c3e59e294200245506dfada4d44ed &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bb1c6e78a67e8c47f2c3ee933216e1a48 .
-_:B6d4c3e59e294200245506dfada4d44ed &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B6d4c3e59e294200245506dfada4d44ed &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B6d4c3e59e294200245506dfada4d44ed &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B9cc5a8d4f96d901325b9424a7fbe4ffe &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B6d4c3e59e294200245506dfada4d44ed .
 _:B6145fc6aa8608e791208d7a4570f88e1 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -557,7 +557,7 @@ _:B3c707df43c0d1c088d957a703bf15da9 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B3c707df43c0d1c088d957a703bf15da9 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B3c707df43c0d1c088d957a703bf15da9 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B3f41cff4be202c3f6231ab1d6c7921d1 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B3c707df43c0d1c088d957a703bf15da9 .
-_:B3f41cff4be202c3f6231ab1d6c7921d1 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B3f41cff4be202c3f6231ab1d6c7921d1 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B3f41cff4be202c3f6231ab1d6c7921d1 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Bbf96767a1d0e4f25be8984d9ed777d0f &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B3f41cff4be202c3f6231ab1d6c7921d1 .
 _:B12d7e31e4b13bfe504b3b171a30332f7 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -606,7 +606,7 @@ _:B9c3be0b14474c8152e4a7af90ada7b21 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B9c3be0b14474c8152e4a7af90ada7b21 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B9c3be0b14474c8152e4a7af90ada7b21 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Bf116c06cdd238f28eb12513e2b4d3b4e &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B9c3be0b14474c8152e4a7af90ada7b21 .
-_:Bf116c06cdd238f28eb12513e2b4d3b4e &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Bf116c06cdd238f28eb12513e2b4d3b4e &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Bf116c06cdd238f28eb12513e2b4d3b4e &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Bad269c47bfb66b87e60b531465ab6a51 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bf116c06cdd238f28eb12513e2b4d3b4e .
 _:Be0a19619e5d38e38bb641c1c625ba083 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -655,7 +655,7 @@ _:B482c2950d5cb82a49c0254869dc9683f &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B482c2950d5cb82a49c0254869dc9683f &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B482c2950d5cb82a49c0254869dc9683f &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Bfc496bc844a33f37fea7e8cf14456f51 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B482c2950d5cb82a49c0254869dc9683f .
-_:Bfc496bc844a33f37fea7e8cf14456f51 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Bfc496bc844a33f37fea7e8cf14456f51 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Bfc496bc844a33f37fea7e8cf14456f51 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Bd39b839d9f0039b5e162194c1c196755 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bfc496bc844a33f37fea7e8cf14456f51 .
 _:B9e0ae72e47520a02a743d9cb74036dd4 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -704,7 +704,7 @@ _:B71a481c17bd809812f130cc0c1ce6146 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B71a481c17bd809812f130cc0c1ce6146 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B71a481c17bd809812f130cc0c1ce6146 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B12908f42dfd03f4e6bd27a26b149a659 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B71a481c17bd809812f130cc0c1ce6146 .
-_:B12908f42dfd03f4e6bd27a26b149a659 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B12908f42dfd03f4e6bd27a26b149a659 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B12908f42dfd03f4e6bd27a26b149a659 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Be43a8e9144eb84a12dbb9766b9ec78e3 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B12908f42dfd03f4e6bd27a26b149a659 .
 _:B0551efd41ed75c63af8a8acebdfe0501 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -753,7 +753,7 @@ _:B123b3148fa3af63286d376c605de7bbe &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B123b3148fa3af63286d376c605de7bbe &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B123b3148fa3af63286d376c605de7bbe &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B10ac05f595fe0c2d73d02feb155cbdef &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B123b3148fa3af63286d376c605de7bbe .
-_:B10ac05f595fe0c2d73d02feb155cbdef &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B10ac05f595fe0c2d73d02feb155cbdef &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B10ac05f595fe0c2d73d02feb155cbdef &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Bd50d369dd6864318b66e2face070a4a5 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B10ac05f595fe0c2d73d02feb155cbdef .
 _:B1f55310f6bd88cbdfd0d4dbc2ae099e1 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -802,7 +802,7 @@ _:B2466710e3b87b1822a85ef245fa86f0c &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B2466710e3b87b1822a85ef245fa86f0c &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B2466710e3b87b1822a85ef245fa86f0c &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B55d2b4e2efd74f47cdfa85ffd9ce1571 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B2466710e3b87b1822a85ef245fa86f0c .
-_:B55d2b4e2efd74f47cdfa85ffd9ce1571 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B55d2b4e2efd74f47cdfa85ffd9ce1571 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B55d2b4e2efd74f47cdfa85ffd9ce1571 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B54be128d76828b365687de613bae10f5 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B55d2b4e2efd74f47cdfa85ffd9ce1571 .
 _:Bc28b617aa16e98089b8666e8c6e9846d &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -851,7 +851,7 @@ _:Bc93064adc5643a92af0338fb575cd94a &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bc93064adc5643a92af0338fb575cd94a &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bc93064adc5643a92af0338fb575cd94a &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B0b83a097e2399f8bea7d0ed9c06b0004 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bc93064adc5643a92af0338fb575cd94a .
-_:B0b83a097e2399f8bea7d0ed9c06b0004 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B0b83a097e2399f8bea7d0ed9c06b0004 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B0b83a097e2399f8bea7d0ed9c06b0004 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B744729667c4c168ca5e471d49d203f15 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B0b83a097e2399f8bea7d0ed9c06b0004 .
 _:B70728720082d8cfe985e09a0e4f03b21 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -900,7 +900,7 @@ _:Ba85dbf6a0860be686a8f7399e835fc63 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Ba85dbf6a0860be686a8f7399e835fc63 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Ba85dbf6a0860be686a8f7399e835fc63 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B139cacb1b7a00214b4544a32974a59f0 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Ba85dbf6a0860be686a8f7399e835fc63 .
-_:B139cacb1b7a00214b4544a32974a59f0 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B139cacb1b7a00214b4544a32974a59f0 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B139cacb1b7a00214b4544a32974a59f0 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Bd69e9200f7cefdf654ccc5dc4d82f36c &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B139cacb1b7a00214b4544a32974a59f0 .
 _:B1878309dc5966377aef338168d38f4f5 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -949,7 +949,7 @@ _:B07281456ddc301a56132d52ac9bfb2b8 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B07281456ddc301a56132d52ac9bfb2b8 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B07281456ddc301a56132d52ac9bfb2b8 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B6a56925ef2d937ccc1de9ae6ec6733d7 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B07281456ddc301a56132d52ac9bfb2b8 .
-_:B6a56925ef2d937ccc1de9ae6ec6733d7 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B6a56925ef2d937ccc1de9ae6ec6733d7 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B6a56925ef2d937ccc1de9ae6ec6733d7 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B4472a1e15df3f50db979b22b4cba6994 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B6a56925ef2d937ccc1de9ae6ec6733d7 .
 _:B5b0139759c7a1b1e3c7d891d9b50964b &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -998,7 +998,7 @@ _:Bed1519abeda18e3768f3a751b14fa6de &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bed1519abeda18e3768f3a751b14fa6de &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bed1519abeda18e3768f3a751b14fa6de &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B41fbab0c8322f771dd8dd77b156c25f0 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bed1519abeda18e3768f3a751b14fa6de .
-_:B41fbab0c8322f771dd8dd77b156c25f0 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B41fbab0c8322f771dd8dd77b156c25f0 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B41fbab0c8322f771dd8dd77b156c25f0 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B7b7940d1c6ef5d6c8429a1fa8e24d202 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B41fbab0c8322f771dd8dd77b156c25f0 .
 _:Bae8ab0cec16fa0596499175dc801a6ba &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -1047,7 +1047,7 @@ _:Bee0ec8b0cf12d3c9e4f3bb9cd69b0277 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bee0ec8b0cf12d3c9e4f3bb9cd69b0277 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bee0ec8b0cf12d3c9e4f3bb9cd69b0277 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Bfc2d9fc52582f9524b2b2729861ff483 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bee0ec8b0cf12d3c9e4f3bb9cd69b0277 .
-_:Bfc2d9fc52582f9524b2b2729861ff483 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Bfc2d9fc52582f9524b2b2729861ff483 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Bfc2d9fc52582f9524b2b2729861ff483 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B3240bd506a3179db9001e30f7117215d &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bfc2d9fc52582f9524b2b2729861ff483 .
 _:B2b35769204f3c988cb66f2c59dc9ba2b &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -1096,7 +1096,7 @@ _:Bbe28bfb5c063e13872d8b1330c546f3c &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bbe28bfb5c063e13872d8b1330c546f3c &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bbe28bfb5c063e13872d8b1330c546f3c &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Be48f6d1a1f8aa2913f3626f57917bf71 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bbe28bfb5c063e13872d8b1330c546f3c .
-_:Be48f6d1a1f8aa2913f3626f57917bf71 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Be48f6d1a1f8aa2913f3626f57917bf71 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Be48f6d1a1f8aa2913f3626f57917bf71 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B7c693615632b4645602bd176b8b36798 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Be48f6d1a1f8aa2913f3626f57917bf71 .
 _:B9785bcaea20123ffc8bbe1224d3e62ac &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -1145,7 +1145,7 @@ _:B2f983741b8071845377891c8083b4934 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B2f983741b8071845377891c8083b4934 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B2f983741b8071845377891c8083b4934 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Bb4aaaa30f29f4dc8f89c766d01409fd3 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B2f983741b8071845377891c8083b4934 .
-_:Bb4aaaa30f29f4dc8f89c766d01409fd3 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Bb4aaaa30f29f4dc8f89c766d01409fd3 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Bb4aaaa30f29f4dc8f89c766d01409fd3 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Bc36f528db7690148f16d469450cef486 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bb4aaaa30f29f4dc8f89c766d01409fd3 .
 _:B1f26c682d39db6339ab29c5562136ec5 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -1194,7 +1194,7 @@ _:B51b7e424e29fefe3f6a713c03f9ce5c8 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B51b7e424e29fefe3f6a713c03f9ce5c8 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B51b7e424e29fefe3f6a713c03f9ce5c8 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B24243206196ff4d5eab85775fdc15888 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B51b7e424e29fefe3f6a713c03f9ce5c8 .
-_:B24243206196ff4d5eab85775fdc15888 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B24243206196ff4d5eab85775fdc15888 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B24243206196ff4d5eab85775fdc15888 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B6958434c2e447e80c4c3a0b85bfb5b62 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B24243206196ff4d5eab85775fdc15888 .
 _:B23bbcda22ff0b63d19156b4670f6b560 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -1243,7 +1243,7 @@ _:Bd8e988960bf7c218ce9b6d826adf4485 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bd8e988960bf7c218ce9b6d826adf4485 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bd8e988960bf7c218ce9b6d826adf4485 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B813e33a398d83f9170b77888b66022d8 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bd8e988960bf7c218ce9b6d826adf4485 .
-_:B813e33a398d83f9170b77888b66022d8 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B813e33a398d83f9170b77888b66022d8 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B813e33a398d83f9170b77888b66022d8 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Be5c9a93b38f44f33f3760bad33f34ee4 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B813e33a398d83f9170b77888b66022d8 .
 _:B69697063a8a3577d07db4ecd5fae2716 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -1292,7 +1292,7 @@ _:Ba7579eff2d1aec14200f8ecaf3bafd6a &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Ba7579eff2d1aec14200f8ecaf3bafd6a &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Ba7579eff2d1aec14200f8ecaf3bafd6a &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Bb6b11677b62bfdcf4805bec18deb81d5 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Ba7579eff2d1aec14200f8ecaf3bafd6a .
-_:Bb6b11677b62bfdcf4805bec18deb81d5 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Bb6b11677b62bfdcf4805bec18deb81d5 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Bb6b11677b62bfdcf4805bec18deb81d5 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B1cc536a9e54a4cf14d2904901bc83a26 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bb6b11677b62bfdcf4805bec18deb81d5 .
 _:B922254c27412d8e9447c9ecf46943343 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -1341,7 +1341,7 @@ _:Bb4145bcbd63857eff279815d9ec5303c &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bb4145bcbd63857eff279815d9ec5303c &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bb4145bcbd63857eff279815d9ec5303c &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B7f57f617ecb4dbadfae3d76e5b2e95d8 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bb4145bcbd63857eff279815d9ec5303c .
-_:B7f57f617ecb4dbadfae3d76e5b2e95d8 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B7f57f617ecb4dbadfae3d76e5b2e95d8 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B7f57f617ecb4dbadfae3d76e5b2e95d8 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B2ba68c384158190f1948bb20305d38f7 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B7f57f617ecb4dbadfae3d76e5b2e95d8 .
 _:B695ca3da401b8a0ecc82995a0bdb1fb8 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -1390,7 +1390,7 @@ _:B7f7827f206fe979708036570e4b4b710 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B7f7827f206fe979708036570e4b4b710 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B7f7827f206fe979708036570e4b4b710 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B1bfaf91e63cdf864a782bc4e9d8cce6e &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B7f7827f206fe979708036570e4b4b710 .
-_:B1bfaf91e63cdf864a782bc4e9d8cce6e &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B1bfaf91e63cdf864a782bc4e9d8cce6e &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B1bfaf91e63cdf864a782bc4e9d8cce6e &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B0c86084b1439c431f26370a60d9c12d9 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B1bfaf91e63cdf864a782bc4e9d8cce6e .
 _:Bc6fbfdeda754763b2e2bec120416f7c9 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -1439,7 +1439,7 @@ _:B569c6beac4c2169e4c1d973228224cb6 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B569c6beac4c2169e4c1d973228224cb6 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B569c6beac4c2169e4c1d973228224cb6 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B2833c09be2a117bcfa91c952fe041318 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B569c6beac4c2169e4c1d973228224cb6 .
-_:B2833c09be2a117bcfa91c952fe041318 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B2833c09be2a117bcfa91c952fe041318 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B2833c09be2a117bcfa91c952fe041318 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B3e329bcd7ee9c3b16bc0baa5786a27bb &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B2833c09be2a117bcfa91c952fe041318 .
 _:B0485d66d373d7ae98247147ad446f1cd &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -1488,7 +1488,7 @@ _:Bfa79613b4c220ce579f812155b3c02c2 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bfa79613b4c220ce579f812155b3c02c2 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bfa79613b4c220ce579f812155b3c02c2 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Bf9c07dd03bb680dd80267009f058672c &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bfa79613b4c220ce579f812155b3c02c2 .
-_:Bf9c07dd03bb680dd80267009f058672c &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Bf9c07dd03bb680dd80267009f058672c &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Bf9c07dd03bb680dd80267009f058672c &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Ba1a9c9b50e4e8ebf7ff1bb5386a5090b &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bf9c07dd03bb680dd80267009f058672c .
 _:Bec2c928cac8b0b9caf6e36e693b944a0 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -1537,7 +1537,7 @@ _:B28f9840c16dc8c70830afb8bb63cdf0f &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B28f9840c16dc8c70830afb8bb63cdf0f &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B28f9840c16dc8c70830afb8bb63cdf0f &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B7414787f8490eafd85b059e4ce135765 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B28f9840c16dc8c70830afb8bb63cdf0f .
-_:B7414787f8490eafd85b059e4ce135765 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B7414787f8490eafd85b059e4ce135765 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B7414787f8490eafd85b059e4ce135765 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Bc40671ce791c2dde42cab2913cb67e06 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B7414787f8490eafd85b059e4ce135765 .
 _:B4526d6746ed048083be406e57bbf4786 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -1586,7 +1586,7 @@ _:B07dc475207642de49c139a93405c50ec &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B07dc475207642de49c139a93405c50ec &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B07dc475207642de49c139a93405c50ec &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Ba18f427e5b5d95e9266b67fc16e14b33 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B07dc475207642de49c139a93405c50ec .
-_:Ba18f427e5b5d95e9266b67fc16e14b33 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Ba18f427e5b5d95e9266b67fc16e14b33 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Ba18f427e5b5d95e9266b67fc16e14b33 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Bd67aa71cde5fbd8fca348b020b98e2bf &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Ba18f427e5b5d95e9266b67fc16e14b33 .
 _:Ba62de49b5459308c452eb41b4e6d389b &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -1635,7 +1635,7 @@ _:B8b9b77078e5e596e871ac63e216dc469 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B8b9b77078e5e596e871ac63e216dc469 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B8b9b77078e5e596e871ac63e216dc469 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Bcfbb336ebe3f5a27fe3280742461f836 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B8b9b77078e5e596e871ac63e216dc469 .
-_:Bcfbb336ebe3f5a27fe3280742461f836 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Bcfbb336ebe3f5a27fe3280742461f836 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Bcfbb336ebe3f5a27fe3280742461f836 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Be477ac102b3289a5283163d8951bf2f9 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bcfbb336ebe3f5a27fe3280742461f836 .
 _:B489575502cee4c757d58fb1107126a3a &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -1684,7 +1684,7 @@ _:Bbdbb84de3e23c01ef5f725d5b3b95fc5 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bbdbb84de3e23c01ef5f725d5b3b95fc5 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bbdbb84de3e23c01ef5f725d5b3b95fc5 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B1424e17e22044b0d20426d4eb998fb5b &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bbdbb84de3e23c01ef5f725d5b3b95fc5 .
-_:B1424e17e22044b0d20426d4eb998fb5b &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B1424e17e22044b0d20426d4eb998fb5b &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B1424e17e22044b0d20426d4eb998fb5b &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Bb7f7fbc943a7f462ec23d0e8091db03d &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B1424e17e22044b0d20426d4eb998fb5b .
 _:B9966ada451d24348fbceb80ad0e7e3e8 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -1733,7 +1733,7 @@ _:Bed5bf4b6aeb6b01401fd325750c7ab4d &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bed5bf4b6aeb6b01401fd325750c7ab4d &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bed5bf4b6aeb6b01401fd325750c7ab4d &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B0668335d792dddb3afc3fd6b0c37b87b &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bed5bf4b6aeb6b01401fd325750c7ab4d .
-_:B0668335d792dddb3afc3fd6b0c37b87b &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B0668335d792dddb3afc3fd6b0c37b87b &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B0668335d792dddb3afc3fd6b0c37b87b &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B4b0ab965cb60ddded832961e78597429 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B0668335d792dddb3afc3fd6b0c37b87b .
 _:B7235fd589e85f7d8b098ce001db820a4 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -1782,7 +1782,7 @@ _:B06a18f50ea8283b1b7c483335ed1443f &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B06a18f50ea8283b1b7c483335ed1443f &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B06a18f50ea8283b1b7c483335ed1443f &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Bc68473cf95159d9cd1401798ceda5dab &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B06a18f50ea8283b1b7c483335ed1443f .
-_:Bc68473cf95159d9cd1401798ceda5dab &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Bc68473cf95159d9cd1401798ceda5dab &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Bc68473cf95159d9cd1401798ceda5dab &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Bd401c7dbe9ed2619f2f4fe4d5dcd481a &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bc68473cf95159d9cd1401798ceda5dab .
 _:B09bdbfcf9cedd78a30e263c0baec0e86 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -1831,7 +1831,7 @@ _:Be5cb05363ed7855eee9b6d4c580e9a2f &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Be5cb05363ed7855eee9b6d4c580e9a2f &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Be5cb05363ed7855eee9b6d4c580e9a2f &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B0cf7e1cadfcdf9dacd5d12fa43733136 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Be5cb05363ed7855eee9b6d4c580e9a2f .
-_:B0cf7e1cadfcdf9dacd5d12fa43733136 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B0cf7e1cadfcdf9dacd5d12fa43733136 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B0cf7e1cadfcdf9dacd5d12fa43733136 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Bfab61d233c0decb5a5adb88b192ab2fb &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B0cf7e1cadfcdf9dacd5d12fa43733136 .
 _:B0271b8115a63ab870b5479cd960df75a &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -1880,7 +1880,7 @@ _:B55bddea7b6346a457545998324c55575 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B55bddea7b6346a457545998324c55575 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B55bddea7b6346a457545998324c55575 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B975bdf277382481e285fd48d306bc53d &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B55bddea7b6346a457545998324c55575 .
-_:B975bdf277382481e285fd48d306bc53d &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B975bdf277382481e285fd48d306bc53d &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B975bdf277382481e285fd48d306bc53d &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Bdb0e0bcffe5a6379ac861c50dee32680 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B975bdf277382481e285fd48d306bc53d .
 _:Bcef6b394cef5841a83a504cc231c25f4 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -1929,7 +1929,7 @@ _:B3f00ec2954d97f861ef8382b55554def &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B3f00ec2954d97f861ef8382b55554def &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B3f00ec2954d97f861ef8382b55554def &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B5f3b3efb38ee7a1d234d2bc5753c1098 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B3f00ec2954d97f861ef8382b55554def .
-_:B5f3b3efb38ee7a1d234d2bc5753c1098 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B5f3b3efb38ee7a1d234d2bc5753c1098 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B5f3b3efb38ee7a1d234d2bc5753c1098 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B0efac61b568545e750f2cc7b06a1f767 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B5f3b3efb38ee7a1d234d2bc5753c1098 .
 _:B8d0da346449dedb46f34d8df6e26b193 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -1978,7 +1978,7 @@ _:B34efeaf857af440e756fe226b35472a7 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B34efeaf857af440e756fe226b35472a7 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B34efeaf857af440e756fe226b35472a7 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Bdb205e3c99c7ea27e78ea022c705dd22 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B34efeaf857af440e756fe226b35472a7 .
-_:Bdb205e3c99c7ea27e78ea022c705dd22 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Bdb205e3c99c7ea27e78ea022c705dd22 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Bdb205e3c99c7ea27e78ea022c705dd22 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B469eea4d2951be4fcbe996fe5dabbac4 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bdb205e3c99c7ea27e78ea022c705dd22 .
 _:B5a02164640295e780b65481649cc8183 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -2027,7 +2027,7 @@ _:B251cfdc3b202ea41552e37e5a7113bd7 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B251cfdc3b202ea41552e37e5a7113bd7 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B251cfdc3b202ea41552e37e5a7113bd7 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Ba376201d030c1baa3eb22e61ec549b63 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B251cfdc3b202ea41552e37e5a7113bd7 .
-_:Ba376201d030c1baa3eb22e61ec549b63 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Ba376201d030c1baa3eb22e61ec549b63 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Ba376201d030c1baa3eb22e61ec549b63 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B6d79c9736b38bd973ca4613bb885d55e &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Ba376201d030c1baa3eb22e61ec549b63 .
 _:B6464239d46597c6a9f0d01422ea9bf45 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -2076,7 +2076,7 @@ _:B6bfb3f0827a62eaf3adc8c3b44a70c62 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B6bfb3f0827a62eaf3adc8c3b44a70c62 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B6bfb3f0827a62eaf3adc8c3b44a70c62 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Bbf130ae5045308752d632c74eaeb46c6 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B6bfb3f0827a62eaf3adc8c3b44a70c62 .
-_:Bbf130ae5045308752d632c74eaeb46c6 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Bbf130ae5045308752d632c74eaeb46c6 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Bbf130ae5045308752d632c74eaeb46c6 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Bd190de2cfd479dd1ffb6a6e8a7262752 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bbf130ae5045308752d632c74eaeb46c6 .
 _:B8aea4303aaff2786097166f50b4860b2 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -2125,7 +2125,7 @@ _:B2b37d131d8232316eec2d9c5a82fb1b0 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B2b37d131d8232316eec2d9c5a82fb1b0 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B2b37d131d8232316eec2d9c5a82fb1b0 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B12728e7f5f1ceb45fe12e1a0d643e0ec &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B2b37d131d8232316eec2d9c5a82fb1b0 .
-_:B12728e7f5f1ceb45fe12e1a0d643e0ec &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B12728e7f5f1ceb45fe12e1a0d643e0ec &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B12728e7f5f1ceb45fe12e1a0d643e0ec &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Ba68fb6b3f12fd72e738afb6232ad750c &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B12728e7f5f1ceb45fe12e1a0d643e0ec .
 _:Bda9eef68b7a82db52d37f1fa73172dcb &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -2174,7 +2174,7 @@ _:Bde0707baf9b1d8992aa5893c7ca49621 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bde0707baf9b1d8992aa5893c7ca49621 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bde0707baf9b1d8992aa5893c7ca49621 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Bd006ed3b6b2ee38989b1f9b363595290 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bde0707baf9b1d8992aa5893c7ca49621 .
-_:Bd006ed3b6b2ee38989b1f9b363595290 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Bd006ed3b6b2ee38989b1f9b363595290 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Bd006ed3b6b2ee38989b1f9b363595290 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B85c8b662aaf54efe68e7cc92cc9aa110 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bd006ed3b6b2ee38989b1f9b363595290 .
 _:Bc606715058c5e87f9101cf9268edda29 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -2223,7 +2223,7 @@ _:B7237f81e39768ab2496fd867d01e02f6 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B7237f81e39768ab2496fd867d01e02f6 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B7237f81e39768ab2496fd867d01e02f6 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B268e01b9f278fe55aa94539c9412ddb6 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B7237f81e39768ab2496fd867d01e02f6 .
-_:B268e01b9f278fe55aa94539c9412ddb6 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B268e01b9f278fe55aa94539c9412ddb6 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B268e01b9f278fe55aa94539c9412ddb6 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B58ec1b1c5048784361295d3ca74a3867 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B268e01b9f278fe55aa94539c9412ddb6 .
 _:B7f510f61be6e81f73b6bc223299569a1 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -2272,7 +2272,7 @@ _:B64f7786334b301e3861a79acb58da41a &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B64f7786334b301e3861a79acb58da41a &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B64f7786334b301e3861a79acb58da41a &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Bb66d0cd629d806fb023c34a61220eecf &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B64f7786334b301e3861a79acb58da41a .
-_:Bb66d0cd629d806fb023c34a61220eecf &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Bb66d0cd629d806fb023c34a61220eecf &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Bb66d0cd629d806fb023c34a61220eecf &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B090be6f5be046b12a6c9986860dae702 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bb66d0cd629d806fb023c34a61220eecf .
 _:B0553d75df699697bc082d0244f02a7c1 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -2321,7 +2321,7 @@ _:B7b46a07ffa13f7e286760c64ccb91d51 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B7b46a07ffa13f7e286760c64ccb91d51 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B7b46a07ffa13f7e286760c64ccb91d51 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B3d7faeeaaa521d412e34d216a48fc0fd &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B7b46a07ffa13f7e286760c64ccb91d51 .
-_:B3d7faeeaaa521d412e34d216a48fc0fd &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B3d7faeeaaa521d412e34d216a48fc0fd &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B3d7faeeaaa521d412e34d216a48fc0fd &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B7a39e4f04ff9ff3c1eef3bccca1edb9e &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B3d7faeeaaa521d412e34d216a48fc0fd .
 _:Bc65858373a6af38ead21a4faf172d463 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -2370,7 +2370,7 @@ _:Bae28b89bba7f5df6afba04fef3d88fc9 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bae28b89bba7f5df6afba04fef3d88fc9 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bae28b89bba7f5df6afba04fef3d88fc9 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B0d871bf1debd67af97137c40707b11f1 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bae28b89bba7f5df6afba04fef3d88fc9 .
-_:B0d871bf1debd67af97137c40707b11f1 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B0d871bf1debd67af97137c40707b11f1 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B0d871bf1debd67af97137c40707b11f1 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B0ef1f3765d25ff3b9aac550becd05259 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B0d871bf1debd67af97137c40707b11f1 .
 _:B61e765da5806d220f72fe65d6625a12b &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -2419,7 +2419,7 @@ _:B20eac06fa25a6f759af736be740dce2b &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B20eac06fa25a6f759af736be740dce2b &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B20eac06fa25a6f759af736be740dce2b &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Bb5b06578695c74f95315fa43cc730bf6 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B20eac06fa25a6f759af736be740dce2b .
-_:Bb5b06578695c74f95315fa43cc730bf6 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Bb5b06578695c74f95315fa43cc730bf6 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Bb5b06578695c74f95315fa43cc730bf6 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Be2f5d8e23ed3f854360102b6d78c5c9b &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bb5b06578695c74f95315fa43cc730bf6 .
 _:Bd0d2301d18b2d9314718ffd50f77d66e &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -2468,7 +2468,7 @@ _:B6033e62559266fe2a7efc5ec12b988f9 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B6033e62559266fe2a7efc5ec12b988f9 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B6033e62559266fe2a7efc5ec12b988f9 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B31d758db7c551acc08fc23166cc2c678 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B6033e62559266fe2a7efc5ec12b988f9 .
-_:B31d758db7c551acc08fc23166cc2c678 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B31d758db7c551acc08fc23166cc2c678 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B31d758db7c551acc08fc23166cc2c678 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Bead394128fbb4c54cb468b90aa8ea70f &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B31d758db7c551acc08fc23166cc2c678 .
 _:B1fea93773dccdda2d2552d2890949eb0 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -2517,7 +2517,7 @@ _:B16466e2e39251b7588418cfabee9e27b &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B16466e2e39251b7588418cfabee9e27b &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B16466e2e39251b7588418cfabee9e27b &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Baca89a1ee171c7c90f7da8f083511a51 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B16466e2e39251b7588418cfabee9e27b .
-_:Baca89a1ee171c7c90f7da8f083511a51 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Baca89a1ee171c7c90f7da8f083511a51 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Baca89a1ee171c7c90f7da8f083511a51 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B4f673b411bd0e79fb1967879fb4485ca &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Baca89a1ee171c7c90f7da8f083511a51 .
 _:Bbbceca05090f16b7fdd8d371108ffd5f &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -2566,7 +2566,7 @@ _:Ba127036092ae5942124b57ba6f78077d &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Ba127036092ae5942124b57ba6f78077d &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Ba127036092ae5942124b57ba6f78077d &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B232860a878dbe79039ba39015e829664 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Ba127036092ae5942124b57ba6f78077d .
-_:B232860a878dbe79039ba39015e829664 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B232860a878dbe79039ba39015e829664 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B232860a878dbe79039ba39015e829664 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B1ad2e4c24a3bcff2d2bb6142553ce281 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B232860a878dbe79039ba39015e829664 .
 _:B0399370b8f8fea53e3a76d5cb58b7502 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -2615,7 +2615,7 @@ _:B578f90e63c2756559a08ba18459b94bb &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B578f90e63c2756559a08ba18459b94bb &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B578f90e63c2756559a08ba18459b94bb &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Bd92138795bfbbbc4d776c643485ba0f3 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B578f90e63c2756559a08ba18459b94bb .
-_:Bd92138795bfbbbc4d776c643485ba0f3 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Bd92138795bfbbbc4d776c643485ba0f3 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Bd92138795bfbbbc4d776c643485ba0f3 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Bfaeca9b2910f482893afe6f20af0e483 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bd92138795bfbbbc4d776c643485ba0f3 .
 _:B1319ac8cddbb61c5efbea6c56583af4d &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -2664,7 +2664,7 @@ _:B03e7a33a83592c66e82e476967ca196c &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B03e7a33a83592c66e82e476967ca196c &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B03e7a33a83592c66e82e476967ca196c &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B7de0cf0e55778cc22135c8312a1e9ce5 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B03e7a33a83592c66e82e476967ca196c .
-_:B7de0cf0e55778cc22135c8312a1e9ce5 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B7de0cf0e55778cc22135c8312a1e9ce5 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B7de0cf0e55778cc22135c8312a1e9ce5 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B30635dee455211a6164d2e36836813c4 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B7de0cf0e55778cc22135c8312a1e9ce5 .
 _:B1321a685b7ad2e6dcb09d7bac77e0282 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -2713,7 +2713,7 @@ _:B4fd857d73335d5e6bc188b0828823e82 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B4fd857d73335d5e6bc188b0828823e82 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B4fd857d73335d5e6bc188b0828823e82 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B5c474de02dc72d438053f85ccafe579d &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B4fd857d73335d5e6bc188b0828823e82 .
-_:B5c474de02dc72d438053f85ccafe579d &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B5c474de02dc72d438053f85ccafe579d &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B5c474de02dc72d438053f85ccafe579d &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B632aa9163e50d449aa71705d0218307b &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B5c474de02dc72d438053f85ccafe579d .
 _:B1d5bd7b1b054ab1306a2743f8e0af844 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -2762,7 +2762,7 @@ _:B5f42971181b31bab2eb3ad2d75cd1094 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B5f42971181b31bab2eb3ad2d75cd1094 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B5f42971181b31bab2eb3ad2d75cd1094 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B62bc334e4e9e3ecd279473f1d0f93cf9 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B5f42971181b31bab2eb3ad2d75cd1094 .
-_:B62bc334e4e9e3ecd279473f1d0f93cf9 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B62bc334e4e9e3ecd279473f1d0f93cf9 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B62bc334e4e9e3ecd279473f1d0f93cf9 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B243e2d41cdc9e873476ad53fd55c7629 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B62bc334e4e9e3ecd279473f1d0f93cf9 .
 _:B930c05b484b491cbf6aec81dcca5b097 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -2811,7 +2811,7 @@ _:Bb0982ebf0057dc95250547b0e21546df &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bb0982ebf0057dc95250547b0e21546df &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bb0982ebf0057dc95250547b0e21546df &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B1ae9ebe3293bc116a8b9614b953efdd2 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bb0982ebf0057dc95250547b0e21546df .
-_:B1ae9ebe3293bc116a8b9614b953efdd2 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B1ae9ebe3293bc116a8b9614b953efdd2 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B1ae9ebe3293bc116a8b9614b953efdd2 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B6b0a36d81410c642f5db6aad9cd98e3d &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B1ae9ebe3293bc116a8b9614b953efdd2 .
 _:B333206087963bc9a2ba9408254d80ff5 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -2860,7 +2860,7 @@ _:B429c453d0a4cb205de3d6564e3864c2c &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B429c453d0a4cb205de3d6564e3864c2c &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B429c453d0a4cb205de3d6564e3864c2c &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Bd43e704f6f36b98add108bb1c1e8ea2b &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B429c453d0a4cb205de3d6564e3864c2c .
-_:Bd43e704f6f36b98add108bb1c1e8ea2b &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Bd43e704f6f36b98add108bb1c1e8ea2b &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Bd43e704f6f36b98add108bb1c1e8ea2b &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B86d73d7606a8a04317f006b9f063f561 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bd43e704f6f36b98add108bb1c1e8ea2b .
 _:B52db745d2f58f2c0559a4d5d8bc07ad9 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -2909,7 +2909,7 @@ _:B95b423526d082cfbf65ea219bbee86c4 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B95b423526d082cfbf65ea219bbee86c4 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B95b423526d082cfbf65ea219bbee86c4 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Bd57f06b124995c85f66e6fa55fa659f7 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B95b423526d082cfbf65ea219bbee86c4 .
-_:Bd57f06b124995c85f66e6fa55fa659f7 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Bd57f06b124995c85f66e6fa55fa659f7 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Bd57f06b124995c85f66e6fa55fa659f7 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Bade54938feb0fef098869effaf4c026b &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bd57f06b124995c85f66e6fa55fa659f7 .
 _:B732d54c4a697915fffa5616898ad4b74 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -2958,7 +2958,7 @@ _:Bfb5e5af3b17e9153f9c9a72c09cd834b &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bfb5e5af3b17e9153f9c9a72c09cd834b &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bfb5e5af3b17e9153f9c9a72c09cd834b &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B3161f75d57b4309a0886fe2e1f092db5 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bfb5e5af3b17e9153f9c9a72c09cd834b .
-_:B3161f75d57b4309a0886fe2e1f092db5 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B3161f75d57b4309a0886fe2e1f092db5 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B3161f75d57b4309a0886fe2e1f092db5 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B7faf9ac9da0d8698a9dda225d03ea7c3 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B3161f75d57b4309a0886fe2e1f092db5 .
 _:Bfcf1fc0edad3ecbb2d04ae4512de5e9c &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -3007,7 +3007,7 @@ _:Bc6706e92544601394196eeae50925b71 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bc6706e92544601394196eeae50925b71 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bc6706e92544601394196eeae50925b71 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B32faedbc7232e1147ec6c00ba7787b57 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bc6706e92544601394196eeae50925b71 .
-_:B32faedbc7232e1147ec6c00ba7787b57 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B32faedbc7232e1147ec6c00ba7787b57 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B32faedbc7232e1147ec6c00ba7787b57 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Bfb223ba7d954bd74b8e2a4467dd6f885 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B32faedbc7232e1147ec6c00ba7787b57 .
 _:B81f669b9fb0fbc798e8e957b42c31a93 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -3056,7 +3056,7 @@ _:B3a59e855d27bb182f3b45de9f916cbd3 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B3a59e855d27bb182f3b45de9f916cbd3 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B3a59e855d27bb182f3b45de9f916cbd3 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Bc474f08c7bbfc8912c468fc0b9fb4996 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B3a59e855d27bb182f3b45de9f916cbd3 .
-_:Bc474f08c7bbfc8912c468fc0b9fb4996 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Bc474f08c7bbfc8912c468fc0b9fb4996 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Bc474f08c7bbfc8912c468fc0b9fb4996 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Bb1400b4bdef8030bfef40470b7680a9b &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bc474f08c7bbfc8912c468fc0b9fb4996 .
 _:B963210365023ed5336db895fcb7deede &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -3105,7 +3105,7 @@ _:Bce2267d38df74dbecdc75a63c14fb19b &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bce2267d38df74dbecdc75a63c14fb19b &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bce2267d38df74dbecdc75a63c14fb19b &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B72df8fa7bc02e674de35c896666d249b &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bce2267d38df74dbecdc75a63c14fb19b .
-_:B72df8fa7bc02e674de35c896666d249b &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B72df8fa7bc02e674de35c896666d249b &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B72df8fa7bc02e674de35c896666d249b &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Bebaae24c90382bb6c7e2d4992cbee7b1 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B72df8fa7bc02e674de35c896666d249b .
 _:B82f8203a2c8fc3943033759c8a6f3745 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -3154,7 +3154,7 @@ _:B1a20246164d3be0fafafde98d59946bb &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B1a20246164d3be0fafafde98d59946bb &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B1a20246164d3be0fafafde98d59946bb &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B6c2326a151bef39fcbe5daff5eadc05e &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B1a20246164d3be0fafafde98d59946bb .
-_:B6c2326a151bef39fcbe5daff5eadc05e &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B6c2326a151bef39fcbe5daff5eadc05e &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B6c2326a151bef39fcbe5daff5eadc05e &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B4ab9218646e3838f9a550e23cae8429e &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B6c2326a151bef39fcbe5daff5eadc05e .
 _:B49fcc34ebf69d5a5a98f0b3cf885ccc7 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -3203,7 +3203,7 @@ _:B34b550d32819ec35286a10ba5dc3b07c &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B34b550d32819ec35286a10ba5dc3b07c &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B34b550d32819ec35286a10ba5dc3b07c &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Ba9f748f7540e636bfbe60e7d73bdc4dd &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B34b550d32819ec35286a10ba5dc3b07c .
-_:Ba9f748f7540e636bfbe60e7d73bdc4dd &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Ba9f748f7540e636bfbe60e7d73bdc4dd &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Ba9f748f7540e636bfbe60e7d73bdc4dd &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Bd6f148de11495ec2b5442a084fc3b516 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Ba9f748f7540e636bfbe60e7d73bdc4dd .
 _:B39745396e1c67f6d15c1229d1f4f9407 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -3252,7 +3252,7 @@ _:Bb8efe70ab33584924efbbe5b87584c1f &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bb8efe70ab33584924efbbe5b87584c1f &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bb8efe70ab33584924efbbe5b87584c1f &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Bc67ab2760c7cce825123576fb88f27ad &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bb8efe70ab33584924efbbe5b87584c1f .
-_:Bc67ab2760c7cce825123576fb88f27ad &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Bc67ab2760c7cce825123576fb88f27ad &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Bc67ab2760c7cce825123576fb88f27ad &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B497ec182a4ad246806deb530c2c09c14 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bc67ab2760c7cce825123576fb88f27ad .
 _:B2d3cc6c974ad29db1fecea49d0d36041 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -3301,7 +3301,7 @@ _:Becb189270f9f271bd286596c27174723 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Becb189270f9f271bd286596c27174723 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Becb189270f9f271bd286596c27174723 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B7b3ab12aef29f4b8dd6328b9ebe5a4c4 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Becb189270f9f271bd286596c27174723 .
-_:B7b3ab12aef29f4b8dd6328b9ebe5a4c4 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B7b3ab12aef29f4b8dd6328b9ebe5a4c4 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B7b3ab12aef29f4b8dd6328b9ebe5a4c4 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B40b3d251907e1f916917fda2ab9212db &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B7b3ab12aef29f4b8dd6328b9ebe5a4c4 .
 _:Bbbec270a84bdcefa85e447d0aa7d4171 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -3350,7 +3350,7 @@ _:B82326b3c5e087d41253b9ee2442578fb &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B82326b3c5e087d41253b9ee2442578fb &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B82326b3c5e087d41253b9ee2442578fb &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B7934a17ec81db8de5e109c6330580006 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B82326b3c5e087d41253b9ee2442578fb .
-_:B7934a17ec81db8de5e109c6330580006 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B7934a17ec81db8de5e109c6330580006 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B7934a17ec81db8de5e109c6330580006 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B95e1ad9f94f131415ad68b9d0f9d4de7 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B7934a17ec81db8de5e109c6330580006 .
 _:Ba4747d0f87f416c9f104f9b25879e975 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -3399,7 +3399,7 @@ _:B18c259ebe1ac54abbbfe6eb8a0b1d92e &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B18c259ebe1ac54abbbfe6eb8a0b1d92e &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B18c259ebe1ac54abbbfe6eb8a0b1d92e &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B75b50c81bbe3d4fe7cda083456d2a51b &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B18c259ebe1ac54abbbfe6eb8a0b1d92e .
-_:B75b50c81bbe3d4fe7cda083456d2a51b &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B75b50c81bbe3d4fe7cda083456d2a51b &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B75b50c81bbe3d4fe7cda083456d2a51b &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B88c5323660be1134d796b22a58d13b3f &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B75b50c81bbe3d4fe7cda083456d2a51b .
 _:Be18e990610a250691ad417e0973aba68 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -3448,7 +3448,7 @@ _:B36c2a53bd200b508e23c3c8bbc517f06 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B36c2a53bd200b508e23c3c8bbc517f06 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B36c2a53bd200b508e23c3c8bbc517f06 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B1739206ce8f719652b326258cdd717f5 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B36c2a53bd200b508e23c3c8bbc517f06 .
-_:B1739206ce8f719652b326258cdd717f5 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B1739206ce8f719652b326258cdd717f5 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B1739206ce8f719652b326258cdd717f5 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B67d4ed9cf6d938b1824b82a49491a168 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B1739206ce8f719652b326258cdd717f5 .
 _:B6c83c2fb9109f9c5657d52560a1ffb6e &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -3497,7 +3497,7 @@ _:Be26d4063b836ffc7513cbf61b0d35e65 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Be26d4063b836ffc7513cbf61b0d35e65 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Be26d4063b836ffc7513cbf61b0d35e65 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B6a81c5c8ec99ac805c14c75e4cae2f53 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Be26d4063b836ffc7513cbf61b0d35e65 .
-_:B6a81c5c8ec99ac805c14c75e4cae2f53 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B6a81c5c8ec99ac805c14c75e4cae2f53 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B6a81c5c8ec99ac805c14c75e4cae2f53 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B90e45f9e88ea786ab43f69a317161735 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B6a81c5c8ec99ac805c14c75e4cae2f53 .
 _:B80f640b693946329546b02f79753fc86 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -3546,7 +3546,7 @@ _:B0f496899fb158c36b438d3597cbd0cb5 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B0f496899fb158c36b438d3597cbd0cb5 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B0f496899fb158c36b438d3597cbd0cb5 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B9c62b8e91db35010affd14597bf51944 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B0f496899fb158c36b438d3597cbd0cb5 .
-_:B9c62b8e91db35010affd14597bf51944 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B9c62b8e91db35010affd14597bf51944 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B9c62b8e91db35010affd14597bf51944 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B3b50e1e251f3231f5d8aa29ca0c3ce1a &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B9c62b8e91db35010affd14597bf51944 .
 _:Ba84aec03f96e18e8fc4e9c970d988cfd &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -3595,7 +3595,7 @@ _:B65e73d571f4946a788573607298c96d4 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B65e73d571f4946a788573607298c96d4 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B65e73d571f4946a788573607298c96d4 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B1fb5ccc516e441f4e2866eff1ec84734 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B65e73d571f4946a788573607298c96d4 .
-_:B1fb5ccc516e441f4e2866eff1ec84734 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B1fb5ccc516e441f4e2866eff1ec84734 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B1fb5ccc516e441f4e2866eff1ec84734 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Bc3b27bfc312cd212206cb2e85ea88b50 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B1fb5ccc516e441f4e2866eff1ec84734 .
 _:Bb62fff576ebd1a3b8e0f2beb62533305 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -3644,7 +3644,7 @@ _:Bc4be676b739ee12c50564c791683ce54 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bc4be676b739ee12c50564c791683ce54 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bc4be676b739ee12c50564c791683ce54 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Bd57ef1445460048087eda0c9e3759e13 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bc4be676b739ee12c50564c791683ce54 .
-_:Bd57ef1445460048087eda0c9e3759e13 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Bd57ef1445460048087eda0c9e3759e13 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Bd57ef1445460048087eda0c9e3759e13 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Be9f7a388140adf0e63dedd993ca81a76 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bd57ef1445460048087eda0c9e3759e13 .
 _:Ba26f027cd9404356404958a987791cf3 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -3693,7 +3693,7 @@ _:B876ddb5732c98c25c8f9cf05e8c9d7a4 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B876ddb5732c98c25c8f9cf05e8c9d7a4 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B876ddb5732c98c25c8f9cf05e8c9d7a4 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Bc27fa933ec66b723a6da0c2434d97eea &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B876ddb5732c98c25c8f9cf05e8c9d7a4 .
-_:Bc27fa933ec66b723a6da0c2434d97eea &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Bc27fa933ec66b723a6da0c2434d97eea &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Bc27fa933ec66b723a6da0c2434d97eea &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B0d046de92824b0e301b32b1129f6557f &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bc27fa933ec66b723a6da0c2434d97eea .
 _:Bb8e202b65fecefce2e6aa30d8a8e96fe &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -3742,7 +3742,7 @@ _:B3e73b525f8736db1e8b24baad8f1036b &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B3e73b525f8736db1e8b24baad8f1036b &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B3e73b525f8736db1e8b24baad8f1036b &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B8c46ce073a9d06ceaca77961cf4d2bc5 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B3e73b525f8736db1e8b24baad8f1036b .
-_:B8c46ce073a9d06ceaca77961cf4d2bc5 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B8c46ce073a9d06ceaca77961cf4d2bc5 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B8c46ce073a9d06ceaca77961cf4d2bc5 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B18ff43967bb73dca016f5cd7fdd91c4f &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B8c46ce073a9d06ceaca77961cf4d2bc5 .
 _:Bf9d1d13f7fac005206c8361407356fa0 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -3791,7 +3791,7 @@ _:Bc95dd8f3c405e7020cd829ef21126c15 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bc95dd8f3c405e7020cd829ef21126c15 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bc95dd8f3c405e7020cd829ef21126c15 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Bc56153335ebf3dadf99e468bbed8445a &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bc95dd8f3c405e7020cd829ef21126c15 .
-_:Bc56153335ebf3dadf99e468bbed8445a &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Bc56153335ebf3dadf99e468bbed8445a &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Bc56153335ebf3dadf99e468bbed8445a &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Ba3bf70ee5916d6bfedd76d3293a1d489 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bc56153335ebf3dadf99e468bbed8445a .
 _:B164624b90da0af4547447a74bf118369 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -3840,7 +3840,7 @@ _:Bb4fe1ba7d23be44aba564691a9ef5ab3 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bb4fe1ba7d23be44aba564691a9ef5ab3 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bb4fe1ba7d23be44aba564691a9ef5ab3 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B44dba1b7d4d4db9da85d42689455e27b &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bb4fe1ba7d23be44aba564691a9ef5ab3 .
-_:B44dba1b7d4d4db9da85d42689455e27b &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B44dba1b7d4d4db9da85d42689455e27b &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B44dba1b7d4d4db9da85d42689455e27b &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Beef9a79d581fbf8d08f5a7c9ee2d149a &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B44dba1b7d4d4db9da85d42689455e27b .
 _:B2c1d3341a65866951500f46b04901a2a &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -3889,7 +3889,7 @@ _:B92083dc8f224f8e2bed29a696ac1cc57 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B92083dc8f224f8e2bed29a696ac1cc57 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B92083dc8f224f8e2bed29a696ac1cc57 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B470c523ed1dc1d4d7873805e3da047be &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B92083dc8f224f8e2bed29a696ac1cc57 .
-_:B470c523ed1dc1d4d7873805e3da047be &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B470c523ed1dc1d4d7873805e3da047be &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B470c523ed1dc1d4d7873805e3da047be &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Bfffb2297650b73b3321318b5c83859f3 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B470c523ed1dc1d4d7873805e3da047be .
 _:B4a65345d84e23add8ded969dea5dec71 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -3938,7 +3938,7 @@ _:Bb940f4ab45ddadf32af412380a90cc56 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bb940f4ab45ddadf32af412380a90cc56 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bb940f4ab45ddadf32af412380a90cc56 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B16ed527b3813e59ef79f70782af01fd1 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bb940f4ab45ddadf32af412380a90cc56 .
-_:B16ed527b3813e59ef79f70782af01fd1 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B16ed527b3813e59ef79f70782af01fd1 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B16ed527b3813e59ef79f70782af01fd1 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B0735852f798e92ac9e36cf4de1c8b65f &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B16ed527b3813e59ef79f70782af01fd1 .
 _:Bfeb931816ec08f225aab375cd2cf60ea &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -3987,7 +3987,7 @@ _:Bc927dae05fc2db9e92aed46baea1e010 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bc927dae05fc2db9e92aed46baea1e010 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bc927dae05fc2db9e92aed46baea1e010 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B26867d25653b6288f9cedc2c4f2f0f90 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bc927dae05fc2db9e92aed46baea1e010 .
-_:B26867d25653b6288f9cedc2c4f2f0f90 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B26867d25653b6288f9cedc2c4f2f0f90 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B26867d25653b6288f9cedc2c4f2f0f90 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B7e910800b31eea8740df5ef9febad52e &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B26867d25653b6288f9cedc2c4f2f0f90 .
 _:B72c48b9728413737f44d1912eb44d986 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -4036,7 +4036,7 @@ _:Bcfac8b582d10a8cd9fb4e247a6397c9b &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bcfac8b582d10a8cd9fb4e247a6397c9b &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bcfac8b582d10a8cd9fb4e247a6397c9b &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B72e9ed0355f61e43dac0bd744d867e8a &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bcfac8b582d10a8cd9fb4e247a6397c9b .
-_:B72e9ed0355f61e43dac0bd744d867e8a &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B72e9ed0355f61e43dac0bd744d867e8a &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B72e9ed0355f61e43dac0bd744d867e8a &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Bf388b61e437183ac080bc0a8f5a60aee &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B72e9ed0355f61e43dac0bd744d867e8a .
 _:Bbf5dc7cb29677e94de09d3db7340ebaa &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -4085,7 +4085,7 @@ _:Bd2624e9bcca34005a644dd328882a777 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bd2624e9bcca34005a644dd328882a777 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bd2624e9bcca34005a644dd328882a777 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B95275a3db90f80fb85ca6ebbba41f366 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bd2624e9bcca34005a644dd328882a777 .
-_:B95275a3db90f80fb85ca6ebbba41f366 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B95275a3db90f80fb85ca6ebbba41f366 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B95275a3db90f80fb85ca6ebbba41f366 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B4a82461af43fb1cfe1fd388a8cb153cf &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B95275a3db90f80fb85ca6ebbba41f366 .
 _:B3f35fbb2cfb8451d40aafe955ffdc5ef &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -4134,7 +4134,7 @@ _:B919d28a62cce5fd062e6dc50c46be142 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B919d28a62cce5fd062e6dc50c46be142 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B919d28a62cce5fd062e6dc50c46be142 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B4641d82cdb12a32040625ed2ff0c810a &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B919d28a62cce5fd062e6dc50c46be142 .
-_:B4641d82cdb12a32040625ed2ff0c810a &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B4641d82cdb12a32040625ed2ff0c810a &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B4641d82cdb12a32040625ed2ff0c810a &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B8019189ee039cbca090dbaaa2b96363a &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B4641d82cdb12a32040625ed2ff0c810a .
 _:B0021e54ac8a10a92d4aa1473fc0224f7 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -4183,7 +4183,7 @@ _:B82b59b318a0b075adb4678e4a86caf71 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B82b59b318a0b075adb4678e4a86caf71 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B82b59b318a0b075adb4678e4a86caf71 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Beaab45dda06159902287bfb59a4120e0 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B82b59b318a0b075adb4678e4a86caf71 .
-_:Beaab45dda06159902287bfb59a4120e0 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Beaab45dda06159902287bfb59a4120e0 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Beaab45dda06159902287bfb59a4120e0 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B41ad14533f3e2eae2aba0ed09d75c9c9 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Beaab45dda06159902287bfb59a4120e0 .
 _:Bb55bb13197c225a321e723c6c404bdba &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -4232,7 +4232,7 @@ _:B2f052cfb881bed62db284e33aaa77104 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B2f052cfb881bed62db284e33aaa77104 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B2f052cfb881bed62db284e33aaa77104 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Bc37b5268ec5445a14f6d019228566322 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B2f052cfb881bed62db284e33aaa77104 .
-_:Bc37b5268ec5445a14f6d019228566322 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Bc37b5268ec5445a14f6d019228566322 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Bc37b5268ec5445a14f6d019228566322 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B78dbfa94f8263b9b5e6f7050efaec343 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bc37b5268ec5445a14f6d019228566322 .
 _:Bb9d38c40be8b7fa01753c43151af9926 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -4281,7 +4281,7 @@ _:B4a9488b29852506874fbba48f5d600fa &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B4a9488b29852506874fbba48f5d600fa &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B4a9488b29852506874fbba48f5d600fa &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Bbc0281924fc664143b00f9fc1d03f878 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B4a9488b29852506874fbba48f5d600fa .
-_:Bbc0281924fc664143b00f9fc1d03f878 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Bbc0281924fc664143b00f9fc1d03f878 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Bbc0281924fc664143b00f9fc1d03f878 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Bf3c8b11b8cbe4da10a39c3d5c11239f0 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bbc0281924fc664143b00f9fc1d03f878 .
 _:B84e67f8967404a985de3d8a66d0f6f47 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -4330,7 +4330,7 @@ _:B076f0566b9e5a4908b97531b11d72f3e &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B076f0566b9e5a4908b97531b11d72f3e &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B076f0566b9e5a4908b97531b11d72f3e &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B7f371736880a8ba23157396883fb4e1c &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B076f0566b9e5a4908b97531b11d72f3e .
-_:B7f371736880a8ba23157396883fb4e1c &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B7f371736880a8ba23157396883fb4e1c &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B7f371736880a8ba23157396883fb4e1c &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B93cab25a3a09688a67e9f99935a78df4 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B7f371736880a8ba23157396883fb4e1c .
 _:B6ef9a575ecc8482649d35cc03948bbb3 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -4379,7 +4379,7 @@ _:B36c1e65d976ba956321d9a6fa078d747 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B36c1e65d976ba956321d9a6fa078d747 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B36c1e65d976ba956321d9a6fa078d747 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B52170ca329e47a545db5c6daf1b8aaba &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B36c1e65d976ba956321d9a6fa078d747 .
-_:B52170ca329e47a545db5c6daf1b8aaba &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B52170ca329e47a545db5c6daf1b8aaba &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B52170ca329e47a545db5c6daf1b8aaba &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B8150b92c136ac6c255a0a8a1539b634c &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B52170ca329e47a545db5c6daf1b8aaba .
 _:Bfabf6e4a1883f5881aadc1bb28ffe3f7 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -4428,7 +4428,7 @@ _:Bbcec8be1f62abfc1d8eb3601179ef7b1 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bbcec8be1f62abfc1d8eb3601179ef7b1 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bbcec8be1f62abfc1d8eb3601179ef7b1 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Bba22f4e30d96add5842d75581989c223 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bbcec8be1f62abfc1d8eb3601179ef7b1 .
-_:Bba22f4e30d96add5842d75581989c223 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Bba22f4e30d96add5842d75581989c223 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Bba22f4e30d96add5842d75581989c223 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B727923bc2f1aba5a6c379b9bfb3aca44 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bba22f4e30d96add5842d75581989c223 .
 _:Be32b74ce83920a8c1ccfb9c9d2e2f4b7 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -4477,7 +4477,7 @@ _:B2f34238c0af81c9dcfb9a20ec1342fe9 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B2f34238c0af81c9dcfb9a20ec1342fe9 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B2f34238c0af81c9dcfb9a20ec1342fe9 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B69b25629c901e3db9198f6d9fb65c670 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B2f34238c0af81c9dcfb9a20ec1342fe9 .
-_:B69b25629c901e3db9198f6d9fb65c670 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B69b25629c901e3db9198f6d9fb65c670 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B69b25629c901e3db9198f6d9fb65c670 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Bf5dea22eaeee03b9df04aaf67a38e453 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B69b25629c901e3db9198f6d9fb65c670 .
 _:B19dc05f90444a99592dd85c13cde1f8d &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -4526,7 +4526,7 @@ _:Bed25aae22aa4ceb4abc7b0944a372cc6 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bed25aae22aa4ceb4abc7b0944a372cc6 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bed25aae22aa4ceb4abc7b0944a372cc6 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Bdf91b1c226d9917c183be83479d46635 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bed25aae22aa4ceb4abc7b0944a372cc6 .
-_:Bdf91b1c226d9917c183be83479d46635 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Bdf91b1c226d9917c183be83479d46635 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Bdf91b1c226d9917c183be83479d46635 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B9847122c624bb2b8b8bcdc39ac381e60 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bdf91b1c226d9917c183be83479d46635 .
 _:B8c563d67ba00870f80ec8a4b0ff93fe4 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -4575,7 +4575,7 @@ _:Bc0091395fe1d9964f8c4e84449a6452d &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bc0091395fe1d9964f8c4e84449a6452d &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bc0091395fe1d9964f8c4e84449a6452d &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Bd30ecf1b6977f25e6a8d8f179a439987 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bc0091395fe1d9964f8c4e84449a6452d .
-_:Bd30ecf1b6977f25e6a8d8f179a439987 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Bd30ecf1b6977f25e6a8d8f179a439987 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Bd30ecf1b6977f25e6a8d8f179a439987 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B8793c1050de7d24229b0b8004a4fe8b2 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Bd30ecf1b6977f25e6a8d8f179a439987 .
 _:B8cc2e0317db2ebaba95ae4c7ff937bb8 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -4624,7 +4624,7 @@ _:B55377fa85947e3bbd63be5bf5940f030 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B55377fa85947e3bbd63be5bf5940f030 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B55377fa85947e3bbd63be5bf5940f030 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B68ac0581ef1ab10eb00de898862e73d0 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B55377fa85947e3bbd63be5bf5940f030 .
-_:B68ac0581ef1ab10eb00de898862e73d0 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B68ac0581ef1ab10eb00de898862e73d0 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B68ac0581ef1ab10eb00de898862e73d0 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B6b177614f423c621ff9542afe75b8395 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B68ac0581ef1ab10eb00de898862e73d0 .
 _:B52ba5e27d76f751b820cf66009156ab0 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -4673,7 +4673,7 @@ _:B1e5d5d777436d1c335c2c1583771139a &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B1e5d5d777436d1c335c2c1583771139a &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B1e5d5d777436d1c335c2c1583771139a &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B9fe9af69c15d9f519036eb096d0c82ff &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B1e5d5d777436d1c335c2c1583771139a .
-_:B9fe9af69c15d9f519036eb096d0c82ff &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B9fe9af69c15d9f519036eb096d0c82ff &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B9fe9af69c15d9f519036eb096d0c82ff &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B103ccb35e5e38ef2091f4e3d701383fe &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B9fe9af69c15d9f519036eb096d0c82ff .
 _:B10bb8f776bcd899d225adb670bae7b61 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -4722,7 +4722,7 @@ _:Bfb6cace5b0c1e1abf703ec703b1822c2 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:Bfb6cace5b0c1e1abf703ec703b1822c2 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:Bfb6cace5b0c1e1abf703ec703b1822c2 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B94b782138b0f9bad4fcd38b5429e4f0a &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:Bfb6cace5b0c1e1abf703ec703b1822c2 .
-_:B94b782138b0f9bad4fcd38b5429e4f0a &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B94b782138b0f9bad4fcd38b5429e4f0a &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B94b782138b0f9bad4fcd38b5429e4f0a &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B0afb249f58018b381bb5062c755b1d32 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B94b782138b0f9bad4fcd38b5429e4f0a .
 _:B24669c20f7fa123f162c4c35f946fd5c &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -4771,7 +4771,7 @@ _:B435c8d40babf636b544cf5924dc486e1 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B435c8d40babf636b544cf5924dc486e1 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B435c8d40babf636b544cf5924dc486e1 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:Babf63c39b87415b0ca55795f7803c48e &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B435c8d40babf636b544cf5924dc486e1 .
-_:Babf63c39b87415b0ca55795f7803c48e &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:Babf63c39b87415b0ca55795f7803c48e &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:Babf63c39b87415b0ca55795f7803c48e &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:Bbb90c0a5a848d1e8da45bef9bd58bbb8 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:Babf63c39b87415b0ca55795f7803c48e .
 _:B0273e7a54ea1ff28eb6871cef773d371 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -4820,7 +4820,7 @@ _:B07ccce8abe565401fda857a1d90c3ca9 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B07ccce8abe565401fda857a1d90c3ca9 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B07ccce8abe565401fda857a1d90c3ca9 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B2a49c0a755d36b66e883a8989008daad &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B07ccce8abe565401fda857a1d90c3ca9 .
-_:B2a49c0a755d36b66e883a8989008daad &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B2a49c0a755d36b66e883a8989008daad &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B2a49c0a755d36b66e883a8989008daad &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B8d69fa8e7efd92f774bc95bad1ff392d &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B2a49c0a755d36b66e883a8989008daad .
 _:B3d85150c5a9e3622f19f8547be9873ea &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -4869,7 +4869,7 @@ _:B375a1726a6e49a77e2a903665a5f33f4 &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B375a1726a6e49a77e2a903665a5f33f4 &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B375a1726a6e49a77e2a903665a5f33f4 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B6036fb56e8066b5f230cdf421ef1bced &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B375a1726a6e49a77e2a903665a5f33f4 .
-_:B6036fb56e8066b5f230cdf421ef1bced &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B6036fb56e8066b5f230cdf421ef1bced &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B6036fb56e8066b5f230cdf421ef1bced &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B8be8c3f89deb997683e448a00b35d8ee &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B6036fb56e8066b5f230cdf421ef1bced .
 _:Bcb685d1d2dbc1b6ec7eb88e001fdff1c &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .
@@ -4918,7 +4918,7 @@ _:B3f51594d4ed6964cbad55adaa73ab88a &lt;https://schema.org/value&gt; "14"^^&lt;h
 _:B3f51594d4ed6964cbad55adaa73ab88a &lt;https://schema.org/unitCode&gt; "m"^^&lt;https://w3id.org/cdt/ucumunit&gt; .
 _:B3f51594d4ed6964cbad55adaa73ab88a &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://def.isotc211.org/iso19103/2015/MeasureTypes#Length&gt; .
 _:B95e13f3607bc5879e448dd3f493b6779 &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B3f51594d4ed6964cbad55adaa73ab88a .
-_:B95e13f3607bc5879e448dd3f493b6779 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .
+_:B95e13f3607bc5879e448dd3f493b6779 &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .
 _:B95e13f3607bc5879e448dd3f493b6779 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .
 _:B30f06bc900a4f22cf11ff9da367b3705 &lt;https://implementatie.data.vlaanderen.be/ns/vsds-verkeersmetingen#Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie&gt; _:B95e13f3607bc5879e448dd3f493b6779 .
 _:Bb46ffb4f779544d4131489f7920ac27e &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; "POINT(3.443520053954542E0 5.107671482653927E1)"^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .

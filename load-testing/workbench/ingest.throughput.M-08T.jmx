@@ -205,7 +205,7 @@ transformers:&#xd;
             iso19156-sp:SF_SamplingPoint.shape [ a sf:Point ; geo:asWKT ?geometryP ] ;&#xd;
             impl:Verkeersmeetpunt.verkeersmeetpuntnetwerkreferentie [ &#xd;
               a dv-netwerk:Puntreferentie ; &#xd;
-              dv-netwerk:toepassingsRichting cl-trt:bothDirection ;&#xd;
+              dv-netwerk:toepassingsRichting cl-trt:bothDirections ;&#xd;
               dv-netwerk:Puntreferentie.opPositie [ &#xd;
                 a iso19103-mt:Length ; schema:unitCode &quot;m&quot;^^cdt:ucumunit ; schema:value ?roadSegmentOffset; &#xd;
               ]&#xd;

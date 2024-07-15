@@ -236,7 +236,7 @@ _:B8c72dc9dX2D8331X2D4a7aX2Dab29X2Ded898d9b2a6b &lt;http://www.w3.org/1999/02/22
 _:Ba341716fX2D7ba3X2D4fdeX2Db87aX2De8b67dd67103 &lt;http://www.opengis.net/ont/geosparql#asWKT&gt; &quot;LINESTRING (3.444080404972583 51.07601791071558, 3.443520053954542 51.07671482653927, 3.443384828630522 51.07680366717121)&quot;^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt; .&#xd;
 _:Ba341716fX2D7ba3X2D4fdeX2Db87aX2De8b67dd67103 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.opengis.net/ont/sf#LineString&gt; .&#xd;
 _:Bd7dcbefcX2Dcbc1X2D433eX2Dae43X2D968b193b225a &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie.opPositie&gt; _:B688b284cX2D1664X2D427fX2D9a97X2D1730d07da455 .&#xd;
-_:Bd7dcbefcX2Dcbc1X2D433eX2Dae43X2D968b193b225a &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirection&gt; .&#xd;
+_:Bd7dcbefcX2Dcbc1X2D433eX2Dae43X2D968b193b225a &lt;https://data.vlaanderen.be/ns/netwerk#toepassingsRichting&gt; &lt;https://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections&gt; .&#xd;
 _:Bd7dcbefcX2Dcbc1X2D433eX2Dae43X2D968b193b225a &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/netwerk#Puntreferentie&gt; .&#xd;
 _:B0fa893e8X2D0570X2D4735X2Da516X2Dfbb10baeb794 &lt;https://data.vlaanderen.be/ns/netwerk#Knoop.geometrie&gt; _:Bbb673069X2Dac82X2D4b57X2D964aX2D0dc17e808899 .&#xd;
 _:B0fa893e8X2D0570X2D4735X2Da516X2Dfbb10baeb794 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://data.vlaanderen.be/ns/weg#Wegknoop&gt; .&#xd;
