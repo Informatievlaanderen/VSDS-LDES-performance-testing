@@ -172,3 +172,22 @@ services:
         reservations:
           cpus: '0.50'
           memory: '0.5GB'
+
+  adminer:
+    image: adminer:${ADMINER_TAG:-latest}
+    container_name: performance_testing_adminer
+    depends_on:
+      - ldes-postgres
+    ports:
+      - 8085:8080
+    networks:
+      - performance_testing
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: '0.25GB'
+        reservations:
+          cpus: '0.125'
+          memory: '0.125GB'
+          
