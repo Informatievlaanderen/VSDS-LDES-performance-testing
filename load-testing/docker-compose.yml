@@ -90,7 +90,7 @@ services:
 
   load-testing-ldio-workbench:
     container_name: performance_testing_ldio-workbench
-    image: ghcr.io/informatievlaanderen/ldi-orchestrator:20240801083041
+    image: ghcr.io/informatievlaanderen/ldi-orchestrator:20240814211044
     # image: ldes/ldi-orchestrator:${LDI_ORCHESTRATOR_TAG:-2.5.1-SNAPSHOT}
     networks:
       - performance_testing
@@ -143,7 +143,7 @@ services:
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.10.0-SNAPSHOT} # Telraam
 #    image: ldes/ldes-server:${LDES_SERVER_TAG:-2.14.0-SNAPSHOT}
     # image: ghcr.io/informatievlaanderen/ldes-server:20240405144556
-    image: ghcr.io/informatievlaanderen/ldes-server:20240806163334
+    image: ghcr.io/informatievlaanderen/ldes-server:20240814154039
     networks:
       - performance_testing
     ports:
