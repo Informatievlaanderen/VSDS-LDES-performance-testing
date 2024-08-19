@@ -931,7 +931,7 @@ return &quot;\n\t\tReplication time: &quot; + time + &quot; ms (&quot; + perSeco
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Tear Down - Delete LDES" enabled="true">
           <intProp name="HTTPSampler.connect_timeout">3000</intProp>
-          <intProp name="HTTPSampler.response_timeout">90000</intProp>
+          <intProp name="HTTPSampler.response_timeout">180000</intProp>
           <stringProp name="HTTPSampler.domain">${server_hostname}</stringProp>
           <stringProp name="HTTPSampler.port">${server_port}</stringProp>
           <stringProp name="HTTPSampler.path">/admin/api/v1/eventstreams/${ldes_name}</stringProp>
