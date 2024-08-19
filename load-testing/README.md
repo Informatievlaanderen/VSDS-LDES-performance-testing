@@ -30,6 +30,11 @@ To spin up the systems:
 docker compose up -d
 ```
 
+## View Tests
+```bash
+curl http://localhost:9000/test
+```
+
 ## Stop Systems
 To bring down the systems:
 ```bash
