@@ -185,9 +185,9 @@
         </HTTPSamplerProxy>
         <hashTree>
           <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Get Initial Fragmentation Count" enabled="true">
-            <stringProp name="RegexExtractor.useHeaders">code</stringProp>
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
             <stringProp name="RegexExtractor.refname">get_initial_fragmentation_count</stringProp>
-            <stringProp name="RegexExtractor.regex">TODO (\d+)</stringProp>
+            <stringProp name="RegexExtractor.regex">ldes_server_pagination_members_count[^\s]+\s(\d+)</stringProp>
             <stringProp name="RegexExtractor.template">$1$</stringProp>
             <stringProp name="RegexExtractor.default">0</stringProp>
             <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
@@ -367,7 +367,7 @@ _:B56e84f09X2D89aeX2D4f0fX2Dbd18X2D80ec0e031082 &lt;http://www.w3.org/1999/02/22
             <collectionProp name="HeaderManager.headers">
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Accept</stringProp>
-                <stringProp name="Header.value">application/n-triples</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -384,9 +384,9 @@ _:B56e84f09X2D89aeX2D4f0fX2Dbd18X2D80ec0e031082 &lt;http://www.w3.org/1999/02/22
           </HTTPSamplerProxy>
           <hashTree>
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Get Current Fragmentation Count" enabled="true">
-              <stringProp name="RegexExtractor.useHeaders">code</stringProp>
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
               <stringProp name="RegexExtractor.refname">get_current_fragmentation_count</stringProp>
-              <stringProp name="RegexExtractor.regex">TODO (\d+)</stringProp>
+              <stringProp name="RegexExtractor.regex">ldes_server_pagination_members_count[^\s]+\s(\d+)</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
               <stringProp name="RegexExtractor.default">0</stringProp>
               <boolProp name="RegexExtractor.default_empty_value">false</boolProp>

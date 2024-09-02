@@ -5228,9 +5228,9 @@ return &quot;\n\t\tIngest time: &quot; + delta + &quot; ms (&quot; + perSecond +
         </HTTPSamplerProxy>
         <hashTree>
           <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Get Initial Fragmentation Count" enabled="true">
-            <stringProp name="RegexExtractor.useHeaders">code</stringProp>
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
             <stringProp name="RegexExtractor.refname">get_initial_fragmentation_count</stringProp>
-            <stringProp name="RegexExtractor.regex">TODO (\d+)</stringProp>
+            <stringProp name="RegexExtractor.regex">ldes_server_pagination_members_count[^\s]+\s(\d+)</stringProp>
             <stringProp name="RegexExtractor.template">$1$</stringProp>
             <stringProp name="RegexExtractor.default">0</stringProp>
             <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
@@ -5287,7 +5287,7 @@ log.info(&quot;expected fragmentation count: &quot; + props.get(&quot;expected_f
             <collectionProp name="HeaderManager.headers">
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Accept</stringProp>
-                <stringProp name="Header.value">application/n-triples</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -5304,9 +5304,9 @@ log.info(&quot;expected fragmentation count: &quot; + props.get(&quot;expected_f
           </HTTPSamplerProxy>
           <hashTree>
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Get Current Fragmentation Count" enabled="true">
-              <stringProp name="RegexExtractor.useHeaders">code</stringProp>
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
               <stringProp name="RegexExtractor.refname">get_current_fragmentation_count</stringProp>
-              <stringProp name="RegexExtractor.regex">TODO (\d+)</stringProp>
+              <stringProp name="RegexExtractor.regex">ldes_server_pagination_members_count[^\s]+\s(\d+)</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
               <stringProp name="RegexExtractor.default">0</stringProp>
               <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
