@@ -201,7 +201,7 @@
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="script">def initial_fragmentation_count = vars.get(&quot;get_initial_fragmentation_count&quot;) as long;
 def expected_fragmentation_count = initial_fragmentation_count + ${total_member_count};
-props.put(&quot;expected_fragmentation_count&quot;, expected_fragmentation_count);
+props.put(&quot;expected_fragmentation_count&quot;, String.valueOf(expected_fragmentation_count));
 
 log.info(&quot;initial fragmentation count: &quot; + vars.get(&quot;get_initial_fragmentation_count&quot;));
 log.info(&quot;expected fragmentation count: &quot; + props.get(&quot;expected_fragmentation_count&quot;));</stringProp>
