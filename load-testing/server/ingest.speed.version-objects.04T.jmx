@@ -34,7 +34,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="ldes_definition" elementType="Argument">
             <stringProp name="Argument.name">ldes_definition</stringProp>
-            <stringProp name="Argument.value">@prefix ldes: &lt;https://w3id.org/ldes#&gt; . @prefix tree: &lt;https://w3id.org/tree#&gt;. @prefix dcterms: &lt;http://purl.org/dc/terms/&gt; . @prefix prov: &lt;http://www.w3.org/ns/prov#&gt; . @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; . &lt;/observations&gt; a ldes:EventStream ; tree:shape [ a sh:NodeShape ; sh:targetClass &lt;https://data.vlaanderen.be/ns/verkeersmetingen#Verkeersmeting&gt; ] ; ldes:timestampPath prov:generatedAtTime ; ldes:versionOfPath dcterms:isVersionOf .</stringProp>
+            <stringProp name="Argument.value">@prefix ldes: &lt;https://w3id.org/ldes#&gt; . @prefix tree: &lt;https://w3id.org/tree#&gt;. @prefix dcterms: &lt;http://purl.org/dc/terms/&gt; . @prefix prov: &lt;http://www.w3.org/ns/prov#&gt; . @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; . &lt;/observations&gt; a ldes:EventStream ; tree:shape [ a sh:NodeShape  ] ; ldes:timestampPath prov:generatedAtTime ; ldes:versionOfPath dcterms:isVersionOf .</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="view_definition" elementType="Argument">
@@ -248,7 +248,7 @@
       </PostThreadGroup>
       <hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Tear Down - Delete LDES">
-          <intProp name="HTTPSampler.response_timeout">90000</intProp>
+          <intProp name="HTTPSampler.response_timeout">180000</intProp>
           <stringProp name="HTTPSampler.path">/admin/api/v1/eventstreams/observations</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <stringProp name="HTTPSampler.method">DELETE</stringProp>

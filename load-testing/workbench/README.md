@@ -30,5 +30,5 @@ Several tests are provided to verify the effect of a S(mall), M(edium) and L(arg
 
 To run the large message test in parallel using 8 threads:
 ```bash
-curl -X POST "http://localhost:9000?category=Workbench" -H "Content-Type: application/xml" --data-binary @./throughput.L-08T.jmx
+curl -X POST "http://localhost:9000/test?category=Workbench" -H "Content-Type: application/xml" --data-binary @./throughput.L-08T.jmx
 ```
