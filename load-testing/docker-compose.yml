@@ -66,7 +66,7 @@ services:
     depends_on:
       ldes-server:
         condition: service_healthy
-      load-testing-ldio-workbench:
+      ldio-workbench:
         condition: service_healthy
     environment:
       - TEST_FOLDER_BASE=/home/node/jmeter-runner/tests
@@ -88,7 +88,7 @@ services:
           cpus: '0.1'
           memory: '0.25GB'
 
-  load-testing-ldio-workbench:
+  ldio-workbench:
     container_name: performance_testing_ldio-workbench
     image: ghcr.io/informatievlaanderen/ldi-orchestrator:20240814211044
     # image: ldes/ldi-orchestrator:${LDI_ORCHESTRATOR_TAG:-2.5.1-SNAPSHOT}
@@ -100,7 +100,7 @@ services:
       - ./workbench/tmp/epsg:/tmp/Databases:rw
       - ./workbench/config.yml:/ldio/application.yml:ro
     healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://load-testing-ldio-workbench:8080/actuator/health"]
+      test: ["CMD", "wget", "-qO-", "http://ldio-workbench:8080/actuator/health"]
     environment:
       - SIS_DATA=/tmp
       - JAVA_TOOL_OPTIONS=-XX:MaxRAMPercentage=90 -XX:MinRAMPercentage=50

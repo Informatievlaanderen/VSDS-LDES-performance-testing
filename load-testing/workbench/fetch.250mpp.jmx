@@ -43,7 +43,7 @@
           </elementProp>
           <elementProp name="hostname" elementType="Argument">
             <stringProp name="Argument.name">hostname</stringProp>
-            <stringProp name="Argument.value">load-testing-ldio-workbench</stringProp>
+            <stringProp name="Argument.value">ldio-workbench</stringProp>
             <stringProp name="Argument.desc">only the hostname, typically localhost or ldes-server</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
