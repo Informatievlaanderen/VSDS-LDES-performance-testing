@@ -142,7 +142,7 @@ services:
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.4.1-SNAPSHOT} # Geomobility
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.10.0-SNAPSHOT} # Telraam
     # image: ghcr.io/informatievlaanderen/ldes-server:20240405144556
-    image: ldes/ldes-server:${LDES_SERVER_TAG:-3.3.0-SNAPSHOT} # Telraam
+    image: ldes/ldes-server:${LDES_SERVER_TAG:-3.3.0-SNAPSHOT}
     networks:
       - performance_testing
     ports:
