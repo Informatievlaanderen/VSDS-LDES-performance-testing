@@ -39,7 +39,9 @@ services:
     container_name: performance_testing_grafana
     image: grafana/grafana:${GRAFANA_TAG:-main}
     environment:
-      - GF_FEATURE_TOGGLES_ENABLE=flameGraph
+    # - GF_FEATURE_TOGGLES_ENABLE=flameGraph
+    - GF_SECURITY_ADMIN_USER=${GRAFANA_USER}
+    - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PWD}
     ports:
       - ${GRAFANA_PORT:-3000}:3000
     networks:
@@ -101,11 +103,18 @@ services:
       - ./workbench/config.yml:/ldio/application.yml:ro
     healthcheck:
       test: ["CMD", "wget", "-qO-", "http://load-testing-ldio-workbench-workbench:8080/actuator/health"]
+      interval: 12s
+      timeout: 3s
+      retries: 20
     environment:
       - SIS_DATA=/tmp
       - JAVA_TOOL_OPTIONS=-XX:MaxRAMPercentage=90 -XX:MinRAMPercentage=50
       - SERVER_PORT=8080
       - ORCHESTRATOR_DIRECTORY=/ldio/pipelines
+      - SPRING_CODEC_MAXINMEMORYSIZE=10MB
+      - MANAGEMENT_TRACING_ENABLED=false
+      - MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE=health,info,prometheus
+      - MANAGEMENT_ENDPOINT_HEALTH_SHOWDETAILS=always
     deploy:
       resources:
         limits:
@@ -121,11 +130,17 @@ services:
     ports:
       - 5432:5432
     environment:
-      - POSTGRES_PASSWORD=admin
-      - POSTGRES_USER=admin
-      - POSTGRES_DB=test
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PWD}
     networks:
       - performance_testing
+    healthcheck:
+      test: pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}
+      interval: 10s
+      retries: 15
+      start_period: 30s
+      timeout: 10s
     deploy:
       resources:
         limits:
@@ -151,19 +166,26 @@ services:
       - ./server/tmp/epsg:/tmp/Databases:rw
       - ./server/config.yml:/application.yml:ro
     depends_on:
-      - ldes-postgres
+      ldes-postgres:
+       condition: service_healthy
     healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://ldes-server:8080/actuator/health"]
+      test: wget -qO- http://ldes-server:8080/actuator/health
+      interval: 12s
+      timeout: 3s
+      retries: 20
     environment:
       - SPRING_TASK_SCHEDULING_POOL_SIZE=5
       - LDESSERVER_FRAGMENTATIONCRON=${LDES_SERVER_FRAGMENTATION_CRON:-*/15 * * * * *}
       - SIS_DATA=/tmp
       - JAVA_TOOL_OPTIONS=-XX:MaxRAMPercentage=90 -XX:MinRAMPercentage=50
-      - spring_Datasource_URL=jdbc:postgresql://ldes-postgres:5432/test
-      - SPRING_DATASOURCE_USERNAME=admin
-      - SPRING_DATASOURCE_PASSWORD=admin
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://ldes-postgres:5432/${POSTGRES_DB}
+      - SPRING_DATASOURCE_USERNAME=${POSTGRES_USER}
+      - SPRING_DATASOURCE_PASSWORD=${POSTGRES_PWD}
       - LDESSERVER_HOSTNAME=http://ldes-server:${LDES_SERVER_PORT:-8080}
       - SERVER_PORT=8080
+      - LDESSERVER_RETENTIONCRON=-
+      - LDESSERVER_COMPACTIONCRON=-
+      - LDESSERVER_DELETIONCRON=-
     deploy:
       resources:
         limits:
