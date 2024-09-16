@@ -5270,7 +5270,7 @@ log.info(&quot;expected fragmentation count: &quot; + vars.get(&quot;expected_fr
         </HTTPSamplerProxy>
         <hashTree/>
         <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While not fragmentation completed" enabled="true">
-          <stringProp name="WhileController.condition">${__groovy(Float.parseFloat(vars.get(&quot;current_fragmentation_count&quot;)) != Float.parseFloat(vars.get(&quot;expected_fragmentation_count&quot;)))}
+          <stringProp name="WhileController.condition">${__groovy(Float.parseFloat(vars.get(&quot;current_fragmentation_count&quot;)?:&quot;0&quot;) != Float.parseFloat(vars.get(&quot;expected_fragmentation_count&quot;)))}
 </stringProp>
         </WhileController>
         <hashTree>

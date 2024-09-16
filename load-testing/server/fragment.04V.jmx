@@ -5146,7 +5146,7 @@ _:Bf6cae0b2dd40d76d100e5e8773cd0d8d &lt;http://www.w3.org/1999/02/22-rdf-syntax-
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Set fragmentation start time">
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Set fragmentation start time" enabled="true">
           <stringProp name="scriptLanguage">groovy</stringProp>
           <stringProp name="parameters"></stringProp>
           <stringProp name="filename"></stringProp>
@@ -5157,7 +5157,7 @@ log.info(&quot;fragmentation_starttime: &quot; + props.get(&quot;fragmentation_s
         </JSR223Sampler>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Test - Fragment members" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Test - Fragment members">
         <boolProp name="ThreadGroup.delayedStart">true</boolProp>
         <stringProp name="ThreadGroup.num_threads">${views}</stringProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -5187,7 +5187,7 @@ log.info(&quot;fragmentation_starttime: &quot; + props.get(&quot;fragmentation_s
           <boolProp name="CounterConfig.per_user">false</boolProp>
         </CounterConfig>
         <hashTree/>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Set view name &amp; definition">
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Set view name &amp; definition" enabled="true">
           <stringProp name="scriptLanguage">groovy</stringProp>
           <stringProp name="parameters"></stringProp>
           <stringProp name="filename"></stringProp>
@@ -5202,7 +5202,7 @@ vars.put(&quot;view_definition&quot;, view_definition);
 </stringProp>
         </JSR223Sampler>
         <hashTree/>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Set fragmentation regex">
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Set fragmentation regex" enabled="true">
           <stringProp name="scriptLanguage">groovy</stringProp>
           <stringProp name="parameters"></stringProp>
           <stringProp name="filename"></stringProp>
@@ -5226,7 +5226,7 @@ vars.put(&quot;fragmentation_regex&quot;, &quot;${fragmentation_regex}&quot;);
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Get Initial Fragmentation Count">
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Get Initial Fragmentation Count" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">false</stringProp>
             <stringProp name="RegexExtractor.refname">initial_fragmentation_count</stringProp>
             <stringProp name="RegexExtractor.regex">${fragmentation_regex}</stringProp>
@@ -5251,7 +5251,7 @@ log.info(&quot;expected fragmentation count: &quot; + vars.get(&quot;expected_fr
           </JSR223PostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Setup - create view">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Setup - create view" enabled="true">
           <stringProp name="HTTPSampler.path">/admin/api/v1/eventstreams/${ldes_name}/views</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
@@ -5269,8 +5269,8 @@ log.info(&quot;expected fragmentation count: &quot; + vars.get(&quot;expected_fr
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While not fragmentation completed" enabled="true">
-          <stringProp name="WhileController.condition">${__groovy(Float.parseFloat(vars.get(&quot;current_fragmentation_count&quot;)) != Float.parseFloat(vars.get(&quot;expected_fragmentation_count&quot;)))}
+        <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While not fragmentation completed">
+          <stringProp name="WhileController.condition">${__groovy(Float.parseFloat(vars.get(&quot;current_fragmentation_count&quot;)?:&quot;0&quot;) != Float.parseFloat(vars.get(&quot;expected_fragmentation_count&quot;)))}
 </stringProp>
         </WhileController>
         <hashTree>
