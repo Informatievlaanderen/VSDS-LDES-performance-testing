@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
   <hashTree>
-    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Parallel Ingest &amp; Fragment Speed Test - 1 Thread &amp; 2 Views">
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Parallel Ingest &amp; Fragment Speed Test - 1 Thread &amp; 4 Views">
       <boolProp name="TestPlan.serialize_threadgroups">true</boolProp>
       <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
@@ -12,6 +12,11 @@
     <hashTree>
       <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Labels">
         <collectionProp name="Arguments.arguments">
+          <elementProp name="test_plan_name" elementType="Argument">
+            <stringProp name="Argument.name">test_plan_name</stringProp>
+            <stringProp name="Argument.value">Parallel Ingest &amp; Fragment Speed Test - 1 Thread &amp; 4 Views</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
           <elementProp name="threads" elementType="Argument">
             <stringProp name="Argument.name">threads</stringProp>
             <stringProp name="Argument.value">1</stringProp>
@@ -5013,7 +5018,7 @@ _:Bf6cae0b2dd40d76d100e5e8773cd0d8d &lt;http://www.w3.org/1999/02/22-rdf-syntax-
         <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
       </ConfigTestElement>
       <hashTree/>
-      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="Setup LDES" enabled="true">
+      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="Setup LDES">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -5051,6 +5056,48 @@ _:Bf6cae0b2dd40d76d100e5e8773cd0d8d &lt;http://www.w3.org/1999/02/22-rdf-syntax-
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Setup - Test plan writer" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">def testPlanName = vars.get(&quot;test_plan_name&quot;);
+return &quot;\n\t\tTest plan name: ${testPlanName}&quot;;
+</stringProp>
+        </JSR223Sampler>
+        <hashTree>
+          <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>false</time>
+                <latency>false</latency>
+                <timestamp>false</timestamp>
+                <success>false</success>
+                <label>false</label>
+                <code>false</code>
+                <message>false</message>
+                <threadName>false</threadName>
+                <dataType>false</dataType>
+                <encoding>false</encoding>
+                <assertions>false</assertions>
+                <subresults>false</subresults>
+                <responseData>true</responseData>
+                <samplerData>false</samplerData>
+                <xml>true</xml>
+                <fieldNames>false</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+              </value>
+            </objProp>
+            <stringProp name="filename">stats.xml</stringProp>
+          </ResultCollector>
+          <hashTree/>
+        </hashTree>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Setup - Views" enabled="true">
         <boolProp name="ThreadGroup.delayedStart">true</boolProp>
@@ -5073,7 +5120,7 @@ _:Bf6cae0b2dd40d76d100e5e8773cd0d8d &lt;http://www.w3.org/1999/02/22-rdf-syntax-
           </collectionProp>
         </HeaderManager>
         <hashTree/>
-        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="View Counter">
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="View Counter" enabled="true">
           <stringProp name="CounterConfig.start">1</stringProp>
           <stringProp name="CounterConfig.end"></stringProp>
           <stringProp name="CounterConfig.incr">1</stringProp>
@@ -5082,7 +5129,7 @@ _:Bf6cae0b2dd40d76d100e5e8773cd0d8d &lt;http://www.w3.org/1999/02/22-rdf-syntax-
           <boolProp name="CounterConfig.per_user">false</boolProp>
         </CounterConfig>
         <hashTree/>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Set view name">
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Set view name" enabled="true">
           <stringProp name="scriptLanguage">groovy</stringProp>
           <stringProp name="parameters"></stringProp>
           <stringProp name="filename"></stringProp>
@@ -5131,7 +5178,7 @@ vars.put(&quot;fragmentation_regex&quot;, &quot;${fragmentation_regex}&quot;);
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
-          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Set Expected Fragmentation Count">
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Set Expected Fragmentation Count" enabled="true">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
@@ -5389,7 +5436,7 @@ return &quot;\n\t\tIngest time: &quot; + delta + &quot; ms (&quot; + perSecond +
           </collectionProp>
         </HeaderManager>
         <hashTree/>
-        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="View Counter">
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="View Counter" enabled="true">
           <stringProp name="CounterConfig.start">1</stringProp>
           <stringProp name="CounterConfig.end"></stringProp>
           <stringProp name="CounterConfig.incr">1</stringProp>
@@ -5398,7 +5445,7 @@ return &quot;\n\t\tIngest time: &quot; + delta + &quot; ms (&quot; + perSecond +
           <boolProp name="CounterConfig.per_user">false</boolProp>
         </CounterConfig>
         <hashTree/>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Set fragmentation regex">
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Set fragmentation regex" enabled="true">
           <stringProp name="scriptLanguage">groovy</stringProp>
           <stringProp name="parameters"></stringProp>
           <stringProp name="filename"></stringProp>
@@ -5411,7 +5458,7 @@ vars.put(&quot;fragmentation_regex&quot;, &quot;${fragmentation_regex}&quot;);
 </stringProp>
         </JSR223Sampler>
         <hashTree/>
-        <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While not fragmentation completed">
+        <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While not fragmentation completed" enabled="true">
           <stringProp name="WhileController.condition">${__groovy(Float.parseFloat(vars.get(&quot;current_fragmentation_count&quot;)?:&quot;0&quot;) != Float.parseFloat(props.get(&quot;expected_fragmentation_count_&quot; + vars.get(&quot;view_index&quot;))))}
 </stringProp>
         </WhileController>
@@ -5446,7 +5493,7 @@ vars.put(&quot;fragmentation_regex&quot;, &quot;${fragmentation_regex}&quot;);
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
-            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Log Current Fragmentation Count">
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Log Current Fragmentation Count" enabled="true">
               <stringProp name="scriptLanguage">groovy</stringProp>
               <stringProp name="parameters"></stringProp>
               <stringProp name="filename"></stringProp>

@@ -12,6 +12,11 @@
     <hashTree>
       <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Labels">
         <collectionProp name="Arguments.arguments">
+          <elementProp name="test_plan_name" elementType="Argument">
+            <stringProp name="Argument.name">test_plan_name</stringProp>
+            <stringProp name="Argument.value">Fragment Speed Test - 1 View</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
           <elementProp name="views" elementType="Argument">
             <stringProp name="Argument.name">views</stringProp>
             <stringProp name="Argument.value">1</stringProp>
@@ -5013,7 +5018,7 @@ _:Bf6cae0b2dd40d76d100e5e8773cd0d8d &lt;http://www.w3.org/1999/02/22-rdf-syntax-
         <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
       </ConfigTestElement>
       <hashTree/>
-      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="Setup - LDES" enabled="true">
+      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="Setup - LDES">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
@@ -5049,6 +5054,48 @@ _:Bf6cae0b2dd40d76d100e5e8773cd0d8d &lt;http://www.w3.org/1999/02/22-rdf-syntax-
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Setup - Test plan writer" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">def testPlanName = vars.get(&quot;test_plan_name&quot;);
+return &quot;\n\t\tTest plan name: ${testPlanName}&quot;;
+</stringProp>
+        </JSR223Sampler>
+        <hashTree>
+          <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>false</time>
+                <latency>false</latency>
+                <timestamp>false</timestamp>
+                <success>false</success>
+                <label>false</label>
+                <code>false</code>
+                <message>false</message>
+                <threadName>false</threadName>
+                <dataType>false</dataType>
+                <encoding>false</encoding>
+                <assertions>false</assertions>
+                <subresults>false</subresults>
+                <responseData>true</responseData>
+                <samplerData>false</samplerData>
+                <xml>true</xml>
+                <fieldNames>false</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+              </value>
+            </objProp>
+            <stringProp name="filename">stats.xml</stringProp>
+          </ResultCollector>
+          <hashTree/>
+        </hashTree>
       </hashTree>
       <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="Setup - Ingest members" enabled="true">
         <stringProp name="ThreadGroup.num_threads">${threads}</stringProp>
@@ -5146,7 +5193,7 @@ _:Bf6cae0b2dd40d76d100e5e8773cd0d8d &lt;http://www.w3.org/1999/02/22-rdf-syntax-
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Set fragmentation start time">
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Set fragmentation start time" enabled="true">
           <stringProp name="scriptLanguage">groovy</stringProp>
           <stringProp name="parameters"></stringProp>
           <stringProp name="filename"></stringProp>
@@ -5187,7 +5234,7 @@ log.info(&quot;fragmentation_starttime: &quot; + props.get(&quot;fragmentation_s
           <boolProp name="CounterConfig.per_user">false</boolProp>
         </CounterConfig>
         <hashTree/>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Set view name &amp; definition">
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Set view name &amp; definition" enabled="true">
           <stringProp name="scriptLanguage">groovy</stringProp>
           <stringProp name="parameters"></stringProp>
           <stringProp name="filename"></stringProp>
@@ -5202,7 +5249,7 @@ vars.put(&quot;view_definition&quot;, view_definition);
 </stringProp>
         </JSR223Sampler>
         <hashTree/>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Set fragmentation regex">
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Set fragmentation regex" enabled="true">
           <stringProp name="scriptLanguage">groovy</stringProp>
           <stringProp name="parameters"></stringProp>
           <stringProp name="filename"></stringProp>
@@ -5215,7 +5262,7 @@ vars.put(&quot;fragmentation_regex&quot;, &quot;${fragmentation_regex}&quot;);
 </stringProp>
         </JSR223Sampler>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Setup - init fragmentation count">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Setup - init fragmentation count" enabled="true">
           <stringProp name="HTTPSampler.path">/actuator/prometheus</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
@@ -5226,7 +5273,7 @@ vars.put(&quot;fragmentation_regex&quot;, &quot;${fragmentation_regex}&quot;);
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Get Initial Fragmentation Count">
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Get Initial Fragmentation Count" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">false</stringProp>
             <stringProp name="RegexExtractor.refname">initial_fragmentation_count</stringProp>
             <stringProp name="RegexExtractor.regex">${fragmentation_regex}</stringProp>
@@ -5251,7 +5298,7 @@ log.info(&quot;expected fragmentation count: &quot; + vars.get(&quot;expected_fr
           </JSR223PostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Setup - create view">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Setup - create view" enabled="true">
           <stringProp name="HTTPSampler.path">/admin/api/v1/eventstreams/${ldes_name}/views</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>

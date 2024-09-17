@@ -12,6 +12,11 @@
     <hashTree>
       <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Labels">
         <collectionProp name="Arguments.arguments">
+          <elementProp name="test_plan_name" elementType="Argument">
+            <stringProp name="Argument.name">test_plan_name</stringProp>
+            <stringProp name="Argument.value">Ingest Speed Test (100 members) - 2 Pipelines (Threads)</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
           <elementProp name="threads" elementType="Argument">
             <stringProp name="Argument.name">threads</stringProp>
             <stringProp name="Argument.value">2</stringProp>
@@ -4987,7 +4992,7 @@ _:Bf6cae0b2dd40d76d100e5e8773cd0d8d &lt;http://www.w3.org/1999/02/22-rdf-syntax-
         <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
       </ConfigTestElement>
       <hashTree/>
-      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="Setup" enabled="true">
+      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="Setup">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -5007,6 +5012,48 @@ _:Bf6cae0b2dd40d76d100e5e8773cd0d8d &lt;http://www.w3.org/1999/02/22-rdf-syntax-
           </collectionProp>
         </HeaderManager>
         <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Setup - Test plan writer">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">def testPlanName = vars.get(&quot;test_plan_name&quot;);
+return &quot;\n\t\tTest plan name: ${testPlanName}&quot;;
+</stringProp>
+        </JSR223Sampler>
+        <hashTree>
+          <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>false</time>
+                <latency>false</latency>
+                <timestamp>false</timestamp>
+                <success>false</success>
+                <label>false</label>
+                <code>false</code>
+                <message>false</message>
+                <threadName>false</threadName>
+                <dataType>false</dataType>
+                <encoding>false</encoding>
+                <assertions>false</assertions>
+                <subresults>false</subresults>
+                <responseData>true</responseData>
+                <samplerData>false</samplerData>
+                <xml>true</xml>
+                <fieldNames>false</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+              </value>
+            </objProp>
+            <stringProp name="filename">stats.xml</stringProp>
+          </ResultCollector>
+          <hashTree/>
+        </hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Setup - Create LDES" enabled="true">
           <stringProp name="HTTPSampler.path">/admin/api/v1/eventstreams</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -5035,7 +5082,7 @@ _:Bf6cae0b2dd40d76d100e5e8773cd0d8d &lt;http://www.w3.org/1999/02/22-rdf-syntax-
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Test - Ingestion">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Test - Ingestion" enabled="true">
         <boolProp name="ThreadGroup.delayedStart">true</boolProp>
         <stringProp name="ThreadGroup.num_threads">${threads}</stringProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -5134,7 +5181,7 @@ _:Bf6cae0b2dd40d76d100e5e8773cd0d8d &lt;http://www.w3.org/1999/02/22-rdf-syntax-
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Test - Ingestion timing">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Test - Ingestion timing" enabled="true">
         <boolProp name="ThreadGroup.delayedStart">true</boolProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -5145,7 +5192,7 @@ _:Bf6cae0b2dd40d76d100e5e8773cd0d8d &lt;http://www.w3.org/1999/02/22-rdf-syntax-
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Test - Ingest result writer">
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Test - Ingest result writer" enabled="true">
           <stringProp name="scriptLanguage">groovy</stringProp>
           <stringProp name="parameters"></stringProp>
           <stringProp name="filename"></stringProp>
