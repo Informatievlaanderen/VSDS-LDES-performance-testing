@@ -5060,7 +5060,7 @@ _:Bf6cae0b2dd40d76d100e5e8773cd0d8d &lt;http://www.w3.org/1999/02/22-rdf-syntax-
           <stringProp name="parameters"></stringProp>
           <stringProp name="filename"></stringProp>
           <stringProp name="cacheKey">true</stringProp>
-          <stringProp name="script">return &quot;\n\t\t${__TestPlanName}&quot;;
+          <stringProp name="script">return &quot;\n\t\t${test_plan_name}&quot;;
 </stringProp>
         </JSR223Sampler>
         <hashTree>
