@@ -156,7 +156,6 @@ services:
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.3.0-SNAPSHOT} # CrowdScan
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.4.1-SNAPSHOT} # Geomobility
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.10.0-SNAPSHOT} # Telraam
-    # image: ghcr.io/informatievlaanderen/ldes-server:20240405144556
     image: ldes/ldes-server:${LDES_SERVER_TAG:-3.3.0-SNAPSHOT}
     networks:
       - performance_testing
@@ -174,8 +173,8 @@ services:
       timeout: 3s
       retries: 20
     environment:
-      - SPRING_TASK_SCHEDULING_POOL_SIZE=5
-      - LDESSERVER_FRAGMENTATIONCRON=${LDES_SERVER_FRAGMENTATION_CRON:-*/15 * * * * *}
+      - SPRING_TASK_SCHEDULING_POOL_SIZE=10
+      - LDESSERVER_FRAGMENTATIONCRON=${LDES_SERVER_FRAGMENTATION_CRON:-*/1 * * * * *}
       - SIS_DATA=/tmp
       - JAVA_TOOL_OPTIONS=-XX:MaxRAMPercentage=90 -XX:MinRAMPercentage=50
       - SPRING_DATASOURCE_URL=jdbc:postgresql://ldes-postgres:5432/${POSTGRES_DB}
