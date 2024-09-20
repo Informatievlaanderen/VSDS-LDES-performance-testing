@@ -20,8 +20,8 @@ for the runner:
 ```bash
 mkdir -p ./tests
 chmod o+w ./tests
-mkdir -p ./logs
-chmod o+w ./logs
+mkdir -p ./temp
+chmod o+w ./temp
 ```
 
 ## Start Systems
