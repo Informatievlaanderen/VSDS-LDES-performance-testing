@@ -1,7 +1,7 @@
 # Server Tests
 
 ```bash
-CATEGORY="Server%20(3.3.0)"
+CATEGORY="Server%20(3.4.0)"
 TEST_SERVER_BASE="http://localhost:9000"
 X_API_KEY=
 ```
