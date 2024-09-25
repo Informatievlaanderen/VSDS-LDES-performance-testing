@@ -57,7 +57,7 @@ services:
 
   jmeter-runner:
     container_name: performance_testing_jmeter-runner
-    image: ghcr.io/informatievlaanderen/jmeter-runner:20240424t1412
+    image: ghcr.io/informatievlaanderen/jmeter-runner:20240925t1209
     networks:
       - performance_testing 
     ports:
