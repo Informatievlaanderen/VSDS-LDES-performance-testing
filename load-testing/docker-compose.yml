@@ -4,21 +4,21 @@ networks:
 
 services:
 
-  prometheus:
-    image: prom/prometheus:latest
-    container_name: performance_testing_prometheus
-    volumes:
-      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
-    command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
-      - '--storage.tsdb.path=/prometheus'
-      - '--web.console.libraries=/etc/prometheus/console_libraries'
-      - '--web.console.templates=/etc/prometheus/consoles'
-      - '--web.enable-lifecycle'
-    expose:
-      - 9090
-    networks:
-      - performance_testing
+  # prometheus:
+  #   image: prom/prometheus:latest
+  #   container_name: performance_testing_prometheus
+  #   volumes:
+  #     - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+  #   command:
+  #     - '--config.file=/etc/prometheus/prometheus.yml'
+  #     - '--storage.tsdb.path=/prometheus'
+  #     - '--web.console.libraries=/etc/prometheus/console_libraries'
+  #     - '--web.console.templates=/etc/prometheus/consoles'
+  #     - '--web.enable-lifecycle'
+  #   expose:
+  #     - 9090
+  #   networks:
+  #     - performance_testing
 
 
   # pyroscope:
@@ -35,24 +35,24 @@ services:
   #     retries: 20
 
 
-  grafana:
-    container_name: performance_testing_grafana
-    image: grafana/grafana:${GRAFANA_TAG:-main}
-    environment:
-    # - GF_FEATURE_TOGGLES_ENABLE=flameGraph
-    - GF_SECURITY_ADMIN_USER=${GRAFANA_USER}
-    - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PWD}
-    ports:
-      - ${GRAFANA_PORT:-3000}:3000
-    networks:
-      - performance_testing
-    # depends_on:
-    #   - pyroscope
-    healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://grafana:3000/api/health"]
-      interval: 12s
-      timeout: 3s
-      retries: 20
+  # grafana:
+  #   container_name: performance_testing_grafana
+  #   image: grafana/grafana:${GRAFANA_TAG:-main}
+  #   environment:
+  #   # - GF_FEATURE_TOGGLES_ENABLE=flameGraph
+  #   - GF_SECURITY_ADMIN_USER=${GRAFANA_USER}
+  #   - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PWD}
+  #   ports:
+  #     - ${GRAFANA_PORT:-3000}:3000
+  #   networks:
+  #     - performance_testing
+  #   # depends_on:
+  #   #   - pyroscope
+  #   healthcheck:
+  #     test: ["CMD", "wget", "-qO-", "http://grafana:3000/api/health"]
+  #     interval: 12s
+  #     timeout: 3s
+  #     retries: 20
 
 
   jmeter-runner:
@@ -68,8 +68,8 @@ services:
     depends_on:
       ldes-server:
         condition: service_healthy
-      load-testing-ldio-workbench-workbench:
-        condition: service_healthy
+      # load-testing-ldio-workbench-workbench:
+      #   condition: service_healthy
     environment:
       - TEST_FOLDER_BASE=/home/node/jmeter-runner/tests
       - TEMP_FOLDER_BASE=/home/node/jmeter-runner/temp
@@ -90,38 +90,38 @@ services:
           cpus: '0.1'
           memory: '0.25GB'
 
-  load-testing-ldio-workbench-workbench:
-    container_name: performance_testing_ldio-workbench
-    image: ldes/ldi-orchestrator:${LDI_ORCHESTRATOR_TAG:-2.9.0-SNAPSHOT}
-    networks:
-      - performance_testing
-    ports:
-      - ${LDIO_WORKBENCH_PORT:-8081}:8080
-    volumes:
-      - ./workbench/tmp/epsg:/tmp/Databases:rw
-      - ./workbench/config.yml:/ldio/application.yml:ro
-    healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://load-testing-ldio-workbench-workbench:8080/actuator/health"]
-      interval: 12s
-      timeout: 3s
-      retries: 20
-    environment:
-      - SIS_DATA=/tmp
-      - JAVA_TOOL_OPTIONS=-XX:MaxRAMPercentage=90 -XX:MinRAMPercentage=50
-      - SERVER_PORT=8080
-      - ORCHESTRATOR_DIRECTORY=/ldio/pipelines
-      - SPRING_CODEC_MAXINMEMORYSIZE=10MB
-      - MANAGEMENT_TRACING_ENABLED=false
-      - MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE=health,info,prometheus
-      - MANAGEMENT_ENDPOINT_HEALTH_SHOWDETAILS=always
-    deploy:
-      resources:
-        limits:
-          cpus: '3.5'
-          memory: '4.0GB'
-        reservations:
-          cpus: '0.10'
-          memory: '0.25GB'
+  # load-testing-ldio-workbench-workbench:
+  #   container_name: performance_testing_ldio-workbench
+  #   image: ldes/ldi-orchestrator:${LDI_ORCHESTRATOR_TAG:-2.9.0-SNAPSHOT}
+  #   networks:
+  #     - performance_testing
+  #   ports:
+  #     - ${LDIO_WORKBENCH_PORT:-8081}:8080
+  #   volumes:
+  #     - ./workbench/tmp/epsg:/tmp/Databases:rw
+  #     - ./workbench/config.yml:/ldio/application.yml:ro
+  #   healthcheck:
+  #     test: ["CMD", "wget", "-qO-", "http://load-testing-ldio-workbench-workbench:8080/actuator/health"]
+  #     interval: 12s
+  #     timeout: 3s
+  #     retries: 20
+  #   environment:
+  #     - SIS_DATA=/tmp
+  #     - JAVA_TOOL_OPTIONS=-XX:MaxRAMPercentage=90 -XX:MinRAMPercentage=50
+  #     - SERVER_PORT=8080
+  #     - ORCHESTRATOR_DIRECTORY=/ldio/pipelines
+  #     - SPRING_CODEC_MAXINMEMORYSIZE=10MB
+  #     - MANAGEMENT_TRACING_ENABLED=false
+  #     - MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE=health,info,prometheus
+  #     - MANAGEMENT_ENDPOINT_HEALTH_SHOWDETAILS=always
+  #   deploy:
+  #     resources:
+  #       limits:
+  #         cpus: '3.5'
+  #         memory: '4.0GB'
+  #       reservations:
+  #         cpus: '0.10'
+  #         memory: '0.25GB'
 
   ldes-postgres:
     container_name: ldes-postgres
