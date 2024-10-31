@@ -92,7 +92,8 @@ services:
 
   load-testing-ldio-workbench-workbench:
     container_name: performance_testing_ldio-workbench
-    image: ldes/ldi-orchestrator:${LDI_ORCHESTRATOR_TAG:-2.9.0-SNAPSHOT}
+    # image: ldes/ldi-orchestrator:${LDI_ORCHESTRATOR_TAG:-2.9.0-SNAPSHOT}
+    image: ghcr.io/informatievlaanderen/ldi-orchestrator:20241021180535
     networks:
       - performance_testing
     ports:
@@ -124,7 +125,7 @@ services:
           memory: '0.25GB'
 
   ldes-postgres:
-    container_name: ldes-postgres
+    container_name: performance_testing_ldes-postgres
     image: postgres:14-alpine
     ports:
       - 5432:5432
@@ -155,7 +156,9 @@ services:
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.3.0-SNAPSHOT} # CrowdScan
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.4.1-SNAPSHOT} # Geomobility
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.10.0-SNAPSHOT} # Telraam
-    image: ldes/ldes-server:${LDES_SERVER_TAG:-3.4.0-SNAPSHOT}
+    # image: ldes/ldes-server:${LDES_SERVER_TAG:-3.4.0-SNAPSHOT}
+    # image: ldes/ldes-server:${LDES_SERVER_TAG:-3.5.0-SNAPSHOT}
+    image: ghcr.io/informatievlaanderen/ldes-server:20241031101101
     networks:
       - performance_testing
     ports:
@@ -181,9 +184,7 @@ services:
       - SPRING_DATASOURCE_PASSWORD=${POSTGRES_PWD}
       - LDESSERVER_HOSTNAME=http://ldes-server:${LDES_SERVER_PORT:-8080}
       - SERVER_PORT=8080
-      - LDESSERVER_RETENTIONCRON=-
-      - LDESSERVER_COMPACTIONCRON=-
-      - LDESSERVER_DELETIONCRON=-
+      - LDESSERVER_MAINTENANCECRON=-
     deploy:
       resources:
         limits:
