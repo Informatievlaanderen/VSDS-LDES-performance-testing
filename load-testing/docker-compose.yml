@@ -21,25 +21,25 @@ services:
       - performance_testing
 
 
-  # pyroscope:
-  #   container_name: performance_testing_pyroscope
-  #   image: grafana/pyroscope:${PYROSCOPE_TAG:-latest}
-  #   ports:
-  #     - ${PYROSCOPE_PORT:-4040}:4040
-  #   networks:
-  #     - performance_testing
-  #   healthcheck:
-  #     test: ["CMD", "wget", "-qO-", "http://pyroscope:4040/ready"]
-  #     interval: 12s
-  #     timeout: 3s
-  #     retries: 20
+  pyroscope:
+    container_name: performance_testing_pyroscope
+    image: grafana/pyroscope:${PYROSCOPE_TAG:-latest}
+    ports:
+      - ${PYROSCOPE_PORT:-4040}:4040
+    networks:
+      - performance_testing
+    # healthcheck:
+    #   test: ["CMD", "wget", "-qO-", "http://pyroscope:4040/ready"]
+    #   interval: 12s
+    #   timeout: 3s
+    #   retries: 20
 
 
   grafana:
     container_name: performance_testing_grafana
     image: grafana/grafana:${GRAFANA_TAG:-main}
     environment:
-    # - GF_FEATURE_TOGGLES_ENABLE=flameGraph
+    - GF_FEATURE_TOGGLES_ENABLE=flameGraph
     - GF_SECURITY_ADMIN_USER=${GRAFANA_USER}
     - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PWD}
     ports:
@@ -126,7 +126,7 @@ services:
 
   ldes-postgres:
     container_name: performance_testing_ldes-postgres
-    image: postgres:14-alpine
+    image: postgres:latest
     ports:
       - 5432:5432
     environment:
@@ -185,6 +185,10 @@ services:
       - LDESSERVER_HOSTNAME=http://ldes-server:${LDES_SERVER_PORT:-8080}
       - SERVER_PORT=8080
       - LDESSERVER_MAINTENANCECRON=-
+      - PYROSCOPE_AGENT_ENABLED=true
+      - PYROSCOPE_APPLICATION_NAME=ldes-server
+      - PYROSCOPE_SERVER_ADDRESS=http://pyroscope:4040
+      - PYROSCOPE_FORMAT=jfr
     deploy:
       resources:
         limits:
