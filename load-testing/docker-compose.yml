@@ -94,7 +94,7 @@ services:
   load-testing-ldio-workbench-workbench:
     container_name: performance_testing_ldio-workbench
     # image: ldes/ldi-orchestrator:${LDI_ORCHESTRATOR_TAG:-2.10.0-SNAPSHOT}
-    image: ghcr.io/informatievlaanderen/ldi-orchestrator:20241021180535 # TODO: use 2.10
+    image: ghcr.io/informatievlaanderen/ldi-orchestrator:20241108154702 # TODO: use 2.10
     networks:
       - performance_testing
     ports:
