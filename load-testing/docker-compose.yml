@@ -28,11 +28,11 @@ services:
   #     - ${PYROSCOPE_PORT:-4040}:4040
   #   networks:
   #     - performance_testing
-  #   healthcheck:
-  #     test: ["CMD", "wget", "-qO-", "http://pyroscope:4040/ready"]
-  #     interval: 12s
-  #     timeout: 3s
-  #     retries: 20
+  #   # healthcheck:
+  #   #   test: ["CMD", "wget", "-qO-", "http://pyroscope:4040/ready"]
+  #   #   interval: 12s
+  #   #   timeout: 3s
+  #   #   retries: 20
 
 
   grafana:
@@ -57,7 +57,7 @@ services:
 
   jmeter-runner:
     container_name: performance_testing_jmeter-runner
-    image: ghcr.io/informatievlaanderen/jmeter-runner:20240424t1412
+    image: ghcr.io/informatievlaanderen/jmeter-runner:20240925t1209
     networks:
       - performance_testing 
     ports:
@@ -80,7 +80,7 @@ services:
       - RUN_TEST_API_KEY=${RUN_TEST_API_KEY:-}
       - CHECK_TEST_API_KEY=${CHECK_TEST_API_KEY:-}
       - DELETE_TEST_API_KEY=${DELETE_TEST_API_KEY:-}
-      - CUSTOM_LABELS=${CUSTOM_LABELS:-threads size type component members_per_page}
+      - CUSTOM_LABELS=${CUSTOM_LABELS:-threads size type component members_per_page views test_plan_name}
     deploy:
       resources:
         limits:
@@ -90,10 +90,11 @@ services:
           cpus: '0.1'
           memory: '0.25GB'
 
+
   load-testing-ldio-workbench-workbench:
     container_name: performance_testing_ldio-workbench
-    image: ghcr.io/informatievlaanderen/ldi-orchestrator:20240814211044
-    # image: ldes/ldi-orchestrator:${LDI_ORCHESTRATOR_TAG:-2.5.1-SNAPSHOT}
+    # image: ldes/ldi-orchestrator:${LDI_ORCHESTRATOR_TAG:-2.10.0-SNAPSHOT}
+    image: ghcr.io/informatievlaanderen/ldi-orchestrator:20241021180535 # TODO: use 2.10
     networks:
       - performance_testing
     ports:
@@ -124,9 +125,10 @@ services:
           cpus: '0.10'
           memory: '0.25GB'
 
+
   ldes-postgres:
-    container_name: ldes-postgres
-    image: postgres:14-alpine
+    container_name: performance_testing_ldes-postgres
+    image: postgres:latest
     ports:
       - 5432:5432
     environment:
@@ -150,13 +152,15 @@ services:
           cpus: '0.50'
           memory: '0.5GB'
 
+
   ldes-server:
     container_name: performance_testing_ldes-server
     # image: ghcr.io/informatievlaanderen/ldes-server:latest
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.3.0-SNAPSHOT} # CrowdScan
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.4.1-SNAPSHOT} # Geomobility
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.10.0-SNAPSHOT} # Telraam
-    image: ldes/ldes-server:${LDES_SERVER_TAG:-3.3.0-SNAPSHOT}
+    # image: ldes/ldes-server:${LDES_SERVER_TAG:-3.4.0-SNAPSHOT}
+    image: ldes/ldes-server:${LDES_SERVER_TAG:-3.5.0-SNAPSHOT}
     networks:
       - performance_testing
     ports:
@@ -182,9 +186,11 @@ services:
       - SPRING_DATASOURCE_PASSWORD=${POSTGRES_PWD}
       - LDESSERVER_HOSTNAME=http://ldes-server:${LDES_SERVER_PORT:-8080}
       - SERVER_PORT=8080
-      - LDESSERVER_RETENTIONCRON=-
-      - LDESSERVER_COMPACTIONCRON=-
-      - LDESSERVER_DELETIONCRON=-
+      - LDESSERVER_MAINTENANCECRON=-
+      # - PYROSCOPE_AGENT_ENABLED=true
+      # - PYROSCOPE_APPLICATION_NAME=ldes-server
+      # - PYROSCOPE_SERVER_ADDRESS=http://pyroscope:4040
+      # - PYROSCOPE_FORMAT=jfr
     deploy:
       resources:
         limits:
