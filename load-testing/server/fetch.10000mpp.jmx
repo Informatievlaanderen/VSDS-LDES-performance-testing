@@ -5003,8 +5003,8 @@ _:Bf6cae0b2dd40d76d100e5e8773cd0d8d &lt;http://www.w3.org/1999/02/22-rdf-syntax-
       </Arguments>
       <hashTree/>
       <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults">
-        <intProp name="HTTPSampler.connect_timeout">3000</intProp>
-        <intProp name="HTTPSampler.response_timeout">90000</intProp>
+        <intProp name="HTTPSampler.connect_timeout">10000</intProp>
+        <intProp name="HTTPSampler.response_timeout">180000</intProp>
         <stringProp name="HTTPSampler.domain">${hostname}</stringProp>
         <stringProp name="HTTPSampler.port">${port}</stringProp>
         <stringProp name="HTTPSampler.contentEncoding">utf8</stringProp>
@@ -5742,7 +5742,7 @@ vars.put(&quot;view_name&quot;, view_name);
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Test - Fetch result writer" enabled="true">
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Test - Fetch result writer">
           <stringProp name="scriptLanguage">groovy</stringProp>
           <stringProp name="parameters"></stringProp>
           <stringProp name="filename"></stringProp>
@@ -5761,7 +5761,7 @@ return &quot;\n\t\tFetch time: &quot; + delta + &quot; ms (&quot; + perSecond + 
 </stringProp>
         </JSR223Sampler>
         <hashTree>
-          <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer" enabled="true">
+          <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer">
             <boolProp name="ResultCollector.error_logging">false</boolProp>
             <objProp>
               <name>saveConfig</name>
@@ -5794,7 +5794,7 @@ return &quot;\n\t\tFetch time: &quot; + delta + &quot; ms (&quot; + perSecond + 
           <hashTree/>
         </hashTree>
       </hashTree>
-      <PostThreadGroup guiclass="PostThreadGroupGui" testclass="PostThreadGroup" testname="Tear Down" enabled="true">
+      <PostThreadGroup guiclass="PostThreadGroupGui" testclass="PostThreadGroup" testname="Tear Down">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -5805,7 +5805,7 @@ return &quot;\n\t\tFetch time: &quot; + delta + &quot; ms (&quot; + perSecond + 
         </elementProp>
       </PostThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Tear Down - Delete LDES" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Tear Down - Delete LDES">
           <intProp name="HTTPSampler.response_timeout">180000</intProp>
           <stringProp name="HTTPSampler.path">/admin/api/v1/eventstreams/${ldes_name}</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
