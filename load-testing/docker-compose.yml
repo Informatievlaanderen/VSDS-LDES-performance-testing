@@ -93,7 +93,7 @@ services:
 
   load-testing-ldio-workbench-workbench:
     container_name: performance_testing_ldio-workbench
-    image: ldes/ldi-orchestrator:${LDI_ORCHESTRATOR_TAG:-2.9.0-SNAPSHOT} # TODO: use 2.11
+    image: ldes/ldi-orchestrator:${LDI_ORCHESTRATOR_TAG:-2.10.0-SNAPSHOT} # TODO: use 2.11
     networks:
       - performance_testing
     ports:
