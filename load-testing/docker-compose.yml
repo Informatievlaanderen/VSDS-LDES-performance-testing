@@ -93,8 +93,7 @@ services:
 
   load-testing-ldio-workbench-workbench:
     container_name: performance_testing_ldio-workbench
-    # image: ldes/ldi-orchestrator:${LDI_ORCHESTRATOR_TAG:-2.10.0-SNAPSHOT}
-    image: ghcr.io/informatievlaanderen/ldi-orchestrator:20241108154702 # TODO: use 2.10
+    image: ldes/ldi-orchestrator:${LDI_ORCHESTRATOR_TAG:-2.9.0-SNAPSHOT} # TODO: use 2.11
     networks:
       - performance_testing
     ports:
@@ -159,8 +158,8 @@ services:
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.3.0-SNAPSHOT} # CrowdScan
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.4.1-SNAPSHOT} # Geomobility
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.10.0-SNAPSHOT} # Telraam
-    # image: ldes/ldes-server:${LDES_SERVER_TAG:-3.4.0-SNAPSHOT}
-    image: ldes/ldes-server:${LDES_SERVER_TAG:-3.5.0-SNAPSHOT}
+    image: ldes/ldes-server:${LDES_SERVER_TAG:-3.4.0-SNAPSHOT}
+    # image: ldes/ldes-server:${LDES_SERVER_TAG:-3.5.0-SNAPSHOT}
     networks:
       - performance_testing
     ports:
