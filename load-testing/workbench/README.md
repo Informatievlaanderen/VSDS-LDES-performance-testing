@@ -46,5 +46,5 @@ export X_API_KEY=
 ```
 
 ```bash
-./run-ingest-throughput.sh
+./run-throughput.sh
 ```
