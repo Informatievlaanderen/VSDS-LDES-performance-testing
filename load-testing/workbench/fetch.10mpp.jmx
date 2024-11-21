@@ -7,6 +7,7 @@
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
     </TestPlan>
     <hashTree>
       <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Labels">
@@ -327,7 +328,7 @@ log.info(&quot;fragmentation_starttime: &quot; + props.get(&quot;fragmentation_s
         </JSR223Sampler>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Setup - Ingest Members">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Setup - Ingest Members" enabled="true">
         <boolProp name="ThreadGroup.delayedStart">true</boolProp>
         <stringProp name="ThreadGroup.num_threads">${threads}</stringProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -437,7 +438,7 @@ log.info(&quot;fragmentation_starttime: &quot; + props.get(&quot;fragmentation_s
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Test - Ingest result writer">
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Test - Ingest result writer" enabled="true">
           <stringProp name="scriptLanguage">groovy</stringProp>
           <stringProp name="parameters"></stringProp>
           <stringProp name="filename"></stringProp>
@@ -490,7 +491,7 @@ return &quot;\n\t\tIngest time: &quot; + delta + &quot; ms (&quot; + perSecond +
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Setup - Fragment members">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Setup - Fragment members" enabled="true">
         <boolProp name="ThreadGroup.delayedStart">true</boolProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -527,7 +528,7 @@ return &quot;\n\t\tIngest time: &quot; + delta + &quot; ms (&quot; + perSecond +
           </collectionProp>
         </HeaderManager>
         <hashTree/>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Set fragmentation regex">
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Set fragmentation regex" enabled="true">
           <stringProp name="scriptLanguage">groovy</stringProp>
           <stringProp name="parameters"></stringProp>
           <stringProp name="filename"></stringProp>
@@ -540,12 +541,12 @@ vars.put(&quot;fragmentation_regex&quot;, &quot;${fragmentation_regex}&quot;);
 </stringProp>
         </JSR223Sampler>
         <hashTree/>
-        <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While not fragmentation completed">
+        <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While not fragmentation completed" enabled="true">
           <stringProp name="WhileController.condition">${__groovy(Float.parseFloat(vars.get(&quot;current_fragmentation_count&quot;)?:&quot;0&quot;) != Float.parseFloat(props.get(&quot;expected_fragmentation_count&quot;)))}
 </stringProp>
         </WhileController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Setup - Get Last Page">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Setup - Get Last Page" enabled="true">
             <stringProp name="HTTPSampler.path">/actuator/prometheus</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
@@ -556,7 +557,7 @@ vars.put(&quot;fragmentation_regex&quot;, &quot;${fragmentation_regex}&quot;);
             </elementProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Get Current Fragmentation Count">
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Get Current Fragmentation Count" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
               <stringProp name="RegexExtractor.refname">current_fragmentation_count</stringProp>
               <stringProp name="RegexExtractor.regex">${fragmentation_regex}</stringProp>
@@ -566,7 +567,7 @@ vars.put(&quot;fragmentation_regex&quot;, &quot;${fragmentation_regex}&quot;);
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
-            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Log Current Fragmentation Count">
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Log Current Fragmentation Count" enabled="true">
               <stringProp name="scriptLanguage">groovy</stringProp>
               <stringProp name="parameters"></stringProp>
               <stringProp name="filename"></stringProp>
@@ -704,7 +705,7 @@ vars.put(&quot;fragmentation_regex&quot;, &quot;${fragmentation_regex}&quot;);
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Setup - Fragmentation result writer">
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Setup - Fragmentation result writer" enabled="true">
           <stringProp name="scriptLanguage">groovy</stringProp>
           <stringProp name="parameters"></stringProp>
           <stringProp name="filename"></stringProp>
@@ -756,7 +757,7 @@ return &quot;\n\t\tFragmentation time: &quot; + delta + &quot; ms (&quot; + perS
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Test">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Test" enabled="true">
         <boolProp name="ThreadGroup.delayedStart">true</boolProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <longProp name="ThreadGroup.duration">900</longProp>
@@ -769,7 +770,7 @@ return &quot;\n\t\tFragmentation time: &quot; + delta + &quot; ms (&quot; + perS
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults">
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
           <intProp name="HTTPSampler.connect_timeout">3000</intProp>
           <intProp name="HTTPSampler.response_timeout">5000</intProp>
           <stringProp name="HTTPSampler.domain">${hostname}</stringProp>
@@ -781,7 +782,7 @@ return &quot;\n\t\tFragmentation time: &quot; + delta + &quot; ms (&quot; + perS
           <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
         </ConfigTestElement>
         <hashTree/>
-        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
           <collectionProp name="HeaderManager.headers">
             <elementProp name="" elementType="Header">
               <stringProp name="Header.name">Content-Type</stringProp>
@@ -793,6 +794,17 @@ return &quot;\n\t\tFragmentation time: &quot; + delta + &quot; ms (&quot; + perS
             </elementProp>
           </collectionProp>
         </HeaderManager>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Set processed regex" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">def processed_regex = ~/ldio_data_out_total\{pipeline_name=\&quot;ldes-client-pipeline\&quot;,\}\s(\d+\.\d+[eE]\d+|\d+\.0)/ ;
+log.info(&quot;processed_regex: &quot; + processed_regex);
+vars.put(&quot;processed_regex&quot;, &quot;${processed_regex}&quot;);
+</stringProp>
+        </JSR223Sampler>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Setup - Get Initial Statistics">
           <stringProp name="HTTPSampler.path">/actuator/prometheus</stringProp>
@@ -808,7 +820,7 @@ return &quot;\n\t\tFragmentation time: &quot; + delta + &quot; ms (&quot; + perS
           <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Get Initial Member Count">
             <stringProp name="RegexExtractor.useHeaders">false</stringProp>
             <stringProp name="RegexExtractor.refname">initial_member_count</stringProp>
-            <stringProp name="RegexExtractor.regex">ldio_data_out_total{pipeline_name=&quot;ldes-client-pipeline&quot;,} (\d+)</stringProp>
+            <stringProp name="RegexExtractor.regex">${processed_regex}</stringProp>
             <stringProp name="RegexExtractor.template">$1$</stringProp>
             <stringProp name="RegexExtractor.default">0</stringProp>
             <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
@@ -867,15 +879,15 @@ outputs:&#xd;
           </JSR223PostProcessor>
           <hashTree/>
         </hashTree>
-        <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While not replicated" enabled="true">
-          <stringProp name="WhileController.condition">${__groovy( ((vars.get(&quot;current_member_count&quot;) as int) - (vars.get(&quot;initial_member_count&quot;) as int)) &lt; (${total_member_count} as int) )}</stringProp>
+        <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While not replicated">
+          <stringProp name="WhileController.condition">${__groovy( ((vars.get(&quot;current_member_count&quot;) as float) - (vars.get(&quot;initial_member_count&quot;) as float)) &lt; (${total_member_count} as float) )}</stringProp>
         </WhileController>
         <hashTree>
-          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Wait in between checks" enabled="true">
-            <stringProp name="ConstantTimer.delay">3000</stringProp>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Wait in between checks">
+            <stringProp name="ConstantTimer.delay">1000</stringProp>
           </ConstantTimer>
           <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Test - Get Statistics" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Test - Get Statistics">
             <stringProp name="HTTPSampler.path">/actuator/prometheus</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
@@ -886,32 +898,32 @@ outputs:&#xd;
             </elementProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Get Current Member Count" enabled="true">
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Get Current Member Count">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
               <stringProp name="RegexExtractor.refname">current_member_count</stringProp>
-              <stringProp name="RegexExtractor.regex">ldio_data_out_total{pipeline_name=&quot;ldes-client-pipeline&quot;,} (\d+)</stringProp>
+              <stringProp name="RegexExtractor.regex">${processed_regex}</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
               <stringProp name="RegexExtractor.default">0</stringProp>
               <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
-            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Set Replicate End Time" enabled="true">
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Set Replicate End Time">
               <stringProp name="scriptLanguage">groovy</stringProp>
               <stringProp name="parameters"></stringProp>
               <stringProp name="filename"></stringProp>
               <stringProp name="cacheKey">true</stringProp>
-              <stringProp name="script">def difference = (vars.get(&quot;current_member_count&quot;) as int) - (vars.get(&quot;initial_member_count&quot;) as int);
+              <stringProp name="script">def difference = (vars.get(&quot;current_member_count&quot;) as float) - (vars.get(&quot;initial_member_count&quot;) as float);
 log.info(&quot;difference: &quot; + String.valueOf(difference));
 
-if (difference == (${total_member_count} as int)) {
+if (difference == (${total_member_count} as float)) {
 	vars.put(&quot;replicate_endtime&quot;, String.valueOf(System.currentTimeMillis()));
 }
 </stringProp>
             </JSR223PostProcessor>
             <hashTree/>
           </hashTree>
-          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
             <boolProp name="ResultCollector.error_logging">false</boolProp>
             <objProp>
               <name>saveConfig</name>
@@ -948,7 +960,7 @@ if (difference == (${total_member_count} as int)) {
             <stringProp name="filename"></stringProp>
           </ResultCollector>
           <hashTree/>
-          <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+          <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report">
             <boolProp name="ResultCollector.error_logging">false</boolProp>
             <objProp>
               <name>saveConfig</name>
