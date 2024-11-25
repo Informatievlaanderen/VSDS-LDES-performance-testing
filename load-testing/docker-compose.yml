@@ -158,7 +158,7 @@ services:
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.3.0-SNAPSHOT} # CrowdScan
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.4.1-SNAPSHOT} # Geomobility
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.10.0-SNAPSHOT} # Telraam
-    image: ldes/ldes-server:${LDES_SERVER_TAG:-3.5.1-SNAPSHOT}
+    image: ldes/ldes-server:${LDES_SERVER_TAG:-3.5.0-SNAPSHOT}
     networks:
       - performance_testing
     ports:
