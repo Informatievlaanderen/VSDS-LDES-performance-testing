@@ -42,9 +42,9 @@ export X_API_KEY=
 ```
 
 ```bash
-clear && for i in {1 .. 7} ; do ./run-fetch.sh ; done
+clear && for((i=0;i<7;i++)) do ./run-fetch.sh ; done
 ```
 
 ```bash
-clear && for i in {1 .. 7} ; do ./run-throughput.sh ; done
+clear && for((i=0;i<7;i++)) do ./run-throughput.sh ; done
 ```
