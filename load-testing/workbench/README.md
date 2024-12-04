@@ -36,12 +36,13 @@ curl -X POST "http://localhost:9000/test?category=Workbench" -H "Content-Type: a
 > TODO from here -------------------------------------
 
 ```bash
-export CATEGORY="Workbench%20(2.10.0)"
+export CATEGORY="Workbench%20(2.11.0)"
 export TEST_SERVER_BASE="http://localhost:9000"
 export X_API_KEY=
 ```
 
 ```bash
+clear && for((i=0;i<7;i++)) do ./run-fetch.10mpp.sh ; done
 clear && for((i=0;i<7;i++)) do ./run-fetch.sh ; done
 ```
 
