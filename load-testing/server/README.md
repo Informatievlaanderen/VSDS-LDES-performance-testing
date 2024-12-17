@@ -2,7 +2,7 @@
 
 ```bash
 cd ./server
-export CATEGORY="Server%20(3.5.0)"
+export CATEGORY="Server%20(3.6.0)"
 export TEST_SERVER_BASE="http://localhost:9000"
 export X_API_KEY=
 ```

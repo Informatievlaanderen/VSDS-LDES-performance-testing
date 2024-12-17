@@ -36,7 +36,7 @@ curl -X POST "http://localhost:9000/test?category=Workbench" -H "Content-Type: a
 > TODO from here -------------------------------------
 
 ```bash
-export CATEGORY="Workbench%20(2.11.0)"
+export CATEGORY="Workbench%20(2.12.0)"
 export TEST_SERVER_BASE="http://localhost:9000"
 export X_API_KEY=
 ```

@@ -93,7 +93,7 @@ services:
 
   load-testing-ldio-workbench-workbench:
     container_name: performance_testing_ldio-workbench
-    image: ldes/ldi-orchestrator:${LDI_ORCHESTRATOR_TAG:-2.11.0-SNAPSHOT}
+    image: ldes/ldi-orchestrator:${LDI_ORCHESTRATOR_TAG:-2.12.0}
     networks:
       - performance_testing
     ports:
@@ -158,7 +158,7 @@ services:
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.3.0-SNAPSHOT} # CrowdScan
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.4.1-SNAPSHOT} # Geomobility
     # image: ldes/ldes-server:${LDES_SERVER_TAG:-2.10.0-SNAPSHOT} # Telraam
-    image: ldes/ldes-server:${LDES_SERVER_TAG:-latest} # TODO: should be 3.6.0-SNAPSHOT
+    image: ldes/ldes-server:${LDES_SERVER_TAG:-3.6.0}
     networks:
       - performance_testing
     ports:
