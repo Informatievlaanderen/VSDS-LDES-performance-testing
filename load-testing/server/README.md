@@ -8,19 +8,19 @@ export X_API_KEY=
 ```
 
 ```bash
-./run-ingest-sequential.sh
+clear && for((i=0;i<7;i++)) do ./run-ingest-sequential.sh ; done
 ```
 
 ```bash
-./run-fragment-sequential.sh
+clear && for((i=0;i<7;i++)) do ./run-fragment-sequential.sh ; done
 ```
 
 ```bash
-./run-both-parallel.sh
+clear && for((i=0;i<7;i++)) do ./run-both-parallel.sh ; done
 ```
 
 ```bash
-./run-fetch.sh
+clear && for((i=0;i<7;i++)) do ./run-fetch.sh ; done
 ```
 
 ```bash
