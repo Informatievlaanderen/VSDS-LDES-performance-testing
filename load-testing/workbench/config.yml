@@ -8,19 +8,7 @@ logging:
     be.vlaanderen.informatievlaanderen.ldes.ldio.Application: INFO
     be.vlaanderen.informatievlaanderen.ldes: WARN
 
-management:
-  tracing:
-    enabled: false
-  endpoints:
-    web:
-      exposure:
-        include:
-          - health
-          - info
-          - prometheus
-  health:
-    defaults:
-      enabled: true
-  endpoint:
-    health:
-      show-details: always
+springdoc:
+  swagger-ui:
+    path: /v1/swagger
+    urlsPrimaryName: base

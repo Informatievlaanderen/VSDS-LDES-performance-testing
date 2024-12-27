@@ -32,3 +32,19 @@ To run the large message test in parallel using 8 threads:
 ```bash
 curl -X POST "http://localhost:9000/test?category=Workbench" -H "Content-Type: application/xml" --data-binary @./throughput.L-08T.jmx
 ```
+
+> TODO from here -------------------------------------
+
+```bash
+export CATEGORY="Workbench%20(2.12.0)"
+export TEST_SERVER_BASE="http://localhost:9000"
+export X_API_KEY=
+```
+
+```bash
+./run-fetch.sh
+```
+
+```bash
+clear && for((i=0;i<7;i++)) do ./run-throughput.sh ; done
+```

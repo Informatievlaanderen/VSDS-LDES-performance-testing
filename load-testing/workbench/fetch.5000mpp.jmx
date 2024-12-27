@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
   <hashTree>
-    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="LDES Client Speed Test - 500 Members / Page">
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="LDES Client Speed Test - 5000 Members / Page">
       <boolProp name="TestPlan.serialize_threadgroups">true</boolProp>
       <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
@@ -13,12 +13,12 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="test_plan_name" elementType="Argument">
             <stringProp name="Argument.name">test_plan_name</stringProp>
-            <stringProp name="Argument.value">Fetch Speed Test - 500 Members / Page</stringProp>
+            <stringProp name="Argument.value">Fetch Speed Test - 5000 Members / Page</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="members_per_page" elementType="Argument">
             <stringProp name="Argument.name">members_per_page</stringProp>
-            <stringProp name="Argument.value">500</stringProp>
+            <stringProp name="Argument.value">5000</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="type" elementType="Argument">
