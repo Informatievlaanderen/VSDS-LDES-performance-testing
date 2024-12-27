@@ -42,8 +42,7 @@ export X_API_KEY=
 ```
 
 ```bash
-clear && for((i=0;i<7;i++)) do ./run-fetch.10mpp.sh ; done
-clear && for((i=0;i<7;i++)) do ./run-fetch.sh ; done
+./run-fetch.sh
 ```
 
 ```bash
